@@ -1,0 +1,78 @@
+{
+  "inputs_sha256": {
+    "/Users/novaz/Desktop/qml2.0/results/bond_length_part3/vibrational_levels.json": "dbb2b85f3b594de3879d6aff03e5b94ccc6eddf4414f4b3e40691efc0b85f4bc",
+    "/Users/novaz/Desktop/qml2.0/results/rhf_30_point_scans/rhf_scan_30.json": "261a03ce80c9eac0c3166579483bd4138148faf2349138b605973f9077a4c2c5",
+    "/Users/novaz/Desktop/qml2.0/json/new_rhf_harmonic_bond_ranges.json": "d698dde31c8252930dcd39aeea1721c5f4bde42efc81d3571a566a88cbfb5999",
+    "/Users/novaz/Desktop/qml2.0/results/rhf_reference_correlation/fci_current_range_cache.json": "ecfb8ace519b992bc59e53b175d338ad6c4dcee427bb4b3371ba8636fa32e290",
+    "/Users/novaz/Desktop/qml2.0/results/rhf_reference_correlation/per_geometry.csv": "f5c217dcd0d8f8569bce5b1b39726a34e20498dcbb2f127249a6d4e42c6f002e",
+    "/Users/novaz/Desktop/qml2.0/results/rhf_reference_correlation/provenance.json": "216b8c39ebb9f4bd385fd1ef5eab2f9a6e09ee00e1acc0ae2fa5eadbb82c7052"
+  },
+  "reference_cache": "/Users/novaz/Desktop/qml2.0/results/rhf_reference_correlation/fci_at_rhf_equilibrium.json",
+  "reference_cache_sha256": "b75c3f05f76956476185e35b534791711d2e5f8c4258ea063147945ba6529642",
+  "computed_this_run": [],
+  "reused_this_run": [
+    "LiH",
+    "BeH2",
+    "H2O",
+    "NH3",
+    "N2",
+    "CO",
+    "HF",
+    "H2S",
+    "H2O2"
+  ],
+  "original_inputs_unchanged": true,
+  "scan_points": 270,
+  "active_spaces": {
+    "LiH": [
+      1,
+      5,
+      2
+    ],
+    "BeH2": [
+      1,
+      6,
+      4
+    ],
+    "H2O": [
+      1,
+      6,
+      8
+    ],
+    "NH3": [
+      1,
+      7,
+      8
+    ],
+    "N2": [
+      2,
+      8,
+      10
+    ],
+    "CO": [
+      2,
+      8,
+      10
+    ],
+    "HF": [
+      1,
+      5,
+      8
+    ],
+    "H2S": [
+      5,
+      6,
+      8
+    ],
+    "H2O2": [
+      2,
+      10,
+      14
+    ]
+  },
+  "reference_geometry": "optimized RHF equilibrium nuclei",
+  "energy_reference": "1000 * (E_method(R) - E_RHF(R_e_RHF))",
+  "reference_zero_tolerance_mHa": 1e-09,
+  "RHF_reference_zero_checks_passed": true,
+  "FCI_reference_is_correlation_energy": true
+}

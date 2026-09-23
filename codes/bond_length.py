@@ -7,7 +7,8 @@ It does not import historical scan/geometry scripts.
 
 Default: reuse matching, validated current results and compute missing stages.
 --reoptimize requests a new equilibrium optimization and invalidates downstream
-stages. --recompute recomputes k and dissociation but retains valid equilibria.
+stages. --recompute recomputes k but retains valid equilibria. Part 3 is pure
+postprocessing of the saved equilibrium energy and harmonic angular frequency.
 All reported energies are Hartree, lengths Angstrom, k Eh/Bohr^2 or Eh/A^2.
 """
 from __future__ import annotations
@@ -19,6 +20,7 @@ import io
 import json
 import math
 import platform
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -28,20 +30,23 @@ import pyscf
 from pyscf import lib
 from scipy.optimize import minimize
 
+PROJECT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROJECT / "tests"))
 import new_rhf_harmonic_bond_ranges as harmonic
 import rhf_bound_level_selection as selection
+import bond_length_part3 as part3
 
 
-PROJECT = Path(__file__).resolve().parent.parent
 MOLECULES = harmonic.MOLECULES
 SUMMARY_FIELDS = [
     "molecule", "basis", "coordinate", "r_e_A", "E_eq_Eh", "max_gradient_Eh_per_Bohr",
     "k_q_Eh_per_Bohr2", "k_q_Eh_per_A2", "mu_eff_amu", "harmonic_quantum_Eh",
     "Delta_q_n0_A", "Delta_q_n1_A", "n0_min_A", "n0_max_A", "n1_min_A", "n1_max_A",
-    "E_diss_Eh", "D_e_Eh", "half_hbar_omega_Eh", "three_halves_hbar_omega_Eh",
-    "E0_rel_Eh", "E1_rel_Eh", "n0_bound", "n1_bound", "selected_n",
+    "E_re_Ha", "omega_rad_per_s", "hbar_omega_Ha", "E_n0_Ha", "E_n1_Ha",
+    "E_total_n0_Ha", "E_total_n1_Ha", "n0_pass", "n1_pass", "selected_n",
     "selected_range_min_A", "selected_range_max_A", "Hessian_FD_relative_difference",
-    "equilibrium_status", "harmonic_status", "selection_status", "asymptote_status",
+    "equilibrium_status", "harmonic_status", "selection_status", "decision_criterion",
+    "energy_reference_status", "energy_reference_warning", "reference_shift_Ha",
     "validation_status", "message",
 ]
 ENERGY_KEYS = {"harmonic_frequency_cm1": "harmonic_quantum_Eh",
@@ -58,7 +63,8 @@ def constants():
 def source_hashes():
     return {"pipeline": harmonic.sha256(__file__),
             "harmonic": harmonic.sha256(harmonic.__file__),
-            "selection": harmonic.sha256(selection.__file__)}
+            "part3": harmonic.sha256(part3.__file__),
+            "scan_utilities": harmonic.sha256(selection.__file__)}
 
 
 def energy_view(value, inverse=False):
@@ -218,50 +224,45 @@ def harmonic_cache_matches(record, equilibrium):
         return False
 
 
-def selection_cache_matches(record, harmonic_record, settings):
-    """Recheck the actual sampled plateau and its relation to the current harmonic path."""
-    try:
-        old, now = record["harmonic_input"], harmonic_record
-        hs, ss = now["summary"], record["summary"]
-        if ss["validation_status"] not in ("PASS", "NEAR_THRESHOLD", "NO_BOUND_LEVEL_IN_HARMONIC_TEST"):
-            return False
-        if ss["asymptote_status"] != "PLATEAU_CONFIRMED" or record.get("failure_reasons"):
-            return False
-        if ss["basis"].lower() != hs["RHF_basis"].lower() or ss["coordinate"] != hs["coordinate_definition"]:
-            return False
-        if not same_geometry(now["symbols"], now["equilibrium_cartesian_A"], old["symbols"], old["equilibrium_cartesian_A"]):
-            return False
-        quantum = hs["harmonic_frequency_cm1"] * selection.conversion_from_constants(constants())
-        if not math.isclose(ss["harmonic_quantum_Eh"], quantum, rel_tol=1e-12, abs_tol=1e-15):
-            return False
-        if any(abs(old["summary"][key] - hs[key]) > 1e-12 for key in ("s_eq_A", "n0_min_A", "n0_max_A", "n1_min_A", "n1_max_A")):
-            return False
-        if abs(ss["E_eq_Eh"] - now["stationarity"]["E_RHF_Eh"]) > 1e-9:
-            return False
-        points = record["scan"]
-        if not points or max(p["q_A"] for p in points) > settings["max_q_A"]:
-            return False
-        if not selection.assess_plateau(points, settings["plateau_tolerance_Eh"])["passed"]:
-            return False
-        if any(not p["internal_stable"] or p["orbital_gradient_norm_Eh"] > selection.SCF_GRADIENT_LIMIT
-               or not p["geometry_validation"]["passed"] for p in points[-4:]):
-            return False
-        checks = record["asymptote_independent_checks"]
-        if len(checks) < 2 or any(not c["accepted"] or abs(c["energy_difference_from_continuation_Eh"]) >= settings["plateau_tolerance_Eh"] for c in checks):
-            return False
-        return (abs(ss["E_diss_Eh"] - points[-1]["energy_Eh"]) < 1e-12
-                and abs(ss["D_e_Eh"] - (ss["E_diss_Eh"] - ss["E_eq_Eh"])) < 1e-12
-                and ss["D_e_Eh"] > 0)
-    except (KeyError, ValueError, TypeError):
-        return False
+def evaluate_part3(equilibrium, harmonic_record):
+    """Use Parts 1/2 verbatim; apply the requested zero test without an energy shift."""
+    hs = harmonic_record["summary"]
+    E_re = equilibrium["E_eq_Eh"]
+    if not math.isclose(E_re, harmonic_record["stationarity"]["E_RHF_Eh"], rel_tol=0, abs_tol=1e-9):
+        raise ValueError("Part 1 equilibrium energy differs from the validated Part 2 input.")
+    omega = hs["omega_rad_per_s"]
+    if not math.isfinite(omega) or omega <= 0:
+        raise ValueError("Part 2 must supply a positive finite angular frequency in rad/s.")
+    quantum = constants()["hbar_J_s"] * omega / constants()["Hartree_J"]
+    from_wavenumber = hs["harmonic_frequency_cm1"] * selection.conversion_from_constants(constants())
+    if not math.isclose(quantum, from_wavenumber, rel_tol=1e-12, abs_tol=1e-15):
+        raise ValueError("Saved angular frequency and wavenumber give inconsistent energy quanta.")
+    summary = part3.compute_levels(E_re, quantum)
+    chosen = summary["selected_n"]
+    summary.update(
+        molecule=hs["molecule"], basis=hs["RHF_basis"],
+        coordinate=hs["coordinate_definition"], r_e_A=hs["s_eq_A"],
+        k_q_Eh_per_Bohr2=hs["k_q_Eh_per_Bohr2"], k_q_Eh_per_A2=hs["k_q_Eh_per_A2"],
+        mu_eff_amu=hs["mu_eff_amu"], omega_rad_per_s=omega,
+        selected_range_min_A=None if chosen is None else hs[f"n{chosen}_min_A"],
+        selected_range_max_A=None if chosen is None else hs[f"n{chosen}_max_A"],
+    )
+    return {"schema_version": part3.SCHEMA_VERSION, "summary": summary,
+            "warnings": [summary["energy_reference_warning"]], "failure_reasons": [],
+            "selection_formula": "E_total_n_Ha = E_re_Ha + (n + 0.5) * hbar_omega_Ha; E_total_n_Ha < 0",
+            "input_sources": {"E_re": "Part 1 E_eq_Eh, unchanged",
+                              "omega": "Part 2 omega_rad_per_s, unchanged"},
+            "unit_checks": {"hbar_omega_from_saved_omega_Ha": quantum,
+                            "hbar_omega_from_saved_wavenumber_Ha": from_wavenumber,
+                            "frequency_conversion_agrees": True},
+            "SCF_recomputed": False, "nuclear_hessian_recomputed": False}
 
 
-def cached_records(output_dir, harmonic_file, selection_file):
-    """Only current validated output files and this pipeline's own saved output are considered."""
-    caches = {"equilibrium": {}, "harmonic": {}, "selection": {}, "notes": []}
+def cached_records(output_dir, harmonic_file):
+    """Reuse only validated Parts 1/2; Part 3 is always inexpensive postprocessing."""
+    caches = {"equilibrium": {}, "harmonic": {}, "notes": []}
     hashes = source_hashes()
-    for kind, path in (("pipeline", output_dir / "bond_length.json"),
-                       ("harmonic", harmonic_file), ("selection", selection_file)):
+    for kind, path in (("pipeline", output_dir / "bond_length.json"), ("harmonic", harmonic_file)):
         try:
             document = read_json(path)
             if document is None:
@@ -276,10 +277,8 @@ def cached_records(output_dir, harmonic_file, selection_file):
                         caches["equilibrium"][name] = result["equilibrium"]
                     if "harmonic" in result:
                         caches["harmonic"][name] = energy_view(result["harmonic"], inverse=True)
-                    if "selection" in result:
-                        caches["selection"][name] = result["selection"]
             else:
-                provenance = document["runtime"] if kind == "harmonic" else document["provenance"]
+                provenance = document["runtime"]
                 if provenance["script_sha256"] != hashes[kind]:
                     caches["notes"].append(f"Ignored {kind} cache with changed implementation: {path}")
                     continue
@@ -310,8 +309,10 @@ def joined_summary(name, basis, result):
         if "harmonic_frequency_cm1" in hs:
             summary["harmonic_quantum_Eh"] = hs["harmonic_frequency_cm1"] * selection.conversion_from_constants(constants())
     if bound:
-        for key in ("E_diss_Eh", "D_e_Eh", "harmonic_quantum_Eh", "half_hbar_omega_Eh", "three_halves_hbar_omega_Eh",
-                    "E0_rel_Eh", "E1_rel_Eh", "n0_bound", "n1_bound", "selected_n", "selected_range_min_A", "selected_range_max_A", "asymptote_status"):
+        for key in ("E_re_Ha", "omega_rad_per_s", "hbar_omega_Ha", "E_n0_Ha", "E_n1_Ha",
+                    "E_total_n0_Ha", "E_total_n1_Ha", "n0_pass", "n1_pass", "selected_n",
+                    "selected_range_min_A", "selected_range_max_A", "decision_criterion",
+                    "energy_reference_status", "energy_reference_warning", "reference_shift_Ha"):
             summary[key] = bound["summary"].get(key)
         summary["selection_status"] = bound["summary"]["validation_status"]
     summary["validation_status"] = result.get("status", "INCOMPLETE")
@@ -322,8 +323,6 @@ def joined_summary(name, basis, result):
 def process_molecule(name, args, rows, caches):
     result = {"sources": {}, "messages": [], "status": "INCOMPLETE"}
     start = time.monotonic()
-    settings = {"max_q_A": args.max_q, "plateau_tolerance_Eh": args.plateau_tol,
-                "threshold_warning_Eh": args.threshold_warning_eh, "molecule": name}
     try:
         equilibrium = None
         if not args.reoptimize:
@@ -368,31 +367,13 @@ def process_molecule(name, args, rows, caches):
             result["messages"].extend(h.get("failures") or [h["summary"].get("message", "Harmonic validation failed.")])
             return result
 
-        allow_selection_cache = result["sources"]["harmonic"] == "reused" and not args.recompute
-        bound = caches["selection"].get(name) if allow_selection_cache else None
-        if bound is not None and selection_cache_matches(bound, h, settings):
-            bound = copy.deepcopy(bound)
-            # Reapply the exact decision using the requested warning window, retaining the saved range floats.
-            bound["summary"].update(selection.select_level(bound["summary"]["D_e_Eh"], bound["summary"]["harmonic_quantum_Eh"],
-                                                         h["summary"], args.threshold_warning_eh))
-            result["sources"]["selection"] = "reused"
-        elif args.reuse_only:
-            result["status"] = "NEEDS_INPUT"
-            result["messages"].append("No matching, independently confirmed RHF plateau is available in reuse-only mode.")
-            return result
-        else:
-            print(f"{name}: 3/3 scanning the same RHF path and selecting n=0/1...", flush=True)
-            progress_time = [time.monotonic()]
-            def progress(partial):
-                if time.monotonic() - progress_time[0] >= 20:
-                    point = partial["scan"][-1]
-                    print(f"  {name}: q={point['q_A']:.6g} A; accepted={point['accepted']}", flush=True)
-                    progress_time[0] = time.monotonic()
-            bound = selection.scan_one(h, settings, selection.conversion_from_constants(constants()), progress)
-            result["sources"]["selection"] = "computed"
+        print(f"{name}: 3/3 evaluating E_re + E_n against zero...", flush=True)
+        bound = evaluate_part3(equilibrium, h)
+        result["sources"]["selection"] = "postprocessed"
         result["selection"] = bound
         result["status"] = bound["summary"]["validation_status"]
         result["messages"].extend(bound.get("failure_reasons", []))
+        result["messages"].extend(bound["warnings"])
     except Exception as exc:
         result["status"] = "ERROR"
         result["messages"].append(f"{type(exc).__name__}: {exc}")
@@ -406,12 +387,12 @@ def report_text(document):
     rows = document["results"]
     lines = ["# Complete RHF bond-length pipeline", "",
              "This pipeline connects (1) RHF equilibrium geometry, (2) the collective stretching force constant, "
-             "and (3) the n=0/n=1 bound-level test on the same constrained RHF dissociation path.", "",
+             "and (3) the requested n=0/n=1 zero-energy test without shifting the supplied equilibrium energy.", "",
              "All energies are Hartree (Eh). Lengths are Angstrom (A). A force constant has dimensions of energy/length^2; "
              "its reported units are Eh/Bohr^2 and Eh/A^2. Atomic masses are PySCF isotope-average masses in amu.", "",
              "## Summary", ""]
-    keys = ("molecule", "r_e_A", "k_q_Eh_per_Bohr2", "mu_eff_amu", "harmonic_quantum_Eh", "D_e_Eh",
-            "E0_rel_Eh", "E1_rel_Eh", "selected_n", "selected_range_min_A", "selected_range_max_A", "validation_status")
+    keys = ("molecule", "r_e_A", "k_q_Eh_per_Bohr2", "mu_eff_amu", "omega_rad_per_s", "hbar_omega_Ha", "E_re_Ha",
+            "E_n0_Ha", "E_n1_Ha", "E_total_n0_Ha", "E_total_n1_Ha", "n0_pass", "n1_pass", "selected_n", "selected_range_min_A", "selected_range_max_A", "validation_status")
     lines += harmonic.table(list(keys), [[r["summary"].get(k) for k in keys] for r in rows])
     lines += ["", "## 1. RHF equilibrium r_e", "",
               "A converged equilibrium is reused only if its molecule, requested RHF basis and nuclear-gradient tolerance match. "
@@ -430,25 +411,26 @@ def report_text(document):
               "checks and independent energy finite differences. Stationarity, fixed internal coordinates, positive curvature, "
               "masses and normal modes must pass the existing harmonic validation. A failed stage cannot yield a selected range.", "",
               "## 3. n=0 or n=1", "",
-              "    D_e^(RHF-path) = E_diss - E_eq", "    E0_rel = -D_e + 0.5 * hbar * omega",
-              "    E1_rel = -D_e + 1.5 * hbar * omega", "",
-              "If E1_rel<0, choose n=1. Otherwise, if E0_rel<0, choose n=0. Otherwise choose NONE. "
-              "Use the corresponding already validated interval r_e +/- Delta_q(n). Epsilon_n above the minimum is positive; "
-              "the negative sign of E_n_rel relative to dissociation is the bound-level test.", "",
-              f"Near-threshold warning window: {document['settings']['threshold_warning_Eh']:.12g} Eh. "
-              f"Plateau tolerance: {document['settings']['plateau_tolerance_Eh']:.6g} Eh. The plateau requires four "
-              "consecutive accepted points with geometrically increasing separation, including an outward confirmation, "
-              "and independent RHF initial guesses that reproduce the asymptotic energy. A single last point is never sufficient. "
-              "No stable, unambiguous plateau means no selected n or range.", "",
-              selection.GENERAL_RHF_WARNING, "",
+              "    hbar_omega_Ha = hbar_J_s * omega_rad_per_s / Hartree_J",
+              "    E_n0_Ha = 0.5 * hbar_omega_Ha", "    E_n1_Ha = 1.5 * hbar_omega_Ha",
+              "    E_total_n0_Ha = E_re_Ha + E_n0_Ha", "    E_total_n1_Ha = E_re_Ha + E_n1_Ha", "",
+              "If E_total_n1_Ha<0, choose n=1. Otherwise, if E_total_n0_Ha<0, choose n=0. "
+              "Otherwise choose NONE. Equality fails the strict test. Use the corresponding existing Part 2 interval.", "",
+              "Energy-reference audit: Part 1 stores float(mf.e_tot) from the converged all-electron RHF "
+              "calculation in E_eq_Eh and energy_hartree. This is the absolute RHF Born-Oppenheimer molecular "
+              "energy, including nuclear repulsion. Part 3 copies it into E_re_Ha without a shift. The workflow "
+              "does not establish that its absolute zero is the intended physical threshold, so every result carries "
+              "UNVALIDATED_ZERO_REFERENCE. Passing this requested numerical test does not establish a physically bound state.", "",
+              "Part 2 already supplies k, mu_eff and omega. Only hbar*omega is converted from joules to Hartree; "
+              "the saved wavenumber conversion is checked independently. E_re, both excitation energies and both "
+              "total energies are in Hartree before comparison.", "",
               "## Reuse and output files", "",
-              "The program checks code hashes, constants, basis, geometry, equilibrium energy, harmonic ranges and actual plateau "
-              "evidence before reusing a stage. --recompute invalidates harmonic and dissociation results. --reuse-only "
-              "forbids numerical calculations and reports NEEDS_INPUT when a stage is unavailable. "
-              "Optimization, harmonic analysis and scans are never launched merely by importing the module.", "",
-              "bond_length.csv contains the joined result. bond_length.json preserves all three stages, Hessians, path checks "
-              "and complete scans. scans/<molecule>.csv provides each energy scan. New equilibrium XYZ and metadata files "
-              "are stored in equilibria/. Partial results are saved after each molecule.", ""]
+              "The program validates Parts 1/2 inputs before reuse. Part 3 always recomputes its simple additions "
+              "and comparisons; old selection caches cannot enter the decision. --recompute invalidates harmonic "
+              "results. --reuse-only forbids SCF, optimization and Hessians. Importing the module launches none of them.", "",
+              "bond_length.csv contains the joined result. bond_length.json preserves the equilibrium and harmonic "
+              "stages with the corrected Part 3 output. New equilibrium XYZ and metadata files are stored in equilibria/. "
+              "Partial results are saved after each molecule.", ""]
     for r in rows:
         s = r["summary"]
         lines += [f"## {s['molecule']}", "", f"Status: {s['validation_status']}. Basis: {s['basis']}.", "",
@@ -482,14 +464,6 @@ def write_outputs(document, output_dir):
     writer.writerows(r["summary"] for r in payload["results"])
     atomic_text(output_dir / "bond_length.csv", stream.getvalue())
     atomic_text(output_dir / "BOND_LENGTH_REPORT.md", report_text(document))
-    scan_fields = ("q_A", "s_A", "energy_Eh", "scf_converged", "orbital_gradient_norm_Eh", "internal_stable", "accepted", "failure")
-    for result in payload["results"]:
-        stream = io.StringIO(newline="")
-        writer = csv.DictWriter(stream, fieldnames=scan_fields, extrasaction="ignore")
-        writer.writeheader()
-        writer.writerows(result.get("selection", {}).get("scan", []))
-        atomic_text(output_dir / "scans" / f"{result['summary']['molecule']}.csv", stream.getvalue())
-
 
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -497,27 +471,21 @@ def parse_args(argv=None):
     parser.add_argument("--molecules", nargs="+", choices=MOLECULES, default=list(MOLECULES))
     parser.add_argument("--metadata", type=Path, default=PROJECT / "results/rhf_geometries/rhf_equilibrium_summary.csv")
     parser.add_argument("--harmonic-json", type=Path, default=PROJECT / "json/new_rhf_harmonic_bond_ranges.json")
-    parser.add_argument("--selection-json", type=Path, default=PROJECT / "json/rhf_bound_level_selection.json")
     parser.add_argument("--output-dir", type=Path, default=PROJECT / "results/bond_length")
     parser.add_argument("--reoptimize", action="store_true", help="Explicitly optimize new equilibria and recompute both subsequent stages.")
-    parser.add_argument("--recompute", action="store_true", help="Recompute k and dissociation, retaining valid RHF equilibrium inputs.")
+    parser.add_argument("--recompute", action="store_true", help="Recompute k, retaining valid RHF equilibrium inputs.")
     parser.add_argument("--reuse-only", action="store_true", help="Use verified saved results only; never run SCF, optimization or Hessians.")
     parser.add_argument("--gtol", type=float, default=1e-6, help="Maximum nuclear gradient in Eh/Bohr for equilibrium optimization/reuse.")
     parser.add_argument("--maxiter", type=int, default=200)
-    parser.add_argument("--max-q", type=float, default=1e7, help="Maximum numerical dissociation displacement in Angstrom.")
-    parser.add_argument("--plateau-tol", type=float, default=1e-6, help="RHF asymptote energy tolerance in Hartree.")
-    parser.add_argument("--threshold-warning-eh", type=float, default=selection.DEFAULT_THRESHOLD_WARNING_EH)
     parser.add_argument("--threads", type=int, default=1)
     args = parser.parse_args(argv)
     if args.reuse_only and (args.recompute or args.reoptimize):
         parser.error("--reuse-only cannot be combined with --recompute or --reoptimize")
-    if any(not math.isfinite(x) or x <= 0 for x in (args.gtol, args.max_q, args.plateau_tol, args.threshold_warning_eh)) or min(args.maxiter, args.threads) < 1:
+    if any(not math.isfinite(x) or x <= 0 for x in (args.gtol,)) or min(args.maxiter, args.threads) < 1:
         parser.error("Tolerances, limits and thread count must be positive and finite")
-    if args.threshold_warning_eh < args.plateau_tol:
-        parser.error("--threshold-warning-eh must cover --plateau-tol")
     if args.gtol > harmonic.TOL["gradient_max_Eh_per_Bohr"]:
         parser.error("--gtol cannot exceed the harmonic stationarity tolerance")
-    for key in ("metadata", "harmonic_json", "selection_json", "output_dir"):
+    for key in ("metadata", "harmonic_json", "output_dir"):
         setattr(args, key, getattr(args, key).expanduser().resolve())
     args.molecules = list(dict.fromkeys(args.molecules))
     return args
@@ -526,19 +494,17 @@ def parse_args(argv=None):
 def main(argv=None):
     args = parse_args(argv)
     rows = read_metadata(args.metadata)
-    caches = cached_records(args.output_dir, args.harmonic_json, args.selection_json)
+    caches = cached_records(args.output_dir, args.harmonic_json)
     if not args.reuse_only:
         lib.num_threads(args.threads)
-    document = {"schema_version": 1, "created_utc": datetime.now(timezone.utc).isoformat(),
+    document = {"schema_version": "bond-length-zero-energy-v2", "created_utc": datetime.now(timezone.utc).isoformat(),
                 "energy_unit": "Hartree", "length_unit": "Angstrom", "results": [],
                 "settings": {"basis": args.basis, "equilibrium_gtol_Eh_per_Bohr": args.gtol,
-                             "max_q_A": args.max_q, "plateau_tolerance_Eh": args.plateau_tol,
-                             "threshold_warning_Eh": args.threshold_warning_eh,
                              "reoptimize": args.reoptimize, "recompute": args.recompute, "reuse_only": args.reuse_only},
                 "provenance": {"source_hashes": source_hashes(), "constants": constants(),
                                "python_version": platform.python_version(), "pyscf_version": pyscf.__version__,
                                "metadata": str(args.metadata), "harmonic_input": str(args.harmonic_json),
-                               "selection_input": str(args.selection_json), "cache_notes": caches["notes"]}}
+                               "part3_schema_version": part3.SCHEMA_VERSION, "cache_notes": caches["notes"]}}
     for name in args.molecules:
         print(f"{name}: RHF equilibrium -> collective k -> n=0/1 selection", flush=True)
         result = process_molecule(name, args, rows, caches)

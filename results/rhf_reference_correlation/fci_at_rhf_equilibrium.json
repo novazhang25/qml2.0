@@ -1,0 +1,461 @@
+{
+  "schema_version": "rhf-equilibrium-fci-references-v1",
+  "records": [
+    {
+      "molecule": "LiH",
+      "geom_index": -1,
+      "source_point_index": 0,
+      "basis": "sto-3g",
+      "symbols": [
+        "Li",
+        "H"
+      ],
+      "cartesian_A": [
+        [
+          -0.0,
+          0.0,
+          -0.755405926516
+        ],
+        [
+          0.0,
+          -0.0,
+          0.755405926516
+        ]
+      ],
+      "bond_length_angstrom": 1.510811853032,
+      "q_A": 0.0,
+      "E_RHF_Ha": -7.863382128921103,
+      "charge": 0,
+      "spin": 0,
+      "schema_version": "current-range-frozen-core-fci-v1",
+      "n_frozen_orbitals": 1,
+      "n_frozen_electrons": 2,
+      "n_active_orbitals": 5,
+      "n_active_electrons": 2,
+      "E_FCI_frozen_core_Ha": -7.882303669753793,
+      "E_CAS_active_Ha": -1.097829666108395,
+      "E_core_including_nuclear_Ha": -6.784474003645398,
+      "E_nuclear_Ha": 1.0507804989575862,
+      "E_RHF_reconstructed_Ha": -7.863382128921108,
+      "fci_converged": true,
+      "total_energy_confirmed": true,
+      "canonical_rhf_orbitals": true,
+      "rhf_orbitals_reconstructed": true,
+      "pyscf_version": "2.14.0",
+      "source_function": "pyscf.mcscf.CASCI.kernel()[0]",
+      "construction": "E_FCI_total = mc.e_cas + mc.get_h1eff()[1]; core includes nuclear repulsion",
+      "rhf_source_file": "/Users/novaz/Desktop/qml2.0/json/new_rhf_harmonic_bond_ranges.json",
+      "rhf_source_key": "results[0].input.metadata_row.energy_hartree"
+    },
+    {
+      "molecule": "BeH2",
+      "geom_index": -1,
+      "source_point_index": 0,
+      "basis": "sto-3g",
+      "symbols": [
+        "Be",
+        "H",
+        "H"
+      ],
+      "cartesian_A": [
+        [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.290538420998
+        ],
+        [
+          0.0,
+          -0.0,
+          1.290538420998
+        ]
+      ],
+      "bond_length_angstrom": 1.290538420998,
+      "q_A": 0.0,
+      "E_RHF_Ha": -15.561352807782086,
+      "charge": 0,
+      "spin": 0,
+      "schema_version": "current-range-frozen-core-fci-v1",
+      "n_frozen_orbitals": 1,
+      "n_frozen_electrons": 2,
+      "n_active_orbitals": 6,
+      "n_active_electrons": 4,
+      "E_FCI_frozen_core_Ha": -15.594409533413865,
+      "E_CAS_active_Ha": -4.000238017375851,
+      "E_core_including_nuclear_Ha": -11.594171516038013,
+      "E_nuclear_Ha": 3.4853718569196874,
+      "E_RHF_reconstructed_Ha": -15.561352807782068,
+      "fci_converged": true,
+      "total_energy_confirmed": true,
+      "canonical_rhf_orbitals": true,
+      "rhf_orbitals_reconstructed": true,
+      "pyscf_version": "2.14.0",
+      "source_function": "pyscf.mcscf.CASCI.kernel()[0]",
+      "construction": "E_FCI_total = mc.e_cas + mc.get_h1eff()[1]; core includes nuclear repulsion",
+      "rhf_source_file": "/Users/novaz/Desktop/qml2.0/json/new_rhf_harmonic_bond_ranges.json",
+      "rhf_source_key": "results[1].input.metadata_row.energy_hartree"
+    },
+    {
+      "molecule": "H2O",
+      "geom_index": -1,
+      "source_point_index": 0,
+      "basis": "sto-3g",
+      "symbols": [
+        "O",
+        "H",
+        "H"
+      ],
+      "cartesian_A": [
+        [
+          0.0,
+          0.0,
+          -0.423868772177
+        ],
+        [
+          0.75807972025,
+          -0.0,
+          0.211934386089
+        ],
+        [
+          -0.75807972025,
+          -0.0,
+          0.211934386089
+        ]
+      ],
+      "bond_length_angstrom": 0.9894091763852498,
+      "q_A": 0.0,
+      "E_RHF_Ha": -74.96590119229926,
+      "charge": 0,
+      "spin": 0,
+      "schema_version": "current-range-frozen-core-fci-v1",
+      "n_frozen_orbitals": 1,
+      "n_frozen_electrons": 2,
+      "n_active_orbitals": 6,
+      "n_active_electrons": 8,
+      "E_FCI_frozen_core_Ha": -75.02033637389107,
+      "E_CAS_active_Ha": -23.336774139179127,
+      "E_core_including_nuclear_Ha": -51.68356223471194,
+      "E_nuclear_Ha": 8.9064907647836,
+      "E_RHF_reconstructed_Ha": -74.96590119229928,
+      "fci_converged": true,
+      "total_energy_confirmed": true,
+      "canonical_rhf_orbitals": true,
+      "rhf_orbitals_reconstructed": true,
+      "pyscf_version": "2.14.0",
+      "source_function": "pyscf.mcscf.CASCI.kernel()[0]",
+      "construction": "E_FCI_total = mc.e_cas + mc.get_h1eff()[1]; core includes nuclear repulsion",
+      "rhf_source_file": "/Users/novaz/Desktop/qml2.0/json/new_rhf_harmonic_bond_ranges.json",
+      "rhf_source_key": "results[2].input.metadata_row.energy_hartree"
+    },
+    {
+      "molecule": "NH3",
+      "geom_index": -1,
+      "source_point_index": 0,
+      "basis": "sto-3g",
+      "symbols": [
+        "N",
+        "H",
+        "H",
+        "H"
+      ],
+      "cartesian_A": [
+        [
+          0.0,
+          0.0,
+          -0.319480247086
+        ],
+        [
+          0.940558128266,
+          0.0,
+          0.106493415695
+        ],
+        [
+          -0.470279064133,
+          0.814547232814,
+          0.106493415695
+        ],
+        [
+          -0.470279064133,
+          -0.814547232814,
+          0.106493415695
+        ]
+      ],
+      "bond_length_angstrom": 1.0325227135661368,
+      "q_A": 0.0,
+      "E_RHF_Ha": -55.45541977879945,
+      "charge": 0,
+      "spin": 0,
+      "schema_version": "current-range-frozen-core-fci-v1",
+      "n_frozen_orbitals": 1,
+      "n_frozen_electrons": 2,
+      "n_active_orbitals": 7,
+      "n_active_electrons": 8,
+      "E_FCI_frozen_core_Ha": -55.52436591510634,
+      "E_CAS_active_Ha": -19.956913284679466,
+      "E_core_including_nuclear_Ha": -35.56745263042687,
+      "E_nuclear_Ha": 11.7371767156308,
+      "E_RHF_reconstructed_Ha": -55.455419778799445,
+      "fci_converged": true,
+      "total_energy_confirmed": true,
+      "canonical_rhf_orbitals": true,
+      "rhf_orbitals_reconstructed": true,
+      "pyscf_version": "2.14.0",
+      "source_function": "pyscf.mcscf.CASCI.kernel()[0]",
+      "construction": "E_FCI_total = mc.e_cas + mc.get_h1eff()[1]; core includes nuclear repulsion",
+      "rhf_source_file": "/Users/novaz/Desktop/qml2.0/json/new_rhf_harmonic_bond_ranges.json",
+      "rhf_source_key": "results[3].input.metadata_row.energy_hartree"
+    },
+    {
+      "molecule": "N2",
+      "geom_index": -1,
+      "source_point_index": 0,
+      "basis": "sto-3g",
+      "symbols": [
+        "N",
+        "N"
+      ],
+      "cartesian_A": [
+        [
+          0.0,
+          0.0,
+          -0.566925503747
+        ],
+        [
+          -0.0,
+          -0.0,
+          0.566925503747
+        ]
+      ],
+      "bond_length_angstrom": 1.133851007494,
+      "q_A": 0.0,
+      "E_RHF_Ha": -107.50065426275157,
+      "charge": 0,
+      "spin": 0,
+      "schema_version": "current-range-frozen-core-fci-v1",
+      "n_frozen_orbitals": 2,
+      "n_frozen_electrons": 4,
+      "n_active_orbitals": 8,
+      "n_active_electrons": 10,
+      "E_FCI_frozen_core_Ha": -107.66834927609966,
+      "E_CAS_active_Ha": -30.875262062054745,
+      "E_core_including_nuclear_Ha": -76.79308721404492,
+      "E_nuclear_Ha": 22.868686594360337,
+      "E_RHF_reconstructed_Ha": -107.50065426275155,
+      "fci_converged": true,
+      "total_energy_confirmed": true,
+      "canonical_rhf_orbitals": true,
+      "rhf_orbitals_reconstructed": true,
+      "pyscf_version": "2.14.0",
+      "source_function": "pyscf.mcscf.CASCI.kernel()[0]",
+      "construction": "E_FCI_total = mc.e_cas + mc.get_h1eff()[1]; core includes nuclear repulsion",
+      "rhf_source_file": "/Users/novaz/Desktop/qml2.0/json/new_rhf_harmonic_bond_ranges.json",
+      "rhf_source_key": "results[4].input.metadata_row.energy_hartree"
+    },
+    {
+      "molecule": "CO",
+      "geom_index": -1,
+      "source_point_index": 0,
+      "basis": "sto-3g",
+      "symbols": [
+        "C",
+        "O"
+      ],
+      "cartesian_A": [
+        [
+          0.0,
+          -0.0,
+          -0.572740337977
+        ],
+        [
+          -0.0,
+          0.0,
+          0.572740337977
+        ]
+      ],
+      "bond_length_angstrom": 1.145480675954,
+      "q_A": 0.0,
+      "E_RHF_Ha": -111.22544951413585,
+      "charge": 0,
+      "spin": 0,
+      "schema_version": "current-range-frozen-core-fci-v1",
+      "n_frozen_orbitals": 2,
+      "n_frozen_electrons": 4,
+      "n_active_orbitals": 8,
+      "n_active_electrons": 10,
+      "E_FCI_frozen_core_Ha": -111.36770817301459,
+      "E_CAS_active_Ha": -32.01564282995821,
+      "E_core_including_nuclear_Ha": -79.3520653430564,
+      "E_nuclear_Ha": 22.17453917588395,
+      "E_RHF_reconstructed_Ha": -111.22544951413573,
+      "fci_converged": true,
+      "total_energy_confirmed": true,
+      "canonical_rhf_orbitals": true,
+      "rhf_orbitals_reconstructed": true,
+      "pyscf_version": "2.14.0",
+      "source_function": "pyscf.mcscf.CASCI.kernel()[0]",
+      "construction": "E_FCI_total = mc.e_cas + mc.get_h1eff()[1]; core includes nuclear repulsion",
+      "rhf_source_file": "/Users/novaz/Desktop/qml2.0/json/new_rhf_harmonic_bond_ranges.json",
+      "rhf_source_key": "results[5].input.metadata_row.energy_hartree"
+    },
+    {
+      "molecule": "HF",
+      "geom_index": -1,
+      "source_point_index": 0,
+      "basis": "sto-3g",
+      "symbols": [
+        "H",
+        "F"
+      ],
+      "cartesian_A": [
+        [
+          -0.0,
+          0.0,
+          -0.477731349305
+        ],
+        [
+          0.0,
+          -0.0,
+          0.477731349305
+        ]
+      ],
+      "bond_length_angstrom": 0.95546269861,
+      "q_A": 0.0,
+      "E_RHF_Ha": -98.57284734716009,
+      "charge": 0,
+      "spin": 0,
+      "schema_version": "current-range-frozen-core-fci-v1",
+      "n_frozen_orbitals": 1,
+      "n_frozen_electrons": 2,
+      "n_active_orbitals": 5,
+      "n_active_electrons": 8,
+      "E_FCI_frozen_core_Ha": -98.60172857208815,
+      "E_CAS_active_Ha": -27.827559735590754,
+      "E_core_including_nuclear_Ha": -70.7741688364974,
+      "E_nuclear_Ha": 4.984595322463753,
+      "E_RHF_reconstructed_Ha": -98.57284734715999,
+      "fci_converged": true,
+      "total_energy_confirmed": true,
+      "canonical_rhf_orbitals": true,
+      "rhf_orbitals_reconstructed": true,
+      "pyscf_version": "2.14.0",
+      "source_function": "pyscf.mcscf.CASCI.kernel()[0]",
+      "construction": "E_FCI_total = mc.e_cas + mc.get_h1eff()[1]; core includes nuclear repulsion",
+      "rhf_source_file": "/Users/novaz/Desktop/qml2.0/json/new_rhf_harmonic_bond_ranges.json",
+      "rhf_source_key": "results[6].input.metadata_row.energy_hartree"
+    },
+    {
+      "molecule": "H2S",
+      "geom_index": -1,
+      "source_point_index": 0,
+      "basis": "sto-3g",
+      "symbols": [
+        "S",
+        "H",
+        "H"
+      ],
+      "cartesian_A": [
+        [
+          0.0,
+          0.0,
+          -0.612383113568
+        ],
+        [
+          0.959972391683,
+          -0.0,
+          0.306191556784
+        ],
+        [
+          -0.959972391683,
+          -0.0,
+          0.306191556784
+        ]
+      ],
+      "bond_length_angstrom": 1.3286558688410872,
+      "q_A": 0.0,
+      "E_RHF_Ha": -394.3116300592765,
+      "charge": 0,
+      "spin": 0,
+      "schema_version": "current-range-frozen-core-fci-v1",
+      "n_frozen_orbitals": 5,
+      "n_frozen_electrons": 10,
+      "n_active_orbitals": 6,
+      "n_active_electrons": 8,
+      "E_FCI_frozen_core_Ha": -394.35343419756254,
+      "E_CAS_active_Ha": -15.995905347106543,
+      "E_core_including_nuclear_Ha": -378.3575288504561,
+      "E_nuclear_Ha": 13.020584705450563,
+      "E_RHF_reconstructed_Ha": -394.31163005927664,
+      "fci_converged": true,
+      "total_energy_confirmed": true,
+      "canonical_rhf_orbitals": true,
+      "rhf_orbitals_reconstructed": true,
+      "pyscf_version": "2.14.0",
+      "source_function": "pyscf.mcscf.CASCI.kernel()[0]",
+      "construction": "E_FCI_total = mc.e_cas + mc.get_h1eff()[1]; core includes nuclear repulsion",
+      "rhf_source_file": "/Users/novaz/Desktop/qml2.0/json/new_rhf_harmonic_bond_ranges.json",
+      "rhf_source_key": "results[7].input.metadata_row.energy_hartree"
+    },
+    {
+      "molecule": "H2O2",
+      "geom_index": -1,
+      "source_point_index": 0,
+      "basis": "sto-3g",
+      "symbols": [
+        "O",
+        "O",
+        "H",
+        "H"
+      ],
+      "cartesian_A": [
+        [
+          -0.251242333741,
+          -0.036651638381,
+          -0.688739789349
+        ],
+        [
+          -0.120371213122,
+          -0.223554968434,
+          0.68873978935
+        ],
+        [
+          0.59530504623,
+          -0.454720838655,
+          -1.021589532732
+        ],
+        [
+          -0.223691499367,
+          0.714927445469,
+          1.021589532732
+        ]
+      ],
+      "bond_length_angstrom": 1.3962485791325798,
+      "q_A": 0.0,
+      "E_RHF_Ha": -148.76499662127225,
+      "charge": 0,
+      "spin": 0,
+      "schema_version": "current-range-frozen-core-fci-v1",
+      "n_frozen_orbitals": 2,
+      "n_frozen_electrons": 4,
+      "n_active_orbitals": 10,
+      "n_active_electrons": 14,
+      "E_FCI_frozen_core_Ha": -148.87124468364829,
+      "E_CAS_active_Ha": -55.567580894319136,
+      "E_core_including_nuclear_Ha": -93.30366378932914,
+      "E_nuclear_Ha": 37.45736548576411,
+      "E_RHF_reconstructed_Ha": -148.76499662127236,
+      "fci_converged": true,
+      "total_energy_confirmed": true,
+      "canonical_rhf_orbitals": true,
+      "rhf_orbitals_reconstructed": true,
+      "pyscf_version": "2.14.0",
+      "source_function": "pyscf.mcscf.CASCI.kernel()[0]",
+      "construction": "E_FCI_total = mc.e_cas + mc.get_h1eff()[1]; core includes nuclear repulsion",
+      "rhf_source_file": "/Users/novaz/Desktop/qml2.0/json/new_rhf_harmonic_bond_ranges.json",
+      "rhf_source_key": "results[8].input.metadata_row.energy_hartree"
+    }
+  ]
+}

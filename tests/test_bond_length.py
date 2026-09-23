@@ -22,17 +22,15 @@ class BondLengthPipelineTests(unittest.TestCase):
     def setUpClass(cls):
         cls.args = pipeline.parse_args(["--reuse-only"])
         cls.rows = pipeline.read_metadata(cls.args.metadata)
-        cls.caches = pipeline.cached_records(cls.args.output_dir, cls.args.harmonic_json, cls.args.selection_json)
+        cls.caches = pipeline.cached_records(cls.args.output_dir, cls.args.harmonic_json)
         cls.equilibrium = pipeline.reuse_equilibrium("LiH", "sto-3g", cls.rows["LiH"], cls.args.metadata, 1e-6)
         cls.harmonic = cls.caches["harmonic"]["LiH"]
-        cls.bound = cls.caches["selection"]["LiH"]
-        cls.settings = {"max_q_A": 1e7, "plateau_tolerance_Eh": 1e-6}
 
     def test_all_nine_reuse_without_numerical_calculations(self):
         with tempfile.TemporaryDirectory() as tmp, contextlib.redirect_stdout(io.StringIO()), \
              patch.object(pipeline, "optimize_equilibrium", side_effect=AssertionError("No optimization allowed")), \
              patch.object(pipeline.harmonic, "calculate", side_effect=AssertionError("No nuclear Hessian allowed")), \
-             patch.object(pipeline.selection, "scan_one", side_effect=AssertionError("No new scan allowed")):
+             patch.object(pipeline.selection, "solve_point", side_effect=AssertionError("No new SCF allowed")):
             code = pipeline.main(["--reuse-only", "--output-dir", tmp])
             self.assertEqual(code, 0)
             document = json.loads((Path(tmp) / "bond_length.json").read_text())
@@ -40,20 +38,26 @@ class BondLengthPipelineTests(unittest.TestCase):
             for result in document["results"]:
                 summary = result["summary"]
                 self.assertEqual(summary["validation_status"], "PASS")
-                self.assertEqual(set(result["sources"].values()), {"reused"})
+                self.assertEqual(result["sources"], {"equilibrium": "reused", "harmonic": "reused", "selection": "postprocessed"})
                 self.assertEqual(summary["selected_n"], 1)
                 self.assertEqual(summary["selected_range_min_A"], summary["n1_min_A"])
                 self.assertEqual(summary["selected_range_max_A"], summary["n1_max_A"])
-                self.assertAlmostEqual(summary["E1_rel_Eh"], -summary["D_e_Eh"] + 1.5*summary["harmonic_quantum_Eh"])
-                original = self.caches["selection"][summary["molecule"]]
-                self.assertEqual(original["scan"], result["selection"]["scan"])
+                self.assertEqual(summary["E_re_Ha"], result["equilibrium"]["E_eq_Eh"])
+                self.assertEqual(summary["E_total_n1_Ha"], summary["E_re_Ha"] + 1.5 * summary["hbar_omega_Ha"])
+                self.assertTrue(summary["n0_pass"])
+                self.assertTrue(summary["n1_pass"])
+                self.assertEqual(summary["energy_reference_status"], "UNVALIDATED_ZERO_REFERENCE")
+                self.assertEqual(summary["reference_shift_Ha"], 0.0)
+                self.assertNotIn("scan", result["selection"])
             contents = (Path(tmp) / "bond_length.json").read_text()
             self.assertNotIn("cm1", contents)
             with (Path(tmp) / "bond_length.csv").open(newline="") as handle:
                 rows = list(csv.DictReader(handle))
             self.assertEqual(len(rows), 9)
             self.assertIn("k_q_Eh_per_Bohr2", rows[0])
-            self.assertIn("E0_rel_Eh", rows[0])
+            self.assertIn("E_total_n0_Ha", rows[0])
+            self.assertNotIn("E_diss", contents)
+            self.assertNotIn("D_e_Eh", contents)
             # A second run can recover the normalized Hartree cache without data loss.
             self.assertEqual(pipeline.main(["--reuse-only", "--output-dir", tmp]), 0)
 
@@ -72,28 +76,53 @@ class BondLengthPipelineTests(unittest.TestCase):
         eq["E_eq_Eh"] += 1e-5
         self.assertFalse(pipeline.harmonic_cache_matches(self.harmonic, eq))
 
-    def test_harmonic_range_change_invalidates_dissociation_cache(self):
-        h = copy.deepcopy(self.harmonic)
-        h["summary"]["n1_min_A"] += .01
-        self.assertFalse(pipeline.selection_cache_matches(self.bound, h, self.settings))
+    def test_part3_reuses_saved_omega_and_current_range_without_a_scan(self):
+        hs = copy.deepcopy(self.harmonic)
+        hs["summary"]["n1_min_A"] += .01
+        with patch.object(pipeline.selection, "solve_point", side_effect=AssertionError("No SCF allowed")):
+            result = pipeline.evaluate_part3(self.equilibrium, hs)
+        summary = result["summary"]
+        self.assertEqual(summary["selected_range_min_A"], hs["summary"]["n1_min_A"])
+        self.assertEqual(summary["omega_rad_per_s"], hs["summary"]["omega_rad_per_s"])
+        expected = pipeline.constants()["hbar_J_s"] * hs["summary"]["omega_rad_per_s"] / pipeline.constants()["Hartree_J"]
+        self.assertEqual(summary["hbar_omega_Ha"], expected)
 
-    def test_unconfirmed_or_failed_plateau_is_not_reused(self):
-        for mutation in ("point", "independent"):
-            record = copy.deepcopy(self.bound)
-            if mutation == "point":
-                record["scan"][-1]["accepted"] = False
-            else:
-                record["asymptote_independent_checks"][0]["accepted"] = False
-            self.assertFalse(pipeline.selection_cache_matches(record, self.harmonic, self.settings))
+    def test_part3_refuses_inconsistent_equilibrium_energy(self):
+        eq = copy.deepcopy(self.equilibrium)
+        eq["E_eq_Eh"] += .1
+        with self.assertRaisesRegex(ValueError, "Part 1 equilibrium energy"):
+            pipeline.evaluate_part3(eq, self.harmonic)
 
-    def test_shorter_requested_scan_cap_invalidates_old_plateau(self):
-        self.assertFalse(pipeline.selection_cache_matches(self.bound, self.harmonic, {**self.settings, "max_q_A": 5.}))
+    def test_part3_refuses_inconsistent_saved_frequency_units(self):
+        hs = copy.deepcopy(self.harmonic)
+        hs["summary"]["harmonic_frequency_cm1"] *= 2
+        with self.assertRaisesRegex(ValueError, "inconsistent energy quanta"):
+            pipeline.evaluate_part3(self.equilibrium, hs)
+
+    def test_part3_pass_fail_and_boundary_branches_do_not_shift_the_reference(self):
+        for eq_energy, expected_n in ((-2.0, 1), (-1.5, 0), (-1.0, 0), (-0.5, None), (0.0, None)):
+            with self.subTest(E_re=eq_energy):
+                eq = copy.deepcopy(self.equilibrium)
+                hs = copy.deepcopy(self.harmonic)
+                eq["E_eq_Eh"] = hs["stationarity"]["E_RHF_Eh"] = eq_energy
+                constants = pipeline.constants()
+                hs["summary"]["omega_rad_per_s"] = constants["Hartree_J"] / constants["hbar_J_s"]
+                hs["summary"]["harmonic_frequency_cm1"] = 1.0 / pipeline.selection.conversion_from_constants(constants)
+                summary = pipeline.evaluate_part3(eq, hs)["summary"]
+                self.assertEqual(summary["selected_n"], expected_n)
+                self.assertEqual(summary["E_re_Ha"], eq_energy)
+                self.assertEqual(summary["E_total_n0_Ha"], eq_energy + .5)
+                self.assertEqual(summary["E_total_n1_Ha"], eq_energy + 1.5)
+                self.assertEqual(summary["reference_shift_Ha"], 0.0)
+                if expected_n is None:
+                    self.assertIsNone(summary["selected_range_min_A"])
+                    self.assertIsNone(summary["selected_range_max_A"])
 
     def test_failed_harmonic_stage_never_selects_a_level(self):
         args = pipeline.parse_args(["--molecules", "LiH", "--recompute"])
         failed = {"summary": {"molecule": "LiH", "validation_status": "FAIL_VALIDATION"}, "failures": ["Nonpositive curvature."]}
         with patch.object(pipeline.harmonic, "calculate", return_value=failed), \
-             patch.object(pipeline.selection, "scan_one", side_effect=AssertionError("Do not scan after harmonic failure")), \
+             patch.object(pipeline, "evaluate_part3", side_effect=AssertionError("Do not select after harmonic failure")), \
              contextlib.redirect_stdout(io.StringIO()):
             result = pipeline.process_molecule("LiH", args, self.rows, self.caches)
         self.assertEqual(result["status"], "FAIL_HARMONIC")
@@ -101,7 +130,7 @@ class BondLengthPipelineTests(unittest.TestCase):
         self.assertIsNone(result["summary"]["selected_n"])
 
     def test_missing_equilibrium_in_reuse_only_mode_does_not_optimize(self):
-        caches = {"equilibrium": {}, "harmonic": {}, "selection": {}, "notes": []}
+        caches = {"equilibrium": {}, "harmonic": {}, "notes": []}
         with patch.object(pipeline, "optimize_equilibrium", side_effect=AssertionError("No optimization")):
             result = pipeline.process_molecule("LiH", self.args, {}, caches)
         self.assertEqual(result["status"], "NEEDS_INPUT")
@@ -132,27 +161,12 @@ class BondLengthPipelineTests(unittest.TestCase):
         native = pipeline.energy_view(h, inverse=True)
         self.assertAlmostEqual(native["summary"]["harmonic_frequency_cm1"], self.harmonic["summary"]["harmonic_frequency_cm1"])
 
-    def test_conflicting_or_uncovered_threshold_options_are_rejected(self):
+    def test_conflicting_or_removed_options_are_rejected(self):
         for arguments in (["--reuse-only", "--reoptimize"], ["--reuse-only", "--recompute"],
                           ["--threshold-warning-eh", "1e-8"], ["--gtol", "1e-3"]):
             with self.subTest(args=arguments), self.assertRaises(SystemExit), contextlib.redirect_stderr(io.StringIO()):
                 pipeline.parse_args(arguments)
 
-    def test_fresh_lih_optimization_hessian_and_selection_in_temporary_directory(self):
-        # A bounded integration calculation exercises the newly connected stages;
-        # original geometry and production outputs are never overwritten.
-        with tempfile.TemporaryDirectory() as tmp, contextlib.redirect_stdout(io.StringIO()):
-            status = pipeline.main(["--molecules", "LiH", "--reoptimize", "--gtol", "2e-7", "--output-dir", tmp])
-            self.assertEqual(status, 0)
-            result = json.loads((Path(tmp) / "bond_length.json").read_text())["results"][0]
-            summary = result["summary"]
-            self.assertEqual(set(result["sources"].values()), {"computed"})
-            self.assertLess(summary["max_gradient_Eh_per_Bohr"], 2e-7)
-            self.assertAlmostEqual(summary["r_e_A"], 1.510812, places=5)
-            self.assertGreater(summary["k_q_Eh_per_Bohr2"], 0)
-            self.assertTrue(result["harmonic"]["finite_differences"]["convergence_pass"])
-            self.assertEqual(summary["selected_n"], 1)
-            self.assertTrue(result["selection"]["accepted_plateau"]["passed"])
 
 
 if __name__ == "__main__":

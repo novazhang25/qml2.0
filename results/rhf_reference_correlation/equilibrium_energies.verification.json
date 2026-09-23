@@ -1,0 +1,266 @@
+{
+  "inputs_sha256": {
+    "/Users/novaz/Desktop/qml2.0/json/new_rhf_harmonic_bond_ranges.json": "d698dde31c8252930dcd39aeea1721c5f4bde42efc81d3571a566a88cbfb5999",
+    "/Users/novaz/Desktop/qml2.0/results/bond_length_part3/vibrational_levels.json": "dbb2b85f3b594de3879d6aff03e5b94ccc6eddf4414f4b3e40691efc0b85f4bc",
+    "/Users/novaz/Desktop/qml2.0/results/rhf_30_point_scans/rhf_scan_30.json": "261a03ce80c9eac0c3166579483bd4138148faf2349138b605973f9077a4c2c5",
+    "/Users/novaz/Desktop/qml2.0/results/rhf_reference_correlation/fci_at_rhf_equilibrium.json": "b75c3f05f76956476185e35b534791711d2e5f8c4258ea063147945ba6529642",
+    "/Users/novaz/Desktop/qml2.0/results/rhf_reference_correlation/fci_current_range_cache.json": "ecfb8ace519b992bc59e53b175d338ad6c4dcee427bb4b3371ba8636fa32e290",
+    "/Users/novaz/Desktop/qml2.0/results/rhf_reference_correlation/per_geometry.csv": "f5c217dcd0d8f8569bce5b1b39726a34e20498dcbb2f127249a6d4e42c6f002e"
+  },
+  "original_inputs_unchanged": true,
+  "geometry_checks": [
+    {
+      "molecule": "LiH",
+      "exact_cartesian_geometry_identical": true,
+      "symbols_identical": true,
+      "frozen_core_convention_matches_scan": true,
+      "cartesian_A": [
+        [
+          -0.0,
+          0.0,
+          -0.755405926516
+        ],
+        [
+          0.0,
+          -0.0,
+          0.755405926516
+        ]
+      ],
+      "symbols": [
+        "Li",
+        "H"
+      ]
+    },
+    {
+      "molecule": "BeH2",
+      "exact_cartesian_geometry_identical": true,
+      "symbols_identical": true,
+      "frozen_core_convention_matches_scan": true,
+      "cartesian_A": [
+        [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.0,
+          -0.0,
+          -1.290538420998
+        ],
+        [
+          0.0,
+          -0.0,
+          1.290538420998
+        ]
+      ],
+      "symbols": [
+        "Be",
+        "H",
+        "H"
+      ]
+    },
+    {
+      "molecule": "H2O",
+      "exact_cartesian_geometry_identical": true,
+      "symbols_identical": true,
+      "frozen_core_convention_matches_scan": true,
+      "cartesian_A": [
+        [
+          0.0,
+          0.0,
+          -0.423868772177
+        ],
+        [
+          0.75807972025,
+          -0.0,
+          0.211934386089
+        ],
+        [
+          -0.75807972025,
+          -0.0,
+          0.211934386089
+        ]
+      ],
+      "symbols": [
+        "O",
+        "H",
+        "H"
+      ]
+    },
+    {
+      "molecule": "NH3",
+      "exact_cartesian_geometry_identical": true,
+      "symbols_identical": true,
+      "frozen_core_convention_matches_scan": true,
+      "cartesian_A": [
+        [
+          0.0,
+          0.0,
+          -0.319480247086
+        ],
+        [
+          0.940558128266,
+          0.0,
+          0.106493415695
+        ],
+        [
+          -0.470279064133,
+          0.814547232814,
+          0.106493415695
+        ],
+        [
+          -0.470279064133,
+          -0.814547232814,
+          0.106493415695
+        ]
+      ],
+      "symbols": [
+        "N",
+        "H",
+        "H",
+        "H"
+      ]
+    },
+    {
+      "molecule": "N2",
+      "exact_cartesian_geometry_identical": true,
+      "symbols_identical": true,
+      "frozen_core_convention_matches_scan": true,
+      "cartesian_A": [
+        [
+          0.0,
+          0.0,
+          -0.566925503747
+        ],
+        [
+          -0.0,
+          -0.0,
+          0.566925503747
+        ]
+      ],
+      "symbols": [
+        "N",
+        "N"
+      ]
+    },
+    {
+      "molecule": "CO",
+      "exact_cartesian_geometry_identical": true,
+      "symbols_identical": true,
+      "frozen_core_convention_matches_scan": true,
+      "cartesian_A": [
+        [
+          0.0,
+          -0.0,
+          -0.572740337977
+        ],
+        [
+          -0.0,
+          0.0,
+          0.572740337977
+        ]
+      ],
+      "symbols": [
+        "C",
+        "O"
+      ]
+    },
+    {
+      "molecule": "HF",
+      "exact_cartesian_geometry_identical": true,
+      "symbols_identical": true,
+      "frozen_core_convention_matches_scan": true,
+      "cartesian_A": [
+        [
+          -0.0,
+          0.0,
+          -0.477731349305
+        ],
+        [
+          0.0,
+          -0.0,
+          0.477731349305
+        ]
+      ],
+      "symbols": [
+        "H",
+        "F"
+      ]
+    },
+    {
+      "molecule": "H2S",
+      "exact_cartesian_geometry_identical": true,
+      "symbols_identical": true,
+      "frozen_core_convention_matches_scan": true,
+      "cartesian_A": [
+        [
+          0.0,
+          0.0,
+          -0.612383113568
+        ],
+        [
+          0.959972391683,
+          -0.0,
+          0.306191556784
+        ],
+        [
+          -0.959972391683,
+          -0.0,
+          0.306191556784
+        ]
+      ],
+      "symbols": [
+        "S",
+        "H",
+        "H"
+      ]
+    },
+    {
+      "molecule": "H2O2",
+      "exact_cartesian_geometry_identical": true,
+      "symbols_identical": true,
+      "frozen_core_convention_matches_scan": true,
+      "cartesian_A": [
+        [
+          -0.251242333741,
+          -0.036651638381,
+          -0.688739789349
+        ],
+        [
+          -0.120371213122,
+          -0.223554968434,
+          0.68873978935
+        ],
+        [
+          0.59530504623,
+          -0.454720838655,
+          -1.021589532732
+        ],
+        [
+          -0.223691499367,
+          0.714927445469,
+          1.021589532732
+        ]
+      ],
+      "symbols": [
+        "O",
+        "O",
+        "H",
+        "H"
+      ]
+    }
+  ],
+  "FCI_already_available": [
+    "LiH",
+    "BeH2",
+    "H2O",
+    "NH3",
+    "N2",
+    "CO",
+    "HF",
+    "H2S",
+    "H2O2"
+  ],
+  "FCI_newly_calculated": [],
+  "note": "All references were saved before this collection run. No electronic-structure calculations or plotting performed."
+}

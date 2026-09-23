@@ -1,0 +1,37 @@
+# Plot 1 with 30 RHF points per molecule
+
+The overview repeats the local harmonic panel in the 3x3 style of tests/plot.py. Each molecule also has an individual local-panel PNG and SVG.
+
+Orange markers show all 30 accepted RHF energies, including both bond-range endpoints. The connecting lines guide the eye; no fitting or extra points are used. Blue dashed curves are the unchanged harmonic approximation. Green shading is the saved selected range. Purple/green horizontal segments are the existing n=0/n=1 harmonic energies and turning points.
+
+The y axis is E-E_re in Hartree: the RHF curve uses E_RHF-E_re; the harmonic curve uses k*q^2/2; the two levels use E_0 and E_1. The reference is the saved optimized equilibrium energy, not the lowest sampled energy. The even 30-point grid does not add an equilibrium sample.
+
+The x axis is the saved absolute bond coordinate in Angstrom; H2O2 uses O-O separation. All RHF data are included in the y limits, including the compression side. No SCF, optimization, Hessian or new energy calculation was run by this plotting command.
+
+Scan input: /Users/novaz/Desktop/qml2.0/results/rhf_30_point_scans/rhf_scan_30.json
+Scan SHA256: 4ffc7920185f14216bf0f8c6eb65b5e784dcb49ba0de7541690c4bc9799eb224
+Part 3 input: /Users/novaz/Desktop/qml2.0/results/bond_length_part3/vibrational_levels.json
+Part 3 SHA256: ae7418ec1534f561c4681fbdf26817d4f1cf543ea8fb85cd7ea26be9b26f07a9
+
+plotted_points.csv contains the exact plotted coordinates, absolute energies and shifted energies.
+
+- [overview.png](overview.png)
+- [overview.svg](overview.svg)
+- [LiH.png](LiH.png)
+- [LiH.svg](LiH.svg)
+- [BeH2.png](BeH2.png)
+- [BeH2.svg](BeH2.svg)
+- [H2O.png](H2O.png)
+- [H2O.svg](H2O.svg)
+- [NH3.png](NH3.png)
+- [NH3.svg](NH3.svg)
+- [N2.png](N2.png)
+- [N2.svg](N2.svg)
+- [CO.png](CO.png)
+- [CO.svg](CO.svg)
+- [HF.png](HF.png)
+- [HF.svg](HF.svg)
+- [H2S.png](H2S.png)
+- [H2S.svg](H2S.svg)
+- [H2O2.png](H2O2.png)
+- [H2O2.svg](H2O2.svg)
