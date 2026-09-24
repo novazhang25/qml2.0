@@ -1,0 +1,1652 @@
+{
+  "molecule": "HF",
+  "geometry_id": "002",
+  "status": "PASS",
+  "validation": {
+    "checks": {
+      "rhf_electron_number_error": {
+        "value": 3.552713678800501e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "mp2_electron_number_error": {
+        "value": 5.329070518200751e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "rhf_idempotency_ao_max_error": {
+        "value": 7.993605777301127e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "rdm2_contraction_max_error": {
+        "value": 7.105427357601002e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "rdm2_particle_number_error": {
+        "value": 5.684341886080802e-14,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "rhf_rdm2_contraction_max_error": {
+        "value": 1.0658141036401503e-14,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "cumulant_contraction_max_error": {
+        "value": 3.712308238590367e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_MO_particle_number": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_MO_pair_number": {
+        "value": 1.4210854715202004e-14,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_MO_contraction": {
+        "value": 3.469446951953614e-18,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_MO_contraction_explicit_loop": {
+        "value": 3.552713678800501e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_MO_contraction_loop_vs_einsum": {
+        "value": 3.552713678800501e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_MO_particle_number_loop_vs_einsum": {
+        "value": 1.7763568394002505e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_MO_pair_number_loop_vs_einsum": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_MO_P_hermiticity": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_MO_Gamma_hermiticity": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_MO_Gamma_particle_exchange": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_MO_particle_number": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_MO_pair_number": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_MO_contraction": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_MO_contraction_explicit_loop": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_MO_contraction_loop_vs_einsum": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_MO_particle_number_loop_vs_einsum": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_MO_pair_number_loop_vs_einsum": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_MO_P_hermiticity": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_MO_Gamma_hermiticity": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_MO_Gamma_particle_exchange": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_MO_particle_number": {
+        "value": 8.673617379884035e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_MO_pair_number": {
+        "value": 2.9394889300426996e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_MO_contraction": {
+        "value": 1.5248219353836134e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_MO_contraction_explicit_loop": {
+        "value": 1.5248219353836134e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_MO_contraction_loop_vs_einsum": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_MO_particle_number_loop_vs_einsum": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_MO_pair_number_loop_vs_einsum": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_MO_P_hermiticity": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_MO_Gamma_hermiticity": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_MO_Gamma_particle_exchange": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_MO_particle_number": {
+        "value": 3.469446951953614e-18,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_MO_pair_number": {
+        "value": 2.7755575615628914e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_MO_contraction": {
+        "value": 6.938893903907228e-18,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_MO_contraction_explicit_loop": {
+        "value": 6.938893903907228e-18,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_MO_contraction_loop_vs_einsum": {
+        "value": 3.469446951953614e-18,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_MO_particle_number_loop_vs_einsum": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_MO_pair_number_loop_vs_einsum": {
+        "value": 1.3877787807814457e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_MO_P_hermiticity": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_MO_Gamma_hermiticity": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_MO_Gamma_particle_exchange": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_AO_particle_number": {
+        "value": 5.329070518200751e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_AO_pair_number": {
+        "value": 5.684341886080802e-14,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_AO_contraction": {
+        "value": 7.105427357601002e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_AO_contraction_explicit_loop": {
+        "value": 7.105427357601002e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_AO_contraction_loop_vs_einsum": {
+        "value": 3.552713678800501e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_AO_particle_number_loop_vs_einsum": {
+        "value": 1.7763568394002505e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_AO_pair_number_loop_vs_einsum": {
+        "value": 2.842170943040401e-14,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_AO_P_hermiticity": {
+        "value": 1.3877787807814457e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_AO_Gamma_hermiticity": {
+        "value": 8.881784197001252e-16,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "consistent_AO_Gamma_particle_exchange": {
+        "value": 8.881784197001252e-16,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_AO_particle_number": {
+        "value": 3.552713678800501e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_AO_pair_number": {
+        "value": 8.526512829121202e-14,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_AO_contraction": {
+        "value": 1.4210854715202004e-14,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_AO_contraction_explicit_loop": {
+        "value": 1.7763568394002505e-14,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_AO_contraction_loop_vs_einsum": {
+        "value": 3.552713678800501e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_AO_particle_number_loop_vs_einsum": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_AO_pair_number_loop_vs_einsum": {
+        "value": 1.4210854715202004e-14,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_AO_P_hermiticity": {
+        "value": 5.070419690678375e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_AO_Gamma_hermiticity": {
+        "value": 4.440892098500626e-16,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order0_AO_Gamma_particle_exchange": {
+        "value": 8.881784197001252e-16,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_AO_particle_number": {
+        "value": 8.673617379884044e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_AO_pair_number": {
+        "value": 2.951091107522138e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_AO_contraction": {
+        "value": 1.5844801402723168e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_AO_contraction_explicit_loop": {
+        "value": 1.5862148637482936e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_AO_contraction_loop_vs_einsum": {
+        "value": 1.3877787807814457e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_AO_particle_number_loop_vs_einsum": {
+        "value": 6.162975822039155e-32,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_AO_pair_number_loop_vs_einsum": {
+        "value": 1.4560520368845612e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_AO_P_hermiticity": {
+        "value": 1.232595164407831e-32,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_AO_Gamma_hermiticity": {
+        "value": 2.7755575615628914e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order1_AO_Gamma_particle_exchange": {
+        "value": 1.3877787807814457e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_AO_particle_number": {
+        "value": 4.336808689942018e-18,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_AO_pair_number": {
+        "value": 1.214306433183765e-16,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_AO_contraction": {
+        "value": 5.551115123125783e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_AO_contraction_explicit_loop": {
+        "value": 5.551115123125783e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_AO_contraction_loop_vs_einsum": {
+        "value": 1.3877787807814457e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_AO_particle_number_loop_vs_einsum": {
+        "value": 4.336808689942018e-19,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_AO_pair_number_loop_vs_einsum": {
+        "value": 1.3877787807814457e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_AO_P_hermiticity": {
+        "value": 1.734723475976807e-18,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_AO_Gamma_hermiticity": {
+        "value": 6.938893903907228e-18,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "order2_AO_Gamma_particle_exchange": {
+        "value": 3.903127820947816e-18,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "frozen_core_density": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "frozen_core_Gamma": {
+        "value": 1.0408340855860843e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "frozen_core_Gamma_explicit_loop": {
+        "value": 1.0408340855860843e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "hf_reference_cumulant_contraction": {
+        "value": 3.712308238590367e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "hf_reference_cumulant_contraction_loop": {
+        "value": 3.70536934468646e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "conventional_cumulant_contraction": {
+        "value": 5.9119376061289586e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "conventional_cumulant_contraction_loop": {
+        "value": 5.915407053080912e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "P_consistent_order_sum": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "Gamma_consistent_order_sum": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "P_MP2_AO_formal_alias_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "Gamma_MP2_AO_formal_alias_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "Gamma0_AO_formal_alias_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "Lambda_AO_formal_alias_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "HFref_formula_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "conventional_formula_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "MO_orthonormality": {
+        "value": 1.6653345369377348e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "wavefunction_norm_eta1": {
+        "value": 1.1102230246251565e-16,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "wavefunction_norm_order0": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "wavefunction_norm_order1": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "wavefunction_norm_order2": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "reference_P_matches_RHF": {
+        "value": 5.070419690678375e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "zero_t2_cumulant_max_error": {
+        "value": 8.881784197001252e-16,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "R0_energy_matches_RHF_Ha": {
+        "value": 2.842170943040401e-14,
+        "limit": 1e-10,
+        "passed": true
+      },
+      "consistent_second_order_energy_error_Ha": {
+        "value": 2.39044894989604e-15,
+        "limit": 1e-10,
+        "passed": true
+      },
+      "lowdin_metric_max_error": {
+        "value": 1.5543122344752192e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "S_half_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "S_minus_half_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "P_L_transform_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "F_L_transform_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "rhf_idempotency_lowdin_max_error": {
+        "value": 7.549516567451064e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "Gamma0_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "Lambda_AO_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "Lambda_L_transform_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "lowdin_electron_number_error": {
+        "value": 3.552713678800501e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "cumulant_lowdin_contraction_max_error": {
+        "value": 4.9144716074422945e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "rhf_energy_error_Ha": {
+        "value": 0.0,
+        "limit": 1e-10,
+        "passed": true
+      },
+      "input_correlation_error_Ha": {
+        "value": 0.0,
+        "limit": 1e-12,
+        "passed": true
+      },
+      "P_mu_extraction_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "F_mu_extraction_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "pair_indices_extraction_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "P_munu_extraction_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "T_full_extraction_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "triple_indices_extraction_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "T_munulambda_extraction_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "T_full_explicit_index_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      }
+    },
+    "rdm_definition": "normalized truncated MP2 wavefunction, expectation values through second order",
+    "rdm_convention": "Gamma[p,q,r,s] = sum_spin <p^dagger r^dagger s q>; real spatial AOs",
+    "passed": true,
+    "failed_checks": [],
+    "dual_rdm": {
+      "consistent": {
+        "MO": {
+          "checks": {
+            "particle_number": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number": {
+              "value": 1.4210854715202004e-14,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction": {
+              "value": 3.469446951953614e-18,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_explicit_loop": {
+              "value": 3.552713678800501e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_loop_vs_einsum": {
+              "value": 3.552713678800501e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "particle_number_loop_vs_einsum": {
+              "value": 1.7763568394002505e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number_loop_vs_einsum": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "P_hermiticity": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_hermiticity": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_particle_exchange": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            }
+          },
+          "electron_number": 10.0,
+          "pair_number": 89.99999999999999,
+          "expected_electron_number": 10.0,
+          "expected_pair_number": 90.0,
+          "P_shape": [
+            6,
+            6
+          ],
+          "Gamma_shape": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "P_frobenius_norm": 4.468267386109222,
+          "Gamma_frobenius_norm": 20.460124340380528,
+          "passed": true,
+          "failed_checks": []
+        },
+        "MO_order0": {
+          "checks": {
+            "particle_number": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_explicit_loop": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_loop_vs_einsum": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "particle_number_loop_vs_einsum": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number_loop_vs_einsum": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "P_hermiticity": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_hermiticity": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_particle_exchange": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            }
+          },
+          "electron_number": 10.0,
+          "pair_number": 90.0,
+          "expected_electron_number": 10.0,
+          "expected_pair_number": 90.0,
+          "P_shape": [
+            6,
+            6
+          ],
+          "Gamma_shape": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "P_frobenius_norm": 4.47213595499958,
+          "Gamma_frobenius_norm": 20.493901531919196,
+          "passed": true,
+          "failed_checks": []
+        },
+        "MO_order1": {
+          "checks": {
+            "particle_number": {
+              "value": 8.673617379884035e-17,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number": {
+              "value": 2.9394889300426996e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction": {
+              "value": 1.5248219353836134e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_explicit_loop": {
+              "value": 1.5248219353836134e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_loop_vs_einsum": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "particle_number_loop_vs_einsum": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number_loop_vs_einsum": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "P_hermiticity": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_hermiticity": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_particle_exchange": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            }
+          },
+          "electron_number": 8.673617379884035e-17,
+          "pair_number": -2.9394889300426996e-15,
+          "expected_electron_number": 0.0,
+          "expected_pair_number": 0.0,
+          "P_shape": [
+            6,
+            6
+          ],
+          "Gamma_shape": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "P_frobenius_norm": 3.170038065693853e-16,
+          "Gamma_frobenius_norm": 0.18632942985324877,
+          "passed": true,
+          "failed_checks": []
+        },
+        "MO_order2": {
+          "checks": {
+            "particle_number": {
+              "value": 3.469446951953614e-18,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number": {
+              "value": 2.7755575615628914e-17,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction": {
+              "value": 6.938893903907228e-18,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_explicit_loop": {
+              "value": 6.938893903907228e-18,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_loop_vs_einsum": {
+              "value": 3.469446951953614e-18,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "particle_number_loop_vs_einsum": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number_loop_vs_einsum": {
+              "value": 1.3877787807814457e-17,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "P_hermiticity": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_hermiticity": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_particle_exchange": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            }
+          },
+          "electron_number": -3.469446951953614e-18,
+          "pair_number": -2.7755575615628914e-17,
+          "expected_electron_number": 0.0,
+          "expected_pair_number": 0.0,
+          "P_shape": [
+            6,
+            6
+          ],
+          "Gamma_shape": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "P_frobenius_norm": 0.011493049933718046,
+          "Gamma_frobenius_norm": 0.07371757598558577,
+          "passed": true,
+          "failed_checks": []
+        },
+        "AO": {
+          "checks": {
+            "particle_number": {
+              "value": 5.329070518200751e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number": {
+              "value": 5.684341886080802e-14,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction": {
+              "value": 7.105427357601002e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_explicit_loop": {
+              "value": 7.105427357601002e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_loop_vs_einsum": {
+              "value": 3.552713678800501e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "particle_number_loop_vs_einsum": {
+              "value": 1.7763568394002505e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number_loop_vs_einsum": {
+              "value": 2.842170943040401e-14,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "P_hermiticity": {
+              "value": 1.3877787807814457e-17,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_hermiticity": {
+              "value": 8.881784197001252e-16,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_particle_exchange": {
+              "value": 8.881784197001252e-16,
+              "limit": 1e-08,
+              "passed": true
+            }
+          },
+          "electron_number": 9.999999999999995,
+          "pair_number": 89.99999999999994,
+          "expected_electron_number": 10.0,
+          "expected_pair_number": 90.0,
+          "P_shape": [
+            6,
+            6
+          ],
+          "Gamma_shape": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "P_frobenius_norm": 4.5279031101100795,
+          "Gamma_frobenius_norm": 20.53990413085113,
+          "passed": true,
+          "failed_checks": []
+        },
+        "AO_order0": {
+          "checks": {
+            "particle_number": {
+              "value": 3.552713678800501e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number": {
+              "value": 8.526512829121202e-14,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction": {
+              "value": 1.4210854715202004e-14,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_explicit_loop": {
+              "value": 1.7763568394002505e-14,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_loop_vs_einsum": {
+              "value": 3.552713678800501e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "particle_number_loop_vs_einsum": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number_loop_vs_einsum": {
+              "value": 1.4210854715202004e-14,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "P_hermiticity": {
+              "value": 5.070419690678375e-17,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_hermiticity": {
+              "value": 4.440892098500626e-16,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_particle_exchange": {
+              "value": 8.881784197001252e-16,
+              "limit": 1e-08,
+              "passed": true
+            }
+          },
+          "electron_number": 9.999999999999996,
+          "pair_number": 89.99999999999991,
+          "expected_electron_number": 10.0,
+          "expected_pair_number": 90.0,
+          "P_shape": [
+            6,
+            6
+          ],
+          "Gamma_shape": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "P_frobenius_norm": 4.528959984249153,
+          "Gamma_frobenius_norm": 20.55341880922385,
+          "passed": true,
+          "failed_checks": []
+        },
+        "AO_order1": {
+          "checks": {
+            "particle_number": {
+              "value": 8.673617379884044e-17,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number": {
+              "value": 2.951091107522138e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction": {
+              "value": 1.5844801402723168e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_explicit_loop": {
+              "value": 1.5862148637482936e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_loop_vs_einsum": {
+              "value": 1.3877787807814457e-17,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "particle_number_loop_vs_einsum": {
+              "value": 6.162975822039155e-32,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number_loop_vs_einsum": {
+              "value": 1.4560520368845612e-17,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "P_hermiticity": {
+              "value": 1.232595164407831e-32,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_hermiticity": {
+              "value": 2.7755575615628914e-17,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_particle_exchange": {
+              "value": 1.3877787807814457e-17,
+              "limit": 1e-08,
+              "passed": true
+            }
+          },
+          "electron_number": 8.673617379884044e-17,
+          "pair_number": -2.951091107522138e-15,
+          "expected_electron_number": 0.0,
+          "expected_pair_number": 0.0,
+          "P_shape": [
+            6,
+            6
+          ],
+          "Gamma_shape": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "P_frobenius_norm": 3.1846670647290673e-16,
+          "Gamma_frobenius_norm": 0.41555956750576256,
+          "passed": true,
+          "failed_checks": []
+        },
+        "AO_order2": {
+          "checks": {
+            "particle_number": {
+              "value": 4.336808689942018e-18,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number": {
+              "value": 1.214306433183765e-16,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction": {
+              "value": 5.551115123125783e-17,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_explicit_loop": {
+              "value": 5.551115123125783e-17,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "contraction_loop_vs_einsum": {
+              "value": 1.3877787807814457e-17,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "particle_number_loop_vs_einsum": {
+              "value": 4.336808689942018e-19,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number_loop_vs_einsum": {
+              "value": 1.3877787807814457e-17,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "P_hermiticity": {
+              "value": 1.734723475976807e-18,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_hermiticity": {
+              "value": 6.938893903907228e-18,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_particle_exchange": {
+              "value": 3.903127820947816e-18,
+              "limit": 1e-08,
+              "passed": true
+            }
+          },
+          "electron_number": 4.336808689942018e-18,
+          "pair_number": 1.214306433183765e-16,
+          "expected_electron_number": 0.0,
+          "expected_pair_number": 0.0,
+          "P_shape": [
+            6,
+            6
+          ],
+          "Gamma_shape": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "P_frobenius_norm": 0.024025337711305935,
+          "Gamma_frobenius_norm": 0.16618090083658363,
+          "passed": true,
+          "failed_checks": []
+        },
+        "frozen_core": {
+          "checks": {
+            "frozen_core_density": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "frozen_core_Gamma": {
+              "value": 1.0408340855860843e-17,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "frozen_core_Gamma_explicit_loop": {
+              "value": 1.0408340855860843e-17,
+              "limit": 1e-08,
+              "passed": true
+            }
+          },
+          "frozen_electron_number": 2.0
+        },
+        "hf_reference_cumulant": {
+          "contraction_max": 0.10490195601668122,
+          "expected_contraction_max": 0.1049019560166814,
+          "residual_max": 3.712308238590367e-15,
+          "formula": "(N-1)*(D-P_HF).T"
+        },
+        "conventional_cumulant": {
+          "contraction_max": 0.014649865306649926,
+          "expected_contraction_max": 0.01464986530664969,
+          "residual_max": 5.9119376061289586e-15,
+          "formula": "(0.5*D@S@D-D).T"
+        }
+      },
+      "pyscf_audit": {
+        "MO": {
+          "checks": {
+            "particle_number": {
+              "value": 1.7763568394002505e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number": {
+              "value": 0.017359328214723746,
+              "limit": 1e-08,
+              "passed": false
+            },
+            "contraction": {
+              "value": 0.008679664107359195,
+              "limit": 1e-08,
+              "passed": false
+            },
+            "contraction_explicit_loop": {
+              "value": 0.008679664107359195,
+              "limit": 1e-08,
+              "passed": false
+            },
+            "contraction_loop_vs_einsum": {
+              "value": 3.552713678800501e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "particle_number_loop_vs_einsum": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number_loop_vs_einsum": {
+              "value": 1.4210854715202004e-14,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "P_hermiticity": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_hermiticity": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_particle_exchange": {
+              "value": 5.71283242415875e-18,
+              "limit": 1e-08,
+              "passed": true
+            }
+          },
+          "electron_number": 9.999999999999998,
+          "pair_number": 90.01735932821472,
+          "expected_electron_number": 10.0,
+          "expected_pair_number": 90.0,
+          "P_shape": [
+            6,
+            6
+          ],
+          "Gamma_shape": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "P_frobenius_norm": 4.468267386109222,
+          "Gamma_frobenius_norm": 20.459300694400042,
+          "passed": false,
+          "failed_checks": [
+            "pair_number",
+            "contraction",
+            "contraction_explicit_loop"
+          ]
+        },
+        "AO": {
+          "checks": {
+            "particle_number": {
+              "value": 3.552713678800501e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number": {
+              "value": 0.01735932821463848,
+              "limit": 1e-08,
+              "passed": false
+            },
+            "contraction": {
+              "value": 0.014712556962777512,
+              "limit": 1e-08,
+              "passed": false
+            },
+            "contraction_explicit_loop": {
+              "value": 0.014712556962777512,
+              "limit": 1e-08,
+              "passed": false
+            },
+            "contraction_loop_vs_einsum": {
+              "value": 3.552713678800501e-15,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "particle_number_loop_vs_einsum": {
+              "value": 0.0,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "pair_number_loop_vs_einsum": {
+              "value": 1.4210854715202004e-14,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "P_hermiticity": {
+              "value": 1.1102230246251565e-16,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_hermiticity": {
+              "value": 4.440892098500626e-16,
+              "limit": 1e-08,
+              "passed": true
+            },
+            "Gamma_particle_exchange": {
+              "value": 1.7763568394002505e-15,
+              "limit": 1e-08,
+              "passed": true
+            }
+          },
+          "electron_number": 9.999999999999996,
+          "pair_number": 90.01735932821464,
+          "expected_electron_number": 10.0,
+          "expected_pair_number": 90.0,
+          "P_shape": [
+            6,
+            6
+          ],
+          "Gamma_shape": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "P_frobenius_norm": 4.5279031101100795,
+          "Gamma_frobenius_norm": 20.541390585082425,
+          "passed": false,
+          "failed_checks": [
+            "pair_number",
+            "contraction",
+            "contraction_explicit_loop"
+          ]
+        }
+      },
+      "differences": {
+        "P_MO": {
+          "max_abs": 2.220446049250313e-16,
+          "frobenius_norm": 3.140190906789247e-16
+        },
+        "Gamma_MO": {
+          "max_abs": 0.012604087827318016,
+          "frobenius_norm": 0.026799429390505874
+        },
+        "P_AO": {
+          "max_abs": 4.440892098500626e-16,
+          "frobenius_norm": 5.497078506421322e-16
+        },
+        "Gamma_AO": {
+          "max_abs": 0.028321077941742157,
+          "frobenius_norm": 0.08002698660184675
+        }
+      },
+      "passed": true
+    },
+    "rdm_construction": {
+      "rdm_source": "normalized truncated MP2 wavefunction, expectation values through second order",
+      "rdm_convention": "Gamma[p,q,r,s] = sum_spin <p^dagger r^dagger s q>; real spatial MOs",
+      "rdm1_convention": "P[p,q] = sum_spin <q^dagger p>",
+      "spin_convention": "closed-shell singlet; spin-summed spatial-orbital RDMs",
+      "wavefunction_ansatz": "Psi(eta) = (Phi + eta chi) / sqrt(1 + eta^2 w); w = <chi|chi>",
+      "expectation_expansion": "R(eta) = R0 + eta R1 + eta^2 (R_chichi - w R0) + O(eta^3)",
+      "retained_wavefunction_norm_coefficients": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "wavefunction_norm_eta1": 0.9999999999999999,
+      "first_order_norm_squared": 0.004339832053679594,
+      "restricted_amplitude_norm_squared": 0.004339832053679594,
+      "amplitude_to_determinant_norm_error": 0.0,
+      "amplitude_pair_symmetry_max_error": 2.856416212079375e-18,
+      "amplitude_mapping": "raw RMP2 t2[i,j,a,b] -> CISD c2; c1=0; no amplitude rescaling",
+      "frozen_core_embedding": "cisd.to_fcivec with full nmo, full nelectron, frozen=frozen_core",
+      "frozen_core": 1,
+      "nmo": 6,
+      "nelectron": 10,
+      "definition_scope": "Expectation expansion of the normalized Phi+eta chi ansatz only; no independent second-order wavefunction or orbital-response terms",
+      "normalized_eta1_vector_note": "Stored for normalization checks; its exact expectation contains higher orders than the saved consistent RDM",
+      "pyscf_version": "2.14.0",
+      "primary_sources": {
+        "amplitude_mapping": "https://pyscf.org/_modules/pyscf/ci/cisd.html#to_fcivec",
+        "density_convention": "https://pyscf.org/_modules/pyscf/fci/direct_spin1.html#make_rdm12",
+        "mp2_amplitudes": "https://pyscf.org/_modules/pyscf/mp/mp2.html#kernel"
+      },
+      "index_ordering_MO": "P[p,q]=sum_spin <q^dagger p>; Gamma[p,q,r,s]=sum_spin <p^dagger r^dagger s q>",
+      "index_ordering_AO": "Gamma[p,q,r,s] = sum_spin <p^dagger r^dagger s q>; real spatial AOs",
+      "MO_to_AO": "P_AO=C P_MO C.T; Gamma_AO[p,q,r,s]=sum_ijkl C[p,i] C[q,j] C[r,k] C[s,l] Gamma_MO[i,j,k,l]; all orbitals real",
+      "contraction_AO": "sum_rs Gamma_AO[p,q,r,s]*S[r,s]=(N-1)*P_AO[q,p]",
+      "formal_cumulant": "Lambda_HFref_AO=Gamma_MP2_AO_consistent-Gamma0_HF_AO",
+      "diagnostic_cumulant": "Lambda_conventional_AO=Gamma_MP2_AO_consistent-Gamma0[P_MP2_AO_consistent]",
+      "formal_cumulant_contraction": "(N-1)*(P_MP2_AO_consistent-P_AO).T",
+      "conventional_cumulant_contraction": "(0.5*P_MP2_AO_consistent@S_AO@P_MP2_AO_consistent-P_MP2_AO_consistent).T",
+      "alias_definitions": "Gamma_MP2_AO and P_MP2_AO alias consistent RDMs; Gamma0_AO aliases Gamma0_HF_AO; Lambda_AO aliases Lambda_HFref_AO",
+      "pyscf_audit_source": "https://pyscf.org/_modules/pyscf/mp/mp2.html#make_rdm2"
+    },
+    "pyscf_standard_audit": {
+      "checks": {
+        "rhf_electron_number_error": {
+          "value": 3.552713678800501e-15,
+          "limit": 1e-08,
+          "passed": true
+        },
+        "mp2_electron_number_error": {
+          "value": 3.552713678800501e-15,
+          "limit": 1e-08,
+          "passed": true
+        },
+        "rhf_idempotency_ao_max_error": {
+          "value": 7.993605777301127e-15,
+          "limit": 1e-08,
+          "passed": true
+        },
+        "rdm2_contraction_max_error": {
+          "value": 0.014712556962777512,
+          "limit": 1e-08,
+          "passed": false
+        },
+        "rdm2_particle_number_error": {
+          "value": 0.01735932821463848,
+          "limit": 1e-08,
+          "passed": false
+        },
+        "rhf_rdm2_contraction_max_error": {
+          "value": 1.0658141036401503e-14,
+          "limit": 1e-08,
+          "passed": true
+        },
+        "cumulant_contraction_max_error": {
+          "value": 0.014712556962779608,
+          "limit": 1e-08,
+          "passed": false
+        },
+        "pyscf_truncation_identity_max_error": {
+          "value": 8.672858438363296e-15,
+          "limit": 1e-08,
+          "passed": true
+        }
+      },
+      "rdm_definition": "PySCF standard unrelaxed MP2 energy-derivative density; audit only",
+      "rdm_convention": "Gamma[p,q,r,s] = sum_spin <p^dagger r^dagger s q>; real spatial AOs",
+      "pyscf_expected_contraction_defect_max": 0.014712556962780685,
+      "passed": false,
+      "failed_checks": [
+        "rdm2_contraction_max_error",
+        "rdm2_particle_number_error",
+        "cumulant_contraction_max_error"
+      ]
+    },
+    "energy_audit": {
+      "consistent_full_H_expectation_Ha": -98.55419579411765,
+      "pyscf_full_H_expectation_Ha": -98.55039112921774,
+      "canonical_RMP2_correlation_Ha": -0.013168468186023265,
+      "canonical_RMP2_total_Ha": -98.55039112921773,
+      "H_on_R1_Ha": -0.026336936372048928,
+      "H0_on_R2_Ha": 0.013168468186023272,
+      "consistent_second_order_correlation_Ha": -0.013168468186025656,
+      "consistent_second_order_total_Ha": -98.55039112921773,
+      "reference_from_R0_Ha": -98.53722266103168,
+      "full_H_difference_Ha": -0.003804664899902832,
+      "interpretation": "Full-H expectations are direct contractions of the named density. Formal MP2 energy retains H:R1 plus H0:R2; V:R2 is higher order. No FCI energy recomputation."
+    },
+    "overlap_eigenvalue_min": 0.3393077377000964,
+    "overlap_eigenvalue_max": 1.6962178757838717,
+    "tensor_shapes": {
+      "S_AO": [
+        6,
+        6
+      ],
+      "F_AO": [
+        6,
+        6
+      ],
+      "S_half": [
+        6,
+        6
+      ],
+      "S_minus_half": [
+        6,
+        6
+      ],
+      "P_L": [
+        6,
+        6
+      ],
+      "F_L": [
+        6,
+        6
+      ],
+      "Gamma0_AO": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "Lambda_AO": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "Lambda_L": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "P_mu": [
+        5
+      ],
+      "F_mu": [
+        5
+      ],
+      "P_munu": [
+        10
+      ],
+      "T_full": [
+        5,
+        5,
+        5
+      ],
+      "T_munulambda": [
+        10
+      ],
+      "pair_indices": [
+        10,
+        2
+      ],
+      "triple_indices": [
+        10,
+        3
+      ],
+      "Gamma_MP2_AO": [
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    "descriptor_dimensions": {
+      "one_body": 5,
+      "pair": 10,
+      "triple": 10
+    },
+    "rhf_converged": true,
+    "rhf_gradient_norm": 2.227351438865071e-13,
+    "mp2_convergence_status": "canonical noniterative RMP2 completed",
+    "mp2_min_occupied_virtual_gap_Ha": 1.2146153411683562,
+    "pyscf_zero_t2_cumulant_max_error": 8.881784197001252e-16
+  }
+}

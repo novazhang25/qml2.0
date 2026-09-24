@@ -1,0 +1,91 @@
+{
+  "molecule": "LiH",
+  "geometry_id": "023",
+  "q_A": 0.1282959728602373,
+  "record": "/Users/novaz/Desktop/qml2.0/results/descriptor-v2-methods-t/LiH/023.npz",
+  "error": "",
+  "validation_performed": false,
+  "T_repair": {
+    "version": "descriptor-v2-methods-t",
+    "mapping": {
+      "raw_tensor": "G[p,q,r,s] = Lambda_Methods[p,r,q,s]",
+      "corrected_T": "T[i,j,k] = Lambda_Methods[i,j,k,k] = G[i,k,j,k]",
+      "previous_T": "T_old[i,j,k] = G[i,j,k,k]",
+      "selection": "valence-local i < j < k, lexicographic combinations; unchanged",
+      "rank4_storage": "unchanged PySCF/raw ordering"
+    },
+    "evidence": {
+      "full_AO_count": 6,
+      "valence_AO_count": 5,
+      "Lambda_L_shape": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "T_full_shape": [
+        5,
+        5,
+        5
+      ],
+      "T_munulambda_shape": [
+        10
+      ],
+      "residuals": {
+        "S_symmetry": 0.0,
+        "S_half_symmetry": 8.326672684688674e-17,
+        "S_half_squared": 2.7755575615628914e-15,
+        "S_minus_half_inverse": 1.9984014443252818e-15,
+        "MO_orthonormality": 1.6653345369377348e-15,
+        "RHF_particle_number": 0.0,
+        "P_L_saved_transform": 0.0,
+        "F_L_saved_transform": 0.0,
+        "MO_particle_number": 0.0,
+        "MO_pair_number": 1.7763568394002505e-15,
+        "MO_contraction": 1.7763568394002505e-15,
+        "MO_P_hermiticity": 0.0,
+        "MO_Gamma_hermiticity": 0.0,
+        "MO_Gamma_particle_exchange": 0.0,
+        "AO_particle_number": 8.881784197001252e-16,
+        "AO_pair_number": 3.552713678800501e-15,
+        "AO_contraction": 8.881784197001252e-16,
+        "AO_P_hermiticity": 2.220446049250313e-16,
+        "AO_Gamma_hermiticity": 2.220446049250313e-16,
+        "AO_Gamma_particle_exchange": 2.220446049250313e-16,
+        "P_MO_to_AO": 0.0,
+        "Gamma_MO_to_AO": 0.0,
+        "Gamma0_HF": 0.0,
+        "Lambda_AO_subtraction": 0.0,
+        "Gamma0_AO_alias": 0.0,
+        "Lambda_HFref_AO_alias": 0.0,
+        "Lambda_L_saved_transform": 0.0,
+        "T_vectorized_vs_literal_loop": 0.0,
+        "T_selection_vs_literal_loop": 0.0
+      },
+      "differences": {
+        "T_munulambda": {
+          "max_abs_difference": 0.07595186028569033,
+          "mean_abs_difference": 0.007595186028569215,
+          "sum_abs_difference": 0.07595186028569215,
+          "element_count": 10,
+          "exactly_unchanged": false,
+          "unchanged_at_1e_8": false
+        },
+        "T_full": {
+          "max_abs_difference": 0.12115203774081659,
+          "mean_abs_difference": 0.00791935028754187,
+          "sum_abs_difference": 0.9899187859427337,
+          "element_count": 125,
+          "exactly_unchanged": false,
+          "unchanged_at_1e_8": false
+        }
+      },
+      "identity": "LiH/023",
+      "source_record": "/Users/novaz/Desktop/qml2.0/results/descriptor/LiH/023.npz",
+      "output_record": "/Users/novaz/Desktop/qml2.0/results/descriptor-v2-methods-t/LiH/023.npz",
+      "source_sha256": "6f7435fb4d9837e16ab3be7bb7e02c93a3bd11c2598b3dcdeaa2898a989c61be",
+      "non_T_NPY_payloads_verified_unchanged": 94,
+      "output_sha256": "94617491524ecf47aed224b1279b6f49443e8bbe54cb30d58e499c697dea9340"
+    }
+  }
+}

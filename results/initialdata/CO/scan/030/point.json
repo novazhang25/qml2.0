@@ -1,0 +1,103 @@
+{
+  "molecule": "CO",
+  "point_index": 30,
+  "basis": "sto-3g",
+  "charge": 0,
+  "spin": 0,
+  "symbols": [
+    "C",
+    "O"
+  ],
+  "cartesian_A": [
+    [
+      0.0,
+      0.0,
+      -0.6169403474348355
+    ],
+    [
+      0.0,
+      0.0,
+      0.6059228064432421
+    ]
+  ],
+  "bond_length_A": 1.2228631538780776,
+  "q_A": 0.07738247822838762,
+  "status": "PASS",
+  "geometry_validation": {
+    "passed": true,
+    "absolute_internal_errors": {
+      "C1-O2": 0.0
+    },
+    "length_tolerance_A": 5e-10,
+    "angle_tolerance_deg": 2.291831180523293e-07
+  },
+  "geometry_file": {
+    "path": "CO/scan/030/geometry.xyz",
+    "sha256": "82f961ec55da765c8c1afb869b91c700ae2849501cb8d3b946a4055d04187fd2"
+  },
+  "rhf_diagnostics": {
+    "accepted": true,
+    "scf_converged": true,
+    "energy_Eh": -111.21107801763176,
+    "orbital_gradient_norm_Eh": 8.846725209085111e-13,
+    "internal_stable": true,
+    "lowest_internal_stability_eigenvalue_Eh": 0.912081258976973,
+    "restricted_stability_corrections": 0,
+    "electron_number": 14.0,
+    "orbital_orthogonality_max_error": 2.4424906541753444e-15,
+    "solver_attempts": [
+      {
+        "initial_guess": "fresh_minao",
+        "stability_repairs": [],
+        "initial_pyscf_converged": true,
+        "initial_polish": [
+          {
+            "iteration": 0,
+            "energy_Eh": -111.21107801763176,
+            "orbital_gradient_norm_Eh": 8.846725209085111e-13,
+            "energy_change_Eh": null,
+            "lowest_internal_eigenvalue_Eh": 0.912081258976973
+          },
+          {
+            "iteration": 1,
+            "energy_Eh": -111.21107801763176,
+            "orbital_gradient_norm_Eh": 8.846725209085111e-13,
+            "energy_change_Eh": 0.0,
+            "lowest_internal_eigenvalue_Eh": 0.912081258976973
+          }
+        ],
+        "final_energy_Eh": -111.21107801763176,
+        "accepted": true
+      }
+    ],
+    "mulliken_atomic_charges": [
+      0.1963062495929604,
+      -0.1963062495929595
+    ]
+  },
+  "E_RHF_Ha": -111.21107801763176,
+  "electronic_state_stage": "RHF_AND_FCI",
+  "electronic_state_file": {
+    "path": "CO/scan/030/electronic_state.npz",
+    "sha256": "45f5556ae14dfc3118cbaf15d620a69a1ab3b268ada8a24a5a64803c61c66d02"
+  },
+  "E_FCI_Ha": -111.37090989672714,
+  "E_FCI_frozen_core_Ha": -111.37090989672714,
+  "E_CAS_active_Ha": -31.31780069217146,
+  "E_core_including_nuclear_Ha": -80.05310920455568,
+  "E_nuclear_Ha": 20.77133982130963,
+  "n_frozen_orbitals": 2,
+  "n_frozen_electrons": 4,
+  "n_active_orbitals": 8,
+  "n_active_electrons": 10,
+  "canonical_rhf_orbitals": true,
+  "fci_converged": true,
+  "fci_energy_tolerance_Ha": 1e-12,
+  "fci_max_cycle": 200,
+  "fci_convention": "frozen-core",
+  "total_energy_includes_nuclear_repulsion": true,
+  "energy_decomposition": "E_FCI_Ha = E_CAS_active_Ha + E_core_including_nuclear_Ha",
+  "E_corr_Ha": -0.15983187909537833,
+  "E_corr_mHa": -159.83187909537833,
+  "elapsed_seconds": 0.05523433303460479
+}

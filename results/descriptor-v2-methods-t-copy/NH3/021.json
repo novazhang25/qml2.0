@@ -1,0 +1,91 @@
+{
+  "molecule": "NH3",
+  "geometry_id": "021",
+  "q_A": 0.03598785204831545,
+  "record": "/Users/novaz/Desktop/qml2.0/results/descriptor-v2-methods-t-copy/NH3/021.npz",
+  "error": "",
+  "validation_performed": false,
+  "T_repair": {
+    "version": "descriptor-v2-methods-t",
+    "mapping": {
+      "raw_tensor": "G[p,q,r,s] = Lambda_Methods[p,r,q,s]",
+      "corrected_T": "T[i,j,k] = Lambda_Methods[i,j,k,k] = G[i,k,j,k]",
+      "previous_T": "T_old[i,j,k] = G[i,j,k,k]",
+      "selection": "valence-local i < j < k, lexicographic combinations; unchanged",
+      "rank4_storage": "unchanged PySCF/raw ordering"
+    },
+    "evidence": {
+      "full_AO_count": 8,
+      "valence_AO_count": 7,
+      "Lambda_L_shape": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "T_full_shape": [
+        7,
+        7,
+        7
+      ],
+      "T_munulambda_shape": [
+        35
+      ],
+      "residuals": {
+        "S_symmetry": 0.0,
+        "S_half_symmetry": 5.551115123125783e-17,
+        "S_half_squared": 2.3314683517128287e-15,
+        "S_minus_half_inverse": 1.9984014443252818e-15,
+        "MO_orthonormality": 1.27675647831893e-15,
+        "RHF_particle_number": 1.7763568394002505e-15,
+        "P_L_saved_transform": 0.0,
+        "F_L_saved_transform": 0.0,
+        "MO_particle_number": 3.552713678800501e-15,
+        "MO_pair_number": 4.263256414560601e-14,
+        "MO_contraction": 1.7763568394002505e-14,
+        "MO_P_hermiticity": 0.0,
+        "MO_Gamma_hermiticity": 0.0,
+        "MO_Gamma_particle_exchange": 0.0,
+        "AO_particle_number": 5.329070518200751e-15,
+        "AO_pair_number": 8.526512829121202e-14,
+        "AO_contraction": 7.105427357601002e-15,
+        "AO_P_hermiticity": 1.1102230246251565e-16,
+        "AO_Gamma_hermiticity": 4.440892098500626e-16,
+        "AO_Gamma_particle_exchange": 8.881784197001252e-16,
+        "P_MO_to_AO": 0.0,
+        "Gamma_MO_to_AO": 0.0,
+        "Gamma0_HF": 0.0,
+        "Lambda_AO_subtraction": 0.0,
+        "Gamma0_AO_alias": 0.0,
+        "Lambda_HFref_AO_alias": 0.0,
+        "Lambda_L_saved_transform": 0.0,
+        "T_vectorized_vs_literal_loop": 0.0,
+        "T_selection_vs_literal_loop": 0.0
+      },
+      "differences": {
+        "T_munulambda": {
+          "max_abs_difference": 0.03513504019063865,
+          "mean_abs_difference": 0.013799427474685015,
+          "sum_abs_difference": 0.4829799616139755,
+          "element_count": 35,
+          "exactly_unchanged": false,
+          "unchanged_at_1e_8": false
+        },
+        "T_full": {
+          "max_abs_difference": 0.1143398358565427,
+          "mean_abs_difference": 0.011217706286701825,
+          "sum_abs_difference": 3.847673256338726,
+          "element_count": 343,
+          "exactly_unchanged": false,
+          "unchanged_at_1e_8": false
+        }
+      },
+      "identity": "NH3/021",
+      "source_record": "/Users/novaz/Desktop/qml2.0/results/descriptor/NH3/021.npz",
+      "output_record": "/Users/novaz/Desktop/qml2.0/results/descriptor-v2-methods-t-copy/NH3/021.npz",
+      "source_sha256": "e8ff49352efdc6bf8dea5cc8e9b9de6c169107a18971012327bbd0fe03a895cc",
+      "non_T_NPY_payloads_verified_unchanged": 94,
+      "output_sha256": "3d36097fb86dfee6331a4be9db734115759903e8d2c6f12a307b9f9f15936193"
+    }
+  }
+}

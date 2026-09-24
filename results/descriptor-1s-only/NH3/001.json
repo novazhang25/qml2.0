@@ -1,0 +1,8 @@
+{
+  "molecule": "NH3",
+  "geometry_id": "001",
+  "q_A": -0.09487706449101341,
+  "record": "/Users/novaz/Desktop/qml2.0/results/descriptor-1s-only/NH3/001.npz",
+  "error": "",
+  "validation_performed": false
+}

@@ -1,0 +1,4536 @@
+{
+  "scope": "Code audit only; document-comparison checks excluded. No production training or data/code modifications by the audit.",
+  "initialdata": {
+    "scope": "Read-only independent checks; no SCF, MP2, or production pipeline run. FCI Hamiltonian independently constructed only for LiH two active electrons.",
+    "checks": [
+      {
+        "check": "LiH/curvature_literal",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha/Bohr^2",
+        "note": "tangent shape (2, 3), Hessian shape (2, 2, 3, 3)"
+      },
+      {
+        "check": "LiH/mass_literal",
+        "shape": [],
+        "max_abs_residual": 1.1102230246251565e-16,
+        "units": "amu",
+        "note": ""
+      },
+      {
+        "check": "LiH/omega",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "rad/s",
+        "note": ""
+      },
+      {
+        "check": "LiH/n1_width",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "LiH/scan_grid_formula",
+        "shape": [
+          30
+        ],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Angstrom",
+        "note": "Inclusive30-point harmonic grid; saved index1..30."
+      },
+      {
+        "check": "LiH/001/geometry_direct_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "LiH/001/geometry_runtime_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "LiH/001/geometry_direct_vs_runtime",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "LiH/001/RHF_density_from_saved_MOs",
+        "shape": [
+          6,
+          6
+        ],
+        "max_abs_residual": 0.0,
+        "units": "dimensionless",
+        "note": ""
+      },
+      {
+        "check": "LiH/001/RHF_energy",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": "Restricted spin-summed density; no saved UHF reference"
+      },
+      {
+        "check": "LiH/001/FCI_energy_decomposition",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "LiH/001/target",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "LiH/001/packed_ERI_unwrap",
+        "shape": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": "Independent lower-triangle indexing checked against library restore"
+      },
+      {
+        "check": "LiH/001/FCI_active_Rayleigh",
+        "shape": [],
+        "max_abs_residual": 8.881784197001252e-16,
+        "units": "Ha",
+        "note": "Independent one-alpha/one-beta Hamiltonian shape (25, 25); CI shape (5, 5); no FCI solver invocation"
+      },
+      {
+        "check": "LiH/001/FCI_active_lowest_eigenvalue",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "LiH/001/FCI_eigenvector_residual",
+        "shape": [
+          25
+        ],
+        "max_abs_residual": 6.661338147750939e-16,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "LiH/001/CI_norm",
+        "shape": [],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "dimensionless",
+        "note": ""
+      },
+      {
+        "check": "LiH/015/geometry_direct_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "LiH/015/geometry_runtime_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "LiH/015/geometry_direct_vs_runtime",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "LiH/015/RHF_density_from_saved_MOs",
+        "shape": [
+          6,
+          6
+        ],
+        "max_abs_residual": 0.0,
+        "units": "dimensionless",
+        "note": ""
+      },
+      {
+        "check": "LiH/015/RHF_energy",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": "Restricted spin-summed density; no saved UHF reference"
+      },
+      {
+        "check": "LiH/015/FCI_energy_decomposition",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "LiH/015/target",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "LiH/015/packed_ERI_unwrap",
+        "shape": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": "Independent lower-triangle indexing checked against library restore"
+      },
+      {
+        "check": "LiH/015/FCI_active_Rayleigh",
+        "shape": [],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Ha",
+        "note": "Independent one-alpha/one-beta Hamiltonian shape (25, 25); CI shape (5, 5); no FCI solver invocation"
+      },
+      {
+        "check": "LiH/015/FCI_active_lowest_eigenvalue",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "LiH/015/FCI_eigenvector_residual",
+        "shape": [
+          25
+        ],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "LiH/015/CI_norm",
+        "shape": [],
+        "max_abs_residual": 1.1102230246251565e-16,
+        "units": "dimensionless",
+        "note": ""
+      },
+      {
+        "check": "LiH/030/geometry_direct_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "LiH/030/geometry_runtime_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "LiH/030/geometry_direct_vs_runtime",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "LiH/030/RHF_density_from_saved_MOs",
+        "shape": [
+          6,
+          6
+        ],
+        "max_abs_residual": 0.0,
+        "units": "dimensionless",
+        "note": ""
+      },
+      {
+        "check": "LiH/030/RHF_energy",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": "Restricted spin-summed density; no saved UHF reference"
+      },
+      {
+        "check": "LiH/030/FCI_energy_decomposition",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "LiH/030/target",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "LiH/030/packed_ERI_unwrap",
+        "shape": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": "Independent lower-triangle indexing checked against library restore"
+      },
+      {
+        "check": "LiH/030/FCI_active_Rayleigh",
+        "shape": [],
+        "max_abs_residual": 8.881784197001252e-16,
+        "units": "Ha",
+        "note": "Independent one-alpha/one-beta Hamiltonian shape (25, 25); CI shape (5, 5); no FCI solver invocation"
+      },
+      {
+        "check": "LiH/030/FCI_active_lowest_eigenvalue",
+        "shape": [],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "LiH/030/FCI_eigenvector_residual",
+        "shape": [
+          25
+        ],
+        "max_abs_residual": 4.440892098500626e-16,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "LiH/030/CI_norm",
+        "shape": [],
+        "max_abs_residual": 4.440892098500626e-16,
+        "units": "dimensionless",
+        "note": ""
+      },
+      {
+        "check": "BeH2/curvature_literal",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha/Bohr^2",
+        "note": "tangent shape (3, 3), Hessian shape (3, 3, 3, 3)"
+      },
+      {
+        "check": "BeH2/mass_literal",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "amu",
+        "note": ""
+      },
+      {
+        "check": "BeH2/omega",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "rad/s",
+        "note": ""
+      },
+      {
+        "check": "BeH2/n1_width",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "BeH2/scan_grid_formula",
+        "shape": [
+          30
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": "Inclusive30-point harmonic grid; saved index1..30."
+      },
+      {
+        "check": "BeH2/001/geometry_direct_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "BeH2/001/geometry_runtime_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "BeH2/001/geometry_direct_vs_runtime",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "BeH2/015/geometry_direct_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "BeH2/015/geometry_runtime_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "BeH2/015/geometry_direct_vs_runtime",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "BeH2/030/geometry_direct_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "BeH2/030/geometry_runtime_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "BeH2/030/geometry_direct_vs_runtime",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O/curvature_literal",
+        "shape": [],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Ha/Bohr^2",
+        "note": "tangent shape (3, 3), Hessian shape (3, 3, 3, 3)"
+      },
+      {
+        "check": "H2O/mass_literal",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "amu",
+        "note": ""
+      },
+      {
+        "check": "H2O/omega",
+        "shape": [],
+        "max_abs_residual": 0.125,
+        "units": "rad/s",
+        "note": ""
+      },
+      {
+        "check": "H2O/n1_width",
+        "shape": [],
+        "max_abs_residual": 2.7755575615628914e-17,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O/scan_grid_formula",
+        "shape": [
+          30
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": "Inclusive30-point harmonic grid; saved index1..30."
+      },
+      {
+        "check": "H2O/001/geometry_direct_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 1.1102230246251565e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O/001/geometry_runtime_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O/001/geometry_direct_vs_runtime",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 1.1102230246251565e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O/015/geometry_direct_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 5.10702591327572e-15,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O/015/geometry_runtime_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O/015/geometry_direct_vs_runtime",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 5.10702591327572e-15,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O/030/geometry_direct_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O/030/geometry_runtime_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O/030/geometry_direct_vs_runtime",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "NH3/curvature_literal",
+        "shape": [],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Ha/Bohr^2",
+        "note": "tangent shape (4, 3), Hessian shape (4, 4, 3, 3)"
+      },
+      {
+        "check": "NH3/mass_literal",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "amu",
+        "note": ""
+      },
+      {
+        "check": "NH3/omega",
+        "shape": [],
+        "max_abs_residual": 0.125,
+        "units": "rad/s",
+        "note": ""
+      },
+      {
+        "check": "NH3/n1_width",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "NH3/scan_grid_formula",
+        "shape": [
+          30
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": "Inclusive30-point harmonic grid; saved index1..30."
+      },
+      {
+        "check": "NH3/001/geometry_direct_vs_saved",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "NH3/001/geometry_runtime_vs_saved",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "NH3/001/geometry_direct_vs_runtime",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "NH3/015/geometry_direct_vs_saved",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 1.1102230246251565e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "NH3/015/geometry_runtime_vs_saved",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "NH3/015/geometry_direct_vs_runtime",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 1.1102230246251565e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "NH3/030/geometry_direct_vs_saved",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 6.661338147750939e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "NH3/030/geometry_runtime_vs_saved",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "NH3/030/geometry_direct_vs_runtime",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 6.661338147750939e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "N2/curvature_literal",
+        "shape": [],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Ha/Bohr^2",
+        "note": "tangent shape (2, 3), Hessian shape (2, 2, 3, 3)"
+      },
+      {
+        "check": "N2/mass_literal",
+        "shape": [],
+        "max_abs_residual": 8.881784197001252e-16,
+        "units": "amu",
+        "note": ""
+      },
+      {
+        "check": "N2/omega",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "rad/s",
+        "note": ""
+      },
+      {
+        "check": "N2/n1_width",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "N2/scan_grid_formula",
+        "shape": [
+          30
+        ],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Angstrom",
+        "note": "Inclusive30-point harmonic grid; saved index1..30."
+      },
+      {
+        "check": "N2/001/geometry_direct_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "N2/001/geometry_runtime_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "N2/001/geometry_direct_vs_runtime",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "N2/015/geometry_direct_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "N2/015/geometry_runtime_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "N2/015/geometry_direct_vs_runtime",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "N2/030/geometry_direct_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "N2/030/geometry_runtime_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "N2/030/geometry_direct_vs_runtime",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "CO/curvature_literal",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha/Bohr^2",
+        "note": "tangent shape (2, 3), Hessian shape (2, 2, 3, 3)"
+      },
+      {
+        "check": "CO/mass_literal",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "amu",
+        "note": ""
+      },
+      {
+        "check": "CO/omega",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "rad/s",
+        "note": ""
+      },
+      {
+        "check": "CO/n1_width",
+        "shape": [],
+        "max_abs_residual": 1.3877787807814457e-17,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "CO/scan_grid_formula",
+        "shape": [
+          30
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": "Inclusive30-point harmonic grid; saved index1..30."
+      },
+      {
+        "check": "CO/001/geometry_direct_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "CO/001/geometry_runtime_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "CO/001/geometry_direct_vs_runtime",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "CO/015/geometry_direct_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "CO/015/geometry_runtime_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "CO/015/geometry_direct_vs_runtime",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "CO/030/geometry_direct_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "CO/030/geometry_runtime_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "CO/030/geometry_direct_vs_runtime",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "HF/curvature_literal",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha/Bohr^2",
+        "note": "tangent shape (2, 3), Hessian shape (2, 2, 3, 3)"
+      },
+      {
+        "check": "HF/mass_literal",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "amu",
+        "note": ""
+      },
+      {
+        "check": "HF/omega",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "rad/s",
+        "note": ""
+      },
+      {
+        "check": "HF/n1_width",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "HF/scan_grid_formula",
+        "shape": [
+          30
+        ],
+        "max_abs_residual": 1.1102230246251565e-16,
+        "units": "Angstrom",
+        "note": "Inclusive30-point harmonic grid; saved index1..30."
+      },
+      {
+        "check": "HF/001/geometry_direct_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "HF/001/geometry_runtime_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "HF/001/geometry_direct_vs_runtime",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "HF/015/geometry_direct_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "HF/015/geometry_runtime_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "HF/015/geometry_direct_vs_runtime",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "HF/030/geometry_direct_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "HF/030/geometry_runtime_vs_saved",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "HF/030/geometry_direct_vs_runtime",
+        "shape": [
+          2,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2S/curvature_literal",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha/Bohr^2",
+        "note": "tangent shape (3, 3), Hessian shape (3, 3, 3, 3)"
+      },
+      {
+        "check": "H2S/mass_literal",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "amu",
+        "note": ""
+      },
+      {
+        "check": "H2S/omega",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "rad/s",
+        "note": ""
+      },
+      {
+        "check": "H2S/n1_width",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2S/scan_grid_formula",
+        "shape": [
+          30
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": "Inclusive30-point harmonic grid; saved index1..30."
+      },
+      {
+        "check": "H2S/001/geometry_direct_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 1.1102230246251565e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2S/001/geometry_runtime_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2S/001/geometry_direct_vs_runtime",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 1.1102230246251565e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2S/001/RHF_density_from_saved_MOs",
+        "shape": [
+          11,
+          11
+        ],
+        "max_abs_residual": 0.0,
+        "units": "dimensionless",
+        "note": ""
+      },
+      {
+        "check": "H2S/001/RHF_energy",
+        "shape": [],
+        "max_abs_residual": 5.684341886080802e-14,
+        "units": "Ha",
+        "note": "Restricted spin-summed density; no saved UHF reference"
+      },
+      {
+        "check": "H2S/001/FCI_energy_decomposition",
+        "shape": [],
+        "max_abs_residual": 1.1368683772161603e-13,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "H2S/001/target",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "H2S/015/geometry_direct_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 3.6637359812630166e-15,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2S/015/geometry_runtime_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2S/015/geometry_direct_vs_runtime",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 3.6637359812630166e-15,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2S/015/RHF_density_from_saved_MOs",
+        "shape": [
+          11,
+          11
+        ],
+        "max_abs_residual": 0.0,
+        "units": "dimensionless",
+        "note": ""
+      },
+      {
+        "check": "H2S/015/RHF_energy",
+        "shape": [],
+        "max_abs_residual": 1.7053025658242404e-13,
+        "units": "Ha",
+        "note": "Restricted spin-summed density; no saved UHF reference"
+      },
+      {
+        "check": "H2S/015/FCI_energy_decomposition",
+        "shape": [],
+        "max_abs_residual": 5.684341886080802e-14,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "H2S/015/target",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "H2S/030/geometry_direct_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2S/030/geometry_runtime_vs_saved",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2S/030/geometry_direct_vs_runtime",
+        "shape": [
+          3,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2S/030/RHF_density_from_saved_MOs",
+        "shape": [
+          11,
+          11
+        ],
+        "max_abs_residual": 0.0,
+        "units": "dimensionless",
+        "note": ""
+      },
+      {
+        "check": "H2S/030/RHF_energy",
+        "shape": [],
+        "max_abs_residual": 2.8421709430404007e-13,
+        "units": "Ha",
+        "note": "Restricted spin-summed density; no saved UHF reference"
+      },
+      {
+        "check": "H2S/030/FCI_energy_decomposition",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "H2S/030/target",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "H2O2/curvature_literal",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha/Bohr^2",
+        "note": "tangent shape (4, 3), Hessian shape (4, 4, 3, 3)"
+      },
+      {
+        "check": "H2O2/mass_literal",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "amu",
+        "note": ""
+      },
+      {
+        "check": "H2O2/omega",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "rad/s",
+        "note": ""
+      },
+      {
+        "check": "H2O2/n1_width",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O2/scan_grid_formula",
+        "shape": [
+          30
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": "Inclusive30-point harmonic grid; saved index1..30."
+      },
+      {
+        "check": "H2O2/001/geometry_direct_vs_saved",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 1.1102230246251565e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O2/001/geometry_runtime_vs_saved",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O2/001/geometry_direct_vs_runtime",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 1.1102230246251565e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O2/001/RHF_density_from_saved_MOs",
+        "shape": [
+          12,
+          12
+        ],
+        "max_abs_residual": 0.0,
+        "units": "dimensionless",
+        "note": ""
+      },
+      {
+        "check": "H2O2/001/RHF_energy",
+        "shape": [],
+        "max_abs_residual": 2.8421709430404007e-13,
+        "units": "Ha",
+        "note": "Restricted spin-summed density; no saved UHF reference"
+      },
+      {
+        "check": "H2O2/001/FCI_energy_decomposition",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "H2O2/001/target",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "H2O2/015/geometry_direct_vs_saved",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O2/015/geometry_runtime_vs_saved",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O2/015/geometry_direct_vs_runtime",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 2.220446049250313e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O2/015/RHF_density_from_saved_MOs",
+        "shape": [
+          12,
+          12
+        ],
+        "max_abs_residual": 0.0,
+        "units": "dimensionless",
+        "note": ""
+      },
+      {
+        "check": "H2O2/015/RHF_energy",
+        "shape": [],
+        "max_abs_residual": 1.7053025658242404e-13,
+        "units": "Ha",
+        "note": "Restricted spin-summed density; no saved UHF reference"
+      },
+      {
+        "check": "H2O2/015/FCI_energy_decomposition",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "H2O2/015/target",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "H2O2/030/geometry_direct_vs_saved",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 1.1102230246251565e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O2/030/geometry_runtime_vs_saved",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 0.0,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O2/030/geometry_direct_vs_runtime",
+        "shape": [
+          4,
+          3
+        ],
+        "max_abs_residual": 1.1102230246251565e-16,
+        "units": "Angstrom",
+        "note": ""
+      },
+      {
+        "check": "H2O2/030/RHF_density_from_saved_MOs",
+        "shape": [
+          12,
+          12
+        ],
+        "max_abs_residual": 0.0,
+        "units": "dimensionless",
+        "note": ""
+      },
+      {
+        "check": "H2O2/030/RHF_energy",
+        "shape": [],
+        "max_abs_residual": 2.842170943040401e-14,
+        "units": "Ha",
+        "note": "Restricted spin-summed density; no saved UHF reference"
+      },
+      {
+        "check": "H2O2/030/FCI_energy_decomposition",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      },
+      {
+        "check": "H2O2/030/target",
+        "shape": [],
+        "max_abs_residual": 0.0,
+        "units": "Ha",
+        "note": ""
+      }
+    ],
+    "watched_sha256": {
+      "/Users/novaz/Desktop/qml2.0/codes/descriptor.py": "ee9fb65bbca840db594294289c0cf1895dbbe933e3a2077ab6bb838a354c90b8",
+      "/Users/novaz/Desktop/qml2.0/codes/plot_initialdata.py": "c0000c5b433fb9b0a0295eb627baca18eecc195037d76ec6462814fbeb07e782",
+      "/Users/novaz/Desktop/qml2.0/codes/circuit.py": "f4e14733f9fa327485d0d583cbd5b64fa1633d211b9f723dcfd6dd5651d36c8b",
+      "/Users/novaz/Desktop/qml2.0/codes/run1.py": "aa5e94a7a7ac8141181bc4b39fe209bc02d2b26cbf48a6a34c346a8fb8b394ee",
+      "/Users/novaz/Desktop/qml2.0/codes/initialdata.py": "54d570007eac4709bf5ae0d4fe46eed16132090b9c013f6aaa9d201da2891b67",
+      "/Users/novaz/Desktop/qml2.0/codes/train.py": "9e2ab522c78f2fd9cd86dd58a162bab63ab6c279311f0c43d2c35c0e60601fc7",
+      "/Users/novaz/Desktop/qml2.0/codes/plot_run1_results.py": "ee0f68af623acf96c1eeeb29c4e8174c3926e4f766d0e457f91e0ee2a159cbe5",
+      "/Users/novaz/Downloads/Nova_Hencoding_note (1).pdf": "20c15b02786619b4306bc15f02615f92b8729e7b874d42bdca243ec4d2d707fa",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/LiH/result.json": "64248989ce2df2ef82b5e8dc70b34c7f0f23f60cf5a0dabd5319d3476d1d9553",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/LiH/scan/001/point.json": "73179d6bb153791f9c165f5c327830512a4c45e8bc9e9293196fccc5f7d27855",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/LiH/scan/001/electronic_state.npz": "9eb1770faf402758936da7c530863a0f8aea8006ea9bf34bbe96ae6d5d7be580",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/LiH/scan/015/point.json": "393c3bbc3da1506ff33a8c0241c5a5f7fd2c06dc520b1aa70d955ac3cee929fd",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/LiH/scan/015/electronic_state.npz": "6e76e5710170d84da0c422b221b4165ea01d60cc36cab531eb2002968fb28552",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/LiH/scan/030/point.json": "c55d9aee6270b0a396fadde8f446dab629d438a27f5f73c562d6c6915f688d99",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/LiH/scan/030/electronic_state.npz": "b4ae0e2868779a7c6524fc0a478b8ce08137678b17f979489fbacba7c2d3eb00",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/BeH2/result.json": "c7551d96db2a90ba0c6249442d081c799c2d2cc2251e95050ae905b8bd4e9900",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/BeH2/scan/001/point.json": "0a0d0375badd74d9ab36d09adcb91817e127d5ec6f94171046ff812d53db0233",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/BeH2/scan/015/point.json": "22c9951da0f0d853bf698cf86cc69b4c34e650f6e85f6686bdaa2c64a4a7efb0",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/BeH2/scan/030/point.json": "1a038ec3dc6ef203160659b0af018d81f07cea092deb31227842ea99e6aff70c",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2O/result.json": "faa799f8d8b657ae1dca0c58c1dc87f247b5bea4ca85430cd560bc86ea68e1c9",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2O/scan/001/point.json": "8eb75d21ca3f43213a3fd88b2835b8b15c9808ba30f74df962fc2ef87b43d271",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2O/scan/015/point.json": "8922251aa979f0b37404d7246ad37af758e37343f3e1699bcf6c2d45f42ce9c8",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2O/scan/030/point.json": "5d0d1d792867ebf31e8e25f14926c90a9df9ab16e71c5bf131296b8730cf4170",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/NH3/result.json": "5c4c7846367ae9d600f73e2c345637e5374b924948e77ed7e40dfc851ea8ad3a",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/NH3/scan/001/point.json": "d46806bfc0d6de39b04d90a21b54e419e66d9f131528acab95f2cdb8cca6f045",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/NH3/scan/015/point.json": "6c5b18edaca3637c4bf01a4ace2029a7f5332c59737d272bab4086fb2088e854",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/NH3/scan/030/point.json": "7accf1323fe667ee714dc78a17e231b5165f8b1bfbb89ad5972e4ddb59e67a12",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/N2/result.json": "35785b4322a6e8a17b0f2ba774ca96f0ea4c034217b8672360fcc701c81a5afe",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/N2/scan/001/point.json": "f3b4eba4eeee48c656bd5ae552be9f6d443261eb85acc5087f9b7b705ecf0b43",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/N2/scan/015/point.json": "6c766b51443e41446d62071048d68c40a67aed09d565315de1c32983dbea2d37",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/N2/scan/030/point.json": "41890ae97a0b1b533eac64a986194d5b604304c1caa03b4bbf26d9d8830f0e9f",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/result.json": "1c885ff1b010018bb6b0dc1fc73218cdf9946478b56cbaa7d5b7d378bc1ad65e",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/001/point.json": "7816ff5b79ed8570fa5f359a73b34077cad06f001de79177c1a8c34f50e886f7",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/015/point.json": "57181767351ec0c8d0542f524859a931d17962c881a4d0be82adaf0475a1ca28",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/030/point.json": "5b62e25bc47c8c154378fe8034d6fdaea398c8cefb5b525386e4d4bb9eb611fe",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/HF/result.json": "17d36872e32ca9735d4d00b292e13581c7b2252beb68724a4f01e0e4d96d34f8",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/HF/scan/001/point.json": "4ab71d35dd036254ec6adbcdd916aaea8851bb87ce4dfc2bb7a29f8bcab92aca",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/HF/scan/015/point.json": "d7ffcbd27b20f9bf96cbf00a14c3777778d1f342a9cf0d19684acbe7b3a9c403",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/HF/scan/030/point.json": "141feeafc99cda5e31ffccb9e78568c6df5a3d0ecb97e22a8ed9ae4b91250797",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2S/result.json": "c00f6ba2ab7fea0c295dc65b0c158a9a3b9b0dac3ab0f9ec6aaa25870549646e",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2S/scan/001/point.json": "b218f819f4a40e33364db28a7207a3fd82cce13d15a6c58b7c178226eb8465d5",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2S/scan/001/electronic_state.npz": "04b9a0036e479b98264ee0beb6f3fc4ac2e67b204897e3a61e649a18c7e47271",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2S/scan/015/point.json": "e4180f2638d45a717bf5c4a5bbbc8ba926362e120417083c2eeb9db5eec42f09",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2S/scan/015/electronic_state.npz": "9ee6eb5c57b2620eca24bc4c07e8bac9b549d41038c23ce9741418254808a2ea",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2S/scan/030/point.json": "9b8ef6fefa3a3e8d1d06145fbd31a9ce151ecd2dab3701f6891d2a636a4dee4c",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2S/scan/030/electronic_state.npz": "9301367147e3c6bb8dd263418701e466c7fd2f94b54e6ab315256193fe777fe8",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2O2/result.json": "6d0d89073c2cbb7bec115984f99693da4315983492ac0a4bfc179f392da3c138",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2O2/scan/001/point.json": "133424592a01f4343b3940f99d1d0c07e4bc2a91082fc77a47fa7a82b682a1f1",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2O2/scan/001/electronic_state.npz": "81b494c4985e7e2eb183200406143fc56938a9f10a30f2220ec6b7b6ec774529",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2O2/scan/015/point.json": "10ff71e18dba1523f1c0cebe3b64ba342b983085f90b84b8dced8f4cedadd4f0",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2O2/scan/015/electronic_state.npz": "b219f28ec00c403bc2da1b3526796a8bf28587438e0d3bd33ecc58ffba60fc2a",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2O2/scan/030/point.json": "5b6d6319406976251f43911bbca2f4da98113833c24c5a97a375421a6a029165",
+      "/Users/novaz/Desktop/qml2.0/results/initialdata/H2O2/scan/030/electronic_state.npz": "9a63e60aeae76420c80a34713889bf79c9e3e4282072db9858466f1e2773bf73"
+    },
+    "changed_files": []
+  },
+  "descriptor": {
+    "method": "Read-only independent NumPy algebra; determinant arrays and RDM expectation values regenerated with installed PySCF APIs without energy solver. No descriptor producer, repair, SCF, MP2 energy kernel, or FCI eigensolver invoked.",
+    "versions": {
+      "numpy": "2.5.3",
+      "pyscf": "2.14.0"
+    },
+    "samples": {
+      "LiH/001": {
+        "path": "/Users/novaz/Desktop/qml2.0/results/descriptor-1s-only/LiH/001.npz",
+        "sha256": "20f8e36bea8431ef9bf37d2fd203c2a384b609f72986e2dc22ed3f9fe43bde33",
+        "file_unchanged": true,
+        "n_full": 6,
+        "n_retained": 5,
+        "n_electrons": 4,
+        "n_occupied": 2,
+        "n_virtual": 4,
+        "valence_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "ao_labels": [
+          "0 Li 1s    ",
+          "0 Li 2s    ",
+          "0 Li 2px   ",
+          "0 Li 2py   ",
+          "0 Li 2pz   ",
+          "1 H 1s    "
+        ],
+        "first_order_norm_squared": 0.007142320365628696,
+        "checks": {
+          "AO_overlap_integral_API_vs_saved": {
+            "shape": [
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_API_recomputation",
+            "unit": "dimensionless"
+          },
+          "RHF_density_from_C_occ": {
+            "shape": [
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "RHF_Fock_h_plus_J_minus_halfK": {
+            "shape": [
+              6,
+              6
+            ],
+            "max_abs_residual": 6.661338147750939e-16,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "RHF_energy_half_density_h_plus_F": {
+            "shape": [],
+            "max_abs_residual": 1.7763568394002505e-15,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "RHF_generalized_eigen_equation": {
+            "shape": [
+              6,
+              6
+            ],
+            "max_abs_residual": 2.1717697085144039e-13,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "S_half": {
+            "shape": [
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "S_minus_half": {
+            "shape": [
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "P_L": {
+            "shape": [
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "F_L": {
+            "shape": [
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "RMP2_t2_direct_spatial_formula": {
+            "shape": [
+              2,
+              2,
+              4,
+              4
+            ],
+            "max_abs_residual": 4.163336342344337e-17,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "RMP2_energy_2direct_minus_exchange": {
+            "shape": [],
+            "max_abs_residual": 8.673617379884035e-18,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "ci_reference_CISD_conversion": {
+            "shape": [
+              15,
+              15
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_API_recomputation",
+            "unit": "dimensionless"
+          },
+          "ci_first_order_CISD_conversion": {
+            "shape": [
+              15,
+              15
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_API_recomputation",
+            "unit": "dimensionless"
+          },
+          "first_order_norm_squared": {
+            "shape": [],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "P_MO_order0_from_determinants": {
+            "shape": [
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "P_MO_order1_from_determinants": {
+            "shape": [
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "P_MO_order2_from_determinants": {
+            "shape": [
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "Gamma_MO_order0_from_determinants": {
+            "shape": [
+              6,
+              6,
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "Gamma_MO_order1_from_determinants": {
+            "shape": [
+              6,
+              6,
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "Gamma_MO_order2_from_determinants": {
+            "shape": [
+              6,
+              6,
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "P_MP2_MO_consistent_from_determinants": {
+            "shape": [
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "Gamma_MP2_MO_consistent_from_determinants": {
+            "shape": [
+              6,
+              6,
+              6,
+              6
+            ],
+            "max_abs_residual": 2.220446049250313e-16,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "ci_normalized_eta1": {
+            "shape": [
+              15,
+              15
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "ci_second_order_normalization": {
+            "shape": [
+              15,
+              15
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "P_MP2_AO_consistent": {
+            "shape": [
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "Gamma_MP2_AO_consistent": {
+            "shape": [
+              6,
+              6,
+              6,
+              6
+            ],
+            "max_abs_residual": 1.7763568394002505e-15,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "Gamma0_HF_AO": {
+            "shape": [
+              6,
+              6,
+              6,
+              6
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "Lambda_AO": {
+            "shape": [
+              6,
+              6,
+              6,
+              6
+            ],
+            "max_abs_residual": 1.7763568394002505e-15,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "Lambda_L": {
+            "shape": [
+              6,
+              6,
+              6,
+              6
+            ],
+            "max_abs_residual": 1.7554317374712802e-15,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "P_mu": {
+            "shape": [
+              5
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "F_mu": {
+            "shape": [
+              5
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "P_munu": {
+            "shape": [
+              10
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "T_full_literal": {
+            "shape": [
+              5,
+              5,
+              5
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "T_munulambda_literal": {
+            "shape": [
+              10
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          }
+        }
+      },
+      "H2S/001": {
+        "path": "/Users/novaz/Desktop/qml2.0/results/descriptor-1s-only/H2S/001.npz",
+        "sha256": "9ea734516e8e86d04beda2c88cfaf859ffe831cfdf01d8b884985929fe0d1f97",
+        "file_unchanged": true,
+        "n_full": 11,
+        "n_retained": 10,
+        "n_electrons": 18,
+        "n_occupied": 9,
+        "n_virtual": 2,
+        "valence_indices": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "ao_labels": [
+          "0 S 1s    ",
+          "0 S 2s    ",
+          "0 S 3s    ",
+          "0 S 2px   ",
+          "0 S 2py   ",
+          "0 S 2pz   ",
+          "0 S 3px   ",
+          "0 S 3py   ",
+          "0 S 3pz   ",
+          "1 H 1s    ",
+          "2 H 1s    "
+        ],
+        "first_order_norm_squared": 0.010211771269459068,
+        "checks": {
+          "AO_overlap_integral_API_vs_saved": {
+            "shape": [
+              11,
+              11
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_API_recomputation",
+            "unit": "dimensionless"
+          },
+          "RHF_density_from_C_occ": {
+            "shape": [
+              11,
+              11
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "RHF_Fock_h_plus_J_minus_halfK": {
+            "shape": [
+              11,
+              11
+            ],
+            "max_abs_residual": 1.4210854715202004e-14,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "RHF_energy_half_density_h_plus_F": {
+            "shape": [],
+            "max_abs_residual": 5.684341886080802e-14,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "RHF_generalized_eigen_equation": {
+            "shape": [
+              11,
+              11
+            ],
+            "max_abs_residual": 7.815970093361102e-14,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "S_half": {
+            "shape": [
+              11,
+              11
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "S_minus_half": {
+            "shape": [
+              11,
+              11
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "P_L": {
+            "shape": [
+              11,
+              11
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "F_L": {
+            "shape": [
+              11,
+              11
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "RMP2_t2_direct_spatial_formula": {
+            "shape": [
+              9,
+              9,
+              2,
+              2
+            ],
+            "max_abs_residual": 1.5959455978986625e-16,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "RMP2_energy_2direct_minus_exchange": {
+            "shape": [],
+            "max_abs_residual": 6.938893903907228e-18,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "ci_reference_CISD_conversion": {
+            "shape": [
+              55,
+              55
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_API_recomputation",
+            "unit": "dimensionless"
+          },
+          "ci_first_order_CISD_conversion": {
+            "shape": [
+              55,
+              55
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_API_recomputation",
+            "unit": "dimensionless"
+          },
+          "first_order_norm_squared": {
+            "shape": [],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "P_MO_order0_from_determinants": {
+            "shape": [
+              11,
+              11
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "P_MO_order1_from_determinants": {
+            "shape": [
+              11,
+              11
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "P_MO_order2_from_determinants": {
+            "shape": [
+              11,
+              11
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "Gamma_MO_order0_from_determinants": {
+            "shape": [
+              11,
+              11,
+              11,
+              11
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "Gamma_MO_order1_from_determinants": {
+            "shape": [
+              11,
+              11,
+              11,
+              11
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "Gamma_MO_order2_from_determinants": {
+            "shape": [
+              11,
+              11,
+              11,
+              11
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "P_MP2_MO_consistent_from_determinants": {
+            "shape": [
+              11,
+              11
+            ],
+            "max_abs_residual": 2.220446049250313e-16,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "Gamma_MP2_MO_consistent_from_determinants": {
+            "shape": [
+              11,
+              11,
+              11,
+              11
+            ],
+            "max_abs_residual": 4.440892098500626e-16,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "ci_normalized_eta1": {
+            "shape": [
+              55,
+              55
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "ci_second_order_normalization": {
+            "shape": [
+              55,
+              55
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "P_MP2_AO_consistent": {
+            "shape": [
+              11,
+              11
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "Gamma_MP2_AO_consistent": {
+            "shape": [
+              11,
+              11,
+              11,
+              11
+            ],
+            "max_abs_residual": 1.2434497875801753e-14,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "Gamma0_HF_AO": {
+            "shape": [
+              11,
+              11,
+              11,
+              11
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "Lambda_AO": {
+            "shape": [
+              11,
+              11,
+              11,
+              11
+            ],
+            "max_abs_residual": 1.2434497875801753e-14,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "Lambda_L": {
+            "shape": [
+              11,
+              11,
+              11,
+              11
+            ],
+            "max_abs_residual": 1.1666462609340178e-14,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "P_mu": {
+            "shape": [
+              10
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "F_mu": {
+            "shape": [
+              10
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "P_munu": {
+            "shape": [
+              45
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "T_full_literal": {
+            "shape": [
+              10,
+              10,
+              10
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "T_munulambda_literal": {
+            "shape": [
+              120
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          }
+        }
+      },
+      "H2O2/001": {
+        "path": "/Users/novaz/Desktop/qml2.0/results/descriptor-1s-only/H2O2/001.npz",
+        "sha256": "291d813d7523149f2b5d23ea42bae6976506b89c5377fe60ebe5c5f2d720413e",
+        "file_unchanged": true,
+        "n_full": 12,
+        "n_retained": 10,
+        "n_electrons": 18,
+        "n_occupied": 9,
+        "n_virtual": 3,
+        "valence_indices": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "ao_labels": [
+          "0 O 1s    ",
+          "0 O 2s    ",
+          "0 O 2px   ",
+          "0 O 2py   ",
+          "0 O 2pz   ",
+          "1 O 1s    ",
+          "1 O 2s    ",
+          "1 O 2px   ",
+          "1 O 2py   ",
+          "1 O 2pz   ",
+          "2 H 1s    ",
+          "3 H 1s    "
+        ],
+        "first_order_norm_squared": 0.027267407399220456,
+        "checks": {
+          "AO_overlap_integral_API_vs_saved": {
+            "shape": [
+              12,
+              12
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_API_recomputation",
+            "unit": "dimensionless"
+          },
+          "RHF_density_from_C_occ": {
+            "shape": [
+              12,
+              12
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "RHF_Fock_h_plus_J_minus_halfK": {
+            "shape": [
+              12,
+              12
+            ],
+            "max_abs_residual": 5.88418203051333e-15,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "RHF_energy_half_density_h_plus_F": {
+            "shape": [],
+            "max_abs_residual": 2.842170943040401e-14,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "RHF_generalized_eigen_equation": {
+            "shape": [
+              12,
+              12
+            ],
+            "max_abs_residual": 9.446610160779301e-14,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "S_half": {
+            "shape": [
+              12,
+              12
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "S_minus_half": {
+            "shape": [
+              12,
+              12
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "P_L": {
+            "shape": [
+              12,
+              12
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "F_L": {
+            "shape": [
+              12,
+              12
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "RMP2_t2_direct_spatial_formula": {
+            "shape": [
+              9,
+              9,
+              3,
+              3
+            ],
+            "max_abs_residual": 4.5102810375396984e-17,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "RMP2_energy_2direct_minus_exchange": {
+            "shape": [],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "ci_reference_CISD_conversion": {
+            "shape": [
+              220,
+              220
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_API_recomputation",
+            "unit": "dimensionless"
+          },
+          "ci_first_order_CISD_conversion": {
+            "shape": [
+              220,
+              220
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_API_recomputation",
+            "unit": "dimensionless"
+          },
+          "first_order_norm_squared": {
+            "shape": [],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "P_MO_order0_from_determinants": {
+            "shape": [
+              12,
+              12
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "P_MO_order1_from_determinants": {
+            "shape": [
+              12,
+              12
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "P_MO_order2_from_determinants": {
+            "shape": [
+              12,
+              12
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "Gamma_MO_order0_from_determinants": {
+            "shape": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "Gamma_MO_order1_from_determinants": {
+            "shape": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "Gamma_MO_order2_from_determinants": {
+            "shape": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "P_MP2_MO_consistent_from_determinants": {
+            "shape": [
+              12,
+              12
+            ],
+            "max_abs_residual": 2.220446049250313e-16,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "Gamma_MP2_MO_consistent_from_determinants": {
+            "shape": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "max_abs_residual": 4.440892098500626e-16,
+            "kind": "library_RDM_API_plus_independent_algebra",
+            "unit": "dimensionless"
+          },
+          "ci_normalized_eta1": {
+            "shape": [
+              220,
+              220
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "ci_second_order_normalization": {
+            "shape": [
+              220,
+              220
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "P_MP2_AO_consistent": {
+            "shape": [
+              12,
+              12
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "Gamma_MP2_AO_consistent": {
+            "shape": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "max_abs_residual": 1.5987211554602254e-14,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "Gamma0_HF_AO": {
+            "shape": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "Lambda_AO": {
+            "shape": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "max_abs_residual": 1.5987211554602254e-14,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "Lambda_L": {
+            "shape": [
+              12,
+              12,
+              12,
+              12
+            ],
+            "max_abs_residual": 1.4295422484655873e-14,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "P_mu": {
+            "shape": [
+              10
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "F_mu": {
+            "shape": [
+              10
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "Hartree"
+          },
+          "P_munu": {
+            "shape": [
+              45
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "T_full_literal": {
+            "shape": [
+              10,
+              10,
+              10
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          },
+          "T_munulambda_literal": {
+            "shape": [
+              120
+            ],
+            "max_abs_residual": 0.0,
+            "kind": "current_formula_vs_saved",
+            "unit": "dimensionless"
+          }
+        }
+      }
+    }
+  },
+  "training": {
+    "scope": "Read-only source/numerical audit; no production training; files only written under /private/tmp/qml_pipeline_audit",
+    "run": "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018",
+    "versions": {
+      "python": "3.13.2 (main, Feb  4 2025, 14:51:09) [Clang 16.0.0 (clang-1600.0.26.6)]",
+      "numpy": "2.5.1",
+      "pandas": "3.0.5",
+      "torch": "2.13.0",
+      "pennylane": "0.45.1"
+    },
+    "adam_source": "/Users/novaz/Desktop/encoding_qml/.venv/lib/python3.13/site-packages/torch/optim/adam.py",
+    "checks": [
+      {
+        "name": "population geometry IDs",
+        "shape": [
+          30
+        ],
+        "maximum_absolute_residual": 0.0
+      },
+      {
+        "name": "population train membership from odd geometry ID",
+        "shape": [
+          30
+        ],
+        "maximum_absolute_residual": 0.0
+      },
+      {
+        "name": "retained positions from sorted (q_A,geometry_index)",
+        "shape": [
+          30
+        ],
+        "maximum_absolute_residual": 0.0
+      },
+      {
+        "name": "Pii training pooled mean/std independent vs saved",
+        "shape": [
+          2
+        ],
+        "maximum_absolute_residual": 0.0,
+        "input_shape": [
+          15,
+          8
+        ],
+        "ddof": 0
+      },
+      {
+        "name": "Pii standardization direct vs runtime",
+        "shape": [
+          8
+        ],
+        "maximum_absolute_residual": 0.0,
+        "sample": "CO/001"
+      },
+      {
+        "name": "Pii current fit vs saved",
+        "shape": [
+          2
+        ],
+        "maximum_absolute_residual": 0.0
+      },
+      {
+        "name": "Fii training pooled mean/std independent vs saved",
+        "shape": [
+          2
+        ],
+        "maximum_absolute_residual": 5.551115123125783e-17,
+        "input_shape": [
+          15,
+          8
+        ],
+        "ddof": 0
+      },
+      {
+        "name": "Fii standardization direct vs runtime",
+        "shape": [
+          8
+        ],
+        "maximum_absolute_residual": 1.1102230246251565e-16,
+        "sample": "CO/001"
+      },
+      {
+        "name": "Fii current fit vs saved",
+        "shape": [
+          2
+        ],
+        "maximum_absolute_residual": 0.0
+      },
+      {
+        "name": "pair percentile interpolation and alpha direct vs saved",
+        "shape": [
+          2
+        ],
+        "maximum_absolute_residual": 0.0,
+        "input_shape": [
+          15,
+          28
+        ],
+        "formula": "linear order statistic with h=.95*(m-1)"
+      },
+      {
+        "name": "strict upper pair direct vs runtime",
+        "shape": [
+          28
+        ],
+        "maximum_absolute_residual": 0.0
+      },
+      {
+        "name": "strict upper triple lexicographic indexing synthetic",
+        "shape": [
+          4
+        ],
+        "maximum_absolute_residual": 0.0
+      },
+      {
+        "name": "strict triple empty behavior synthetic n=2",
+        "shape": [
+          0
+        ],
+        "maximum_absolute_residual": 0.0,
+        "actual": "empty vector; no fallback to tensor.flatten()"
+      },
+      {
+        "name": "FG raw features direct vs runtime",
+        "shape": [
+          15,
+          2
+        ],
+        "maximum_absolute_residual": 0.0
+      },
+      {
+        "name": "FG feature means/std direct vs saved",
+        "shape": [
+          3,
+          2
+        ],
+        "maximum_absolute_residual": 0.0,
+        "input_shape": [
+          15,
+          2
+        ],
+        "ddof": 0
+      },
+      {
+        "name": "FG encoding direct vs runtime",
+        "shape": [
+          30,
+          2
+        ],
+        "maximum_absolute_residual": 0.0,
+        "source_shape": [
+          30,
+          2
+        ],
+        "clipped_entries": 0
+      },
+      {
+        "name": "FE raw features direct vs runtime",
+        "shape": [
+          15,
+          8
+        ],
+        "maximum_absolute_residual": 0.0
+      },
+      {
+        "name": "FE feature means/std direct vs saved",
+        "shape": [
+          3,
+          8
+        ],
+        "maximum_absolute_residual": 0.0,
+        "input_shape": [
+          15,
+          8
+        ],
+        "ddof": 0
+      },
+      {
+        "name": "FE encoding direct vs runtime",
+        "shape": [
+          30,
+          8
+        ],
+        "maximum_absolute_residual": 0.0,
+        "source_shape": [
+          30,
+          8
+        ],
+        "clipped_entries": 0
+      },
+      {
+        "name": "FG initializer leaves global Torch RNG unchanged",
+        "shape": [
+          5056
+        ],
+        "maximum_absolute_residual": 0
+      },
+      {
+        "name": "FG initialized parameter vector vs independent local generator",
+        "shape": [
+          14
+        ],
+        "maximum_absolute_residual": 0.0
+      },
+      {
+        "name": "FG saved best_theta -> current predictions vs saved CSV seed0",
+        "shape": [
+          30
+        ],
+        "maximum_absolute_residual": 0.0,
+        "theta_shape": [
+          14
+        ],
+        "unit": "Hartree"
+      },
+      {
+        "name": "FE initializer leaves global Torch RNG unchanged",
+        "shape": [
+          5056
+        ],
+        "maximum_absolute_residual": 0
+      },
+      {
+        "name": "FE initialized parameter vector vs independent local generator",
+        "shape": [
+          14
+        ],
+        "maximum_absolute_residual": 0.0
+      },
+      {
+        "name": "FE saved best_theta -> current predictions vs saved CSV seed0",
+        "shape": [
+          30
+        ],
+        "maximum_absolute_residual": 0.0,
+        "theta_shape": [
+          14
+        ],
+        "unit": "Hartree"
+      },
+      {
+        "name": "MB-1 initializer leaves global Torch RNG unchanged",
+        "shape": [
+          5056
+        ],
+        "maximum_absolute_residual": 0
+      },
+      {
+        "name": "MB-1 initialized parameter vector vs independent local generator",
+        "shape": [
+          17
+        ],
+        "maximum_absolute_residual": 0.0
+      },
+      {
+        "name": "MB-1 saved best_theta -> current predictions vs saved CSV seed0",
+        "shape": [
+          30
+        ],
+        "maximum_absolute_residual": 0.0,
+        "theta_shape": [
+          17
+        ],
+        "unit": "Hartree"
+      },
+      {
+        "name": "signed error CSV identity all96runs",
+        "shape": [
+          2880
+        ],
+        "maximum_absolute_residual": 0.0,
+        "unit": "Hartree"
+      },
+      {
+        "name": "eight metrics from predictions all96runs x2splits",
+        "shape": [
+          192,
+          8
+        ],
+        "maximum_absolute_residual": 0.0,
+        "units": "alternating Hartree,mHa; 4 metric kinds",
+        "per_split_prediction_shape": [
+          15
+        ]
+      },
+      {
+        "name": "checkpoint first train-MAE minimizing epoch all96runs",
+        "shape": [
+          96
+        ],
+        "maximum_absolute_residual": 0.0,
+        "history_shape_per_run": [
+          500
+        ]
+      },
+      {
+        "name": "checkpoint minimum train-MAE all96runs",
+        "shape": [
+          96
+        ],
+        "maximum_absolute_residual": 0.0,
+        "unit": "Hartree"
+      },
+      {
+        "name": "seed summary direct ddof1 vs saved",
+        "shape": [
+          6,
+          5
+        ],
+        "maximum_absolute_residual": 4.440892098500626e-16,
+        "input_shape_per_group": [
+          32
+        ],
+        "unit": "mHa except count"
+      },
+      {
+        "name": "overall summary equals molecule summary for CO-only saved run",
+        "shape": [
+          6,
+          5
+        ],
+        "maximum_absolute_residual": 0.0,
+        "limitation": "Only one molecule: does not numerically distinguish weighting alternatives"
+      },
+      {
+        "name": "plot admission full geometry/split/bond/target equality",
+        "shape": [
+          96,
+          30,
+          4
+        ],
+        "maximum_absolute_residual": 0.0,
+        "details": "All 96 prediction files pass equality on [geometry_id,split,bond_length_A,target_Ha]; exactly seeds 0..31 per method."
+      },
+      {
+        "name": "current plot statistics vs saved plot summary",
+        "shape": [
+          3,
+          6
+        ],
+        "maximum_absolute_residual": 0.0,
+        "unit": "mHa"
+      },
+      {
+        "name": "synthetic two-step Adam textbook formula vs installed optimizer",
+        "shape": [
+          3
+        ],
+        "maximum_absolute_residual": 5.551115123125783e-17,
+        "optimizer_defaults": {
+          "lr": 0.02,
+          "betas": [
+            0.9,
+            0.999
+          ],
+          "eps": 1e-08,
+          "weight_decay": 0,
+          "amsgrad": false,
+          "maximize": false,
+          "foreach": null,
+          "capturable": false,
+          "differentiable": false,
+          "fused": null,
+          "decoupled_weight_decay": false
+        },
+        "unit": "synthetic parameter units"
+      }
+    ],
+    "limitations": [
+      "No archived table-era pipeline replay.",
+      "No saved per-epoch theta snapshots; checkpoint history minimizer and saved-theta inference verified but actual historical restore event cannot independently be replayed.",
+      "Only CO complete current run exists in selected saved output; other molecule training numerical claims not checked.",
+      "Synthetic Adam check verifies installed CPU runtime formula to rounding, not production optimizer trajectory.",
+      "No table formula for FG raw vector; independent CO geometry and FE eigenspectrum calculations checked."
+    ],
+    "default_loader_provenance_checks": [
+      {
+        "dataset": "descriptor",
+        "molecule": "LiH",
+        "sample": "001",
+        "path": "/Users/novaz/Desktop/qml2.0/results/descriptor/LiH/001.npz",
+        "schema": "descriptor-v1-calculation-only",
+        "valence_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "shapes": {
+          "S_AO": [
+            6,
+            6
+          ],
+          "P_L": [
+            6,
+            6
+          ],
+          "Lambda_L": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "P_mu": [
+            5
+          ],
+          "F_mu": [
+            5
+          ],
+          "P_munu": [
+            10
+          ]
+        },
+        "T_keys": [
+          "T_full",
+          "T_munulambda"
+        ],
+        "outcome": "PASS",
+        "pii_shape": [
+          5
+        ],
+        "pij_shape": [
+          5,
+          5
+        ],
+        "t_lowdin": null,
+        "active_ao_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "dataset": "descriptor",
+        "molecule": "H2S",
+        "sample": "001",
+        "path": "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/001.npz",
+        "schema": "descriptor-v1-calculation-only",
+        "valence_indices": [
+          2,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "shapes": {
+          "S_AO": [
+            11,
+            11
+          ],
+          "P_L": [
+            11,
+            11
+          ],
+          "Lambda_L": [
+            11,
+            11,
+            11,
+            11
+          ],
+          "P_mu": [
+            6
+          ],
+          "F_mu": [
+            6
+          ],
+          "P_munu": [
+            15
+          ]
+        },
+        "T_keys": [
+          "T_full",
+          "T_munulambda"
+        ],
+        "outcome": "REJECTED",
+        "exception": "ValueError",
+        "error": "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/001.npz: valence_indices: saved selection does not match canonical valence AO labels"
+      },
+      {
+        "dataset": "descriptor-1s-only",
+        "molecule": "LiH",
+        "sample": "001",
+        "path": "/Users/novaz/Desktop/qml2.0/results/descriptor-1s-only/LiH/001.npz",
+        "schema": "descriptor-v1-calculation-only",
+        "valence_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "shapes": {
+          "S_AO": [
+            6,
+            6
+          ],
+          "P_L": [
+            6,
+            6
+          ],
+          "Lambda_L": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "P_mu": [
+            5
+          ],
+          "F_mu": [
+            5
+          ],
+          "P_munu": [
+            10
+          ]
+        },
+        "T_keys": [
+          "T_full",
+          "T_munulambda"
+        ],
+        "outcome": "PASS",
+        "pii_shape": [
+          5
+        ],
+        "pij_shape": [
+          5,
+          5
+        ],
+        "t_lowdin": null,
+        "active_ao_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "dataset": "descriptor-1s-only",
+        "molecule": "H2S",
+        "sample": "001",
+        "path": "/Users/novaz/Desktop/qml2.0/results/descriptor-1s-only/H2S/001.npz",
+        "schema": "descriptor-v1-calculation-only",
+        "valence_indices": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "shapes": {
+          "S_AO": [
+            11,
+            11
+          ],
+          "P_L": [
+            11,
+            11
+          ],
+          "Lambda_L": [
+            11,
+            11,
+            11,
+            11
+          ],
+          "P_mu": [
+            10
+          ],
+          "F_mu": [
+            10
+          ],
+          "P_munu": [
+            45
+          ]
+        },
+        "T_keys": [
+          "T_full",
+          "T_munulambda"
+        ],
+        "outcome": "PASS",
+        "pii_shape": [
+          10
+        ],
+        "pij_shape": [
+          10,
+          10
+        ],
+        "t_lowdin": null,
+        "active_ao_indices": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      },
+      {
+        "dataset": "descriptor-v2-methods-t-copy",
+        "molecule": "LiH",
+        "sample": "001",
+        "path": "/Users/novaz/Desktop/qml2.0/results/descriptor-v2-methods-t-copy/LiH/001.npz",
+        "schema": "descriptor-v1-calculation-only",
+        "valence_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "shapes": {
+          "S_AO": [
+            6,
+            6
+          ],
+          "P_L": [
+            6,
+            6
+          ],
+          "Lambda_L": [
+            6,
+            6,
+            6,
+            6
+          ],
+          "P_mu": [
+            5
+          ],
+          "F_mu": [
+            5
+          ],
+          "P_munu": [
+            10
+          ]
+        },
+        "T_keys": [
+          "T_full",
+          "T_munulambda"
+        ],
+        "outcome": "PASS",
+        "pii_shape": [
+          5
+        ],
+        "pij_shape": [
+          5,
+          5
+        ],
+        "t_lowdin": null,
+        "active_ao_indices": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "dataset": "descriptor-v2-methods-t-copy",
+        "molecule": "H2S",
+        "sample": "001",
+        "path": "/Users/novaz/Desktop/qml2.0/results/descriptor-v2-methods-t-copy/H2S/001.npz",
+        "schema": "descriptor-v1-calculation-only",
+        "valence_indices": [
+          2,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "shapes": {
+          "S_AO": [
+            11,
+            11
+          ],
+          "P_L": [
+            11,
+            11
+          ],
+          "Lambda_L": [
+            11,
+            11,
+            11,
+            11
+          ],
+          "P_mu": [
+            6
+          ],
+          "F_mu": [
+            6
+          ],
+          "P_munu": [
+            15
+          ]
+        },
+        "T_keys": [
+          "T_full",
+          "T_munulambda"
+        ],
+        "outcome": "REJECTED",
+        "exception": "ValueError",
+        "error": "/Users/novaz/Desktop/qml2.0/results/descriptor-v2-methods-t-copy/H2S/001.npz: valence_indices: saved selection does not match canonical valence AO labels"
+      }
+    ],
+    "runtime_source_note": "Runtime checked before the later FE_prime source additions."
+  },
+  "independent_circuit": {
+    "method": "Independent pure NumPy statevector: explicit half-angle RY, sequential big-endian CNOT permutations, ascending wire Z from probabilities, unpadded moments, right zero padding and saved affine readout. Current production CO FG/FE/MB-1 only; no PennyLane or Torch imported; no pair/triple gates in this production branch. Compared to saved predictions; training audit separately reproduces those predictions with current executable model. This triangulates forward results, not arbitrary gates or training gradients.",
+    "numpy_version": "2.5.3",
+    "checks": [
+      {
+        "sample": "CO/001",
+        "model": "FG",
+        "seed": 0,
+        "state_shape": [
+          4
+        ],
+        "z_shape": [
+          2
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          14
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 0.0,
+        "norm_residual": 0.0,
+        "saved_prediction_Ha": -0.12840084082630682,
+        "direct_prediction_Ha": -0.12840084082630682
+      },
+      {
+        "sample": "CO/016",
+        "model": "FG",
+        "seed": 0,
+        "state_shape": [
+          4
+        ],
+        "z_shape": [
+          2
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          14
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 0.0,
+        "norm_residual": 0.0,
+        "saved_prediction_Ha": -0.1414075856496529,
+        "direct_prediction_Ha": -0.1414075856496529
+      },
+      {
+        "sample": "CO/030",
+        "model": "FG",
+        "seed": 0,
+        "state_shape": [
+          4
+        ],
+        "z_shape": [
+          2
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          14
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 2.7755575615628914e-17,
+        "norm_residual": 1.1102230246251565e-16,
+        "saved_prediction_Ha": -0.14881843622434826,
+        "direct_prediction_Ha": -0.1488184362243483
+      },
+      {
+        "sample": "CO/001",
+        "model": "FG",
+        "seed": 31,
+        "state_shape": [
+          4
+        ],
+        "z_shape": [
+          2
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          14
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 0.0,
+        "norm_residual": 0.0,
+        "saved_prediction_Ha": -0.13164872397592997,
+        "direct_prediction_Ha": -0.13164872397592997
+      },
+      {
+        "sample": "CO/016",
+        "model": "FG",
+        "seed": 31,
+        "state_shape": [
+          4
+        ],
+        "z_shape": [
+          2
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          14
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 0.0,
+        "norm_residual": 0.0,
+        "saved_prediction_Ha": -0.14396444160115526,
+        "direct_prediction_Ha": -0.14396444160115526
+      },
+      {
+        "sample": "CO/030",
+        "model": "FG",
+        "seed": 31,
+        "state_shape": [
+          4
+        ],
+        "z_shape": [
+          2
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          14
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 0.0,
+        "norm_residual": 2.220446049250313e-16,
+        "saved_prediction_Ha": -0.1524545660007998,
+        "direct_prediction_Ha": -0.1524545660007998
+      },
+      {
+        "sample": "CO/001",
+        "model": "FE",
+        "seed": 0,
+        "state_shape": [
+          256
+        ],
+        "z_shape": [
+          8
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          14
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 2.7755575615628914e-17,
+        "norm_residual": 8.881784197001252e-16,
+        "saved_prediction_Ha": -0.1320486900658599,
+        "direct_prediction_Ha": -0.13204869006585992
+      },
+      {
+        "sample": "CO/016",
+        "model": "FE",
+        "seed": 0,
+        "state_shape": [
+          256
+        ],
+        "z_shape": [
+          8
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          14
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 2.7755575615628914e-17,
+        "norm_residual": 0.0,
+        "saved_prediction_Ha": -0.14364140602362113,
+        "direct_prediction_Ha": -0.14364140602362116
+      },
+      {
+        "sample": "CO/030",
+        "model": "FE",
+        "seed": 0,
+        "state_shape": [
+          256
+        ],
+        "z_shape": [
+          8
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          14
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 2.7755575615628914e-17,
+        "norm_residual": 6.661338147750939e-16,
+        "saved_prediction_Ha": -0.15171610093489904,
+        "direct_prediction_Ha": -0.15171610093489907
+      },
+      {
+        "sample": "CO/001",
+        "model": "FE",
+        "seed": 31,
+        "state_shape": [
+          256
+        ],
+        "z_shape": [
+          8
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          14
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 5.551115123125783e-17,
+        "norm_residual": 2.220446049250313e-16,
+        "saved_prediction_Ha": -0.1321941550067329,
+        "direct_prediction_Ha": -0.13219415500673296
+      },
+      {
+        "sample": "CO/016",
+        "model": "FE",
+        "seed": 31,
+        "state_shape": [
+          256
+        ],
+        "z_shape": [
+          8
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          14
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 5.551115123125783e-17,
+        "norm_residual": 9.992007221626409e-16,
+        "saved_prediction_Ha": -0.1439690163141902,
+        "direct_prediction_Ha": -0.14396901631419026
+      },
+      {
+        "sample": "CO/030",
+        "model": "FE",
+        "seed": 31,
+        "state_shape": [
+          256
+        ],
+        "z_shape": [
+          8
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          14
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 0.0,
+        "norm_residual": 8.881784197001252e-16,
+        "saved_prediction_Ha": -0.15107565095574998,
+        "direct_prediction_Ha": -0.15107565095574998
+      },
+      {
+        "sample": "CO/001",
+        "model": "MB-1",
+        "seed": 0,
+        "state_shape": [
+          256
+        ],
+        "z_shape": [
+          8
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          17
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 0.0,
+        "norm_residual": 3.3306690738754696e-16,
+        "saved_prediction_Ha": -0.12456663399485768,
+        "direct_prediction_Ha": -0.12456663399485768
+      },
+      {
+        "sample": "CO/016",
+        "model": "MB-1",
+        "seed": 0,
+        "state_shape": [
+          256
+        ],
+        "z_shape": [
+          8
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          17
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 1.942890293094024e-16,
+        "norm_residual": 0.0,
+        "saved_prediction_Ha": -0.14348242365522743,
+        "direct_prediction_Ha": -0.14348242365522762
+      },
+      {
+        "sample": "CO/030",
+        "model": "MB-1",
+        "seed": 0,
+        "state_shape": [
+          256
+        ],
+        "z_shape": [
+          8
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          17
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 1.1102230246251565e-16,
+        "norm_residual": 5.551115123125783e-16,
+        "saved_prediction_Ha": -0.1579966455859469,
+        "direct_prediction_Ha": -0.157996645585947
+      },
+      {
+        "sample": "CO/001",
+        "model": "MB-1",
+        "seed": 31,
+        "state_shape": [
+          256
+        ],
+        "z_shape": [
+          8
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          17
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 1.3877787807814457e-17,
+        "norm_residual": 0.0,
+        "saved_prediction_Ha": -0.12492160636627891,
+        "direct_prediction_Ha": -0.12492160636627893
+      },
+      {
+        "sample": "CO/016",
+        "model": "MB-1",
+        "seed": 31,
+        "state_shape": [
+          256
+        ],
+        "z_shape": [
+          8
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          17
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 1.3877787807814457e-16,
+        "norm_residual": 0.0,
+        "saved_prediction_Ha": -0.14334797718493064,
+        "direct_prediction_Ha": -0.14334797718493078
+      },
+      {
+        "sample": "CO/030",
+        "model": "MB-1",
+        "seed": 31,
+        "state_shape": [
+          256
+        ],
+        "z_shape": [
+          8
+        ],
+        "readout_shape": [
+          11
+        ],
+        "theta_shape": [
+          17
+        ],
+        "prediction_shape": [],
+        "prediction_max_abs_residual_Ha": 3.3306690738754696e-16,
+        "norm_residual": 4.440892098500626e-16,
+        "saved_prediction_Ha": -0.15812728851084712,
+        "direct_prediction_Ha": -0.15812728851084745
+      }
+    ],
+    "input_output_values": [
+      {
+        "model": "FG",
+        "seed": 0,
+        "gid": "001",
+        "angles": [
+          -2.544980920992311,
+          2.6499733455637973
+        ],
+        "phi": [
+          0.41957453965997715,
+          0.566636666120937
+        ],
+        "z": [
+          0.8994903357858735,
+          -0.7381418734984397
+        ],
+        "features": [
+          0.8994903357858735,
+          -0.7381418734984397,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.08067423114371686,
+          0.676968144791985,
+          0.16279154447866748
+        ],
+        "prediction": -0.12840084082630682
+      },
+      {
+        "model": "FG",
+        "seed": 0,
+        "gid": "016",
+        "angles": [
+          0.18178435149944916,
+          -0.24363936719027873
+        ],
+        "phi": [
+          0.41957453965997715,
+          0.566636666120937
+        ],
+        "z": [
+          0.3812572183873024,
+          0.3851220986259023
+        ],
+        "features": [
+          0.3812572183873024,
+          0.3851220986259023,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.38318965850660236,
+          0.1468380487112212,
+          0.05626968365072968
+        ],
+        "prediction": -0.1414075856496529
+      },
+      {
+        "model": "FG",
+        "seed": 0,
+        "gid": "030",
+        "angles": [
+          2.7267652724917677,
+          -2.6025446504277783
+        ],
+        "phi": [
+          0.41957453965997715,
+          0.566636666120937
+        ],
+        "z": [
+          0.4873795952707252,
+          -0.9488993895060933
+        ],
+        "features": [
+          0.4873795952707252,
+          -0.9488993895060933,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.23075989711768405,
+          0.5689744606456463,
+          -0.36931347490858024
+        ],
+        "prediction": -0.1488184362243483
+      },
+      {
+        "model": "FG",
+        "seed": 31,
+        "gid": "001",
+        "angles": [
+          -2.544980920992311,
+          2.6499733455637973
+        ],
+        "phi": [
+          0.14458498688190954,
+          -0.9375891177189785
+        ],
+        "z": [
+          -0.13380138477498454,
+          0.2655983240334577
+        ],
+        "features": [
+          -0.13380138477498454,
+          0.2655983240334577,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.06589846962923657,
+          0.04422264014854252,
+          0.008170270443990858
+        ],
+        "prediction": -0.13164872397592997
+      },
+      {
+        "model": "FG",
+        "seed": 31,
+        "gid": "016",
+        "angles": [
+          0.18178435149944916,
+          -0.24363936719027873
+        ],
+        "phi": [
+          0.14458498688190954,
+          -0.9375891177189785
+        ],
+        "z": [
+          0.8162011491873041,
+          0.41958401066175627
+        ],
+        "features": [
+          0.8162011491873041,
+          0.41958401066175627,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.6178925799245302,
+          0.42111752896884036,
+          0.30880424032301973
+        ],
+        "prediction": -0.14396444160115526
+      },
+      {
+        "model": "FG",
+        "seed": 31,
+        "gid": "030",
+        "angles": [
+          2.7267652724917677,
+          -2.6025446504277783
+        ],
+        "phi": [
+          0.14458498688190954,
+          -0.9375891177189785
+        ],
+        "z": [
+          0.657320221219639,
+          -0.8466250720893469
+        ],
+        "features": [
+          0.657320221219639,
+          -0.8466250720893469,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.09465242543485397,
+          0.5744219429572635,
+          -0.16141529275779656
+        ],
+        "prediction": -0.1524545660007998
+      },
+      {
+        "model": "FE",
+        "seed": 0,
+        "gid": "001",
+        "angles": [
+          0.0,
+          0.0,
+          -3.1121650815342643,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "phi": [
+          0.4575173742105154,
+          -0.6220961021823028
+        ],
+        "z": [
+          0.052206805030494054,
+          -0.3745239787825819,
+          0.2106180046974654,
+          -0.26279779696626526,
+          0.12673569110383417,
+          -0.19049801015293413,
+          0.07065846096034872,
+          -0.18295548016100152
+        ],
+        "features": [
+          0.052206805030494054,
+          -0.3745239787825819,
+          0.2106180046974654,
+          -0.26279779696626526,
+          0.12673569110383417,
+          -0.19049801015293413,
+          0.07065846096034872,
+          -0.18295548016100152,
+          -0.06881953803383006,
+          0.04340414253321418,
+          -0.008980841752620707
+        ],
+        "prediction": -0.13204869006585992
+      },
+      {
+        "model": "FE",
+        "seed": 0,
+        "gid": "016",
+        "angles": [
+          0.0,
+          0.0,
+          0.55628115843833,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "phi": [
+          0.4575173742105154,
+          -0.6220961021823028
+        ],
+        "z": [
+          0.3731043865974396,
+          0.3093714354301927,
+          0.4333980513680678,
+          0.330050721489525,
+          0.4098811198196806,
+          0.33133572276211304,
+          0.38536611564045636,
+          0.4502932329938118
+        ],
+        "features": [
+          0.3731043865974396,
+          0.3093714354301927,
+          0.4333980513680678,
+          0.330050721489525,
+          0.4098811198196806,
+          0.33133572276211304,
+          0.38536611564045636,
+          0.4502932329938118,
+          0.3778500982626608,
+          0.145092731296318,
+          0.05658478883041291
+        ],
+        "prediction": -0.14364140602362116
+      },
+      {
+        "model": "FE",
+        "seed": 0,
+        "gid": "030",
+        "angles": [
+          0.0,
+          0.0,
+          1.9068533146832483,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "phi": [
+          0.4575173742105154,
+          -0.6220961021823028
+        ],
+        "z": [
+          0.23686454300881213,
+          -0.140284752387445,
+          0.3270933416557221,
+          -0.020219671234910856,
+          0.2897690287651211,
+          0.034024527842296474,
+          0.2467890345946211,
+          0.09143396077142137
+        ],
+        "features": [
+          0.23686454300881213,
+          -0.140284752387445,
+          0.3270933416557221,
+          -0.020219671234910856,
+          0.2897690287651211,
+          0.034024527842296474,
+          0.2467890345946211,
+          0.09143396077142137,
+          0.1331837516269548,
+          0.04219653350655033,
+          0.010710142420863298
+        ],
+        "prediction": -0.15171610093489907
+      },
+      {
+        "model": "FE",
+        "seed": 31,
+        "gid": "001",
+        "angles": [
+          0.0,
+          0.0,
+          -3.1121650815342643,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "phi": [
+          0.4840524321660156,
+          -0.5865418281883742
+        ],
+        "z": [
+          0.04772790383814433,
+          -0.36055423695086103,
+          0.1998867397129999,
+          -0.2737418861206886,
+          0.12396770137011337,
+          -0.2111494273983244,
+          0.07154376167482182,
+          -0.20532832745038573
+        ],
+        "features": [
+          0.04772790383814433,
+          -0.36055423695086103,
+          0.1998867397129999,
+          -0.2737418861206886,
+          0.12396770137011337,
+          -0.2111494273983244,
+          0.07154376167482182,
+          -0.20532832745038573,
+          -0.07595597141552256,
+          0.044299617884973976,
+          -0.009386072688707113
+        ],
+        "prediction": -0.13219415500673296
+      },
+      {
+        "model": "FE",
+        "seed": 31,
+        "gid": "016",
+        "angles": [
+          0.0,
+          0.0,
+          0.55628115843833,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "phi": [
+          0.4840524321660156,
+          -0.5865418281883742
+        ],
+        "z": [
+          0.398030350499535,
+          0.2917194232785865,
+          0.430682695309848,
+          0.32784306480070996,
+          0.42438565485127516,
+          0.34397445688859857,
+          0.41577327700454186,
+          0.46647432144229645
+        ],
+        "features": [
+          0.398030350499535,
+          0.2917194232785865,
+          0.430682695309848,
+          0.32784306480070996,
+          0.42438565485127516,
+          0.34397445688859857,
+          0.41577327700454186,
+          0.46647432144229645,
+          0.38736040550942397,
+          0.15317304531069376,
+          0.06168965180681775
+        ],
+        "prediction": -0.14396901631419026
+      },
+      {
+        "model": "FE",
+        "seed": 31,
+        "gid": "030",
+        "angles": [
+          0.0,
+          0.0,
+          1.9068533146832483,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "phi": [
+          0.4840524321660156,
+          -0.5865418281883742
+        ],
+        "z": [
+          0.2386344044974302,
+          -0.1466415632299383,
+          0.3123163168436185,
+          -0.03824565629355128,
+          0.2874493804630218,
+          0.014718701854538344,
+          0.25413724145162186,
+          0.06799893790087189
+        ],
+        "features": [
+          0.2386344044974302,
+          -0.1466415632299383,
+          0.3123163168436185,
+          -0.03824565629355128,
+          0.2874493804630218,
+          0.014718701854538344,
+          0.25413724145162186,
+          0.06799893790087189,
+          0.12379597043595163,
+          0.04118846482869944,
+          0.010165780546635734
+        ],
+        "prediction": -0.15107565095574998
+      },
+      {
+        "model": "MB-1",
+        "seed": 0,
+        "gid": "001",
+        "angles": [
+          -1.0406473645486463,
+          0.9052365565446044,
+          0.9052365565446047,
+          0.3170010766729655,
+          -1.3919800203495671,
+          -0.49076437297058595,
+          -0.4907643729705895,
+          -0.7587139647847211
+        ],
+        "phi": [
+          -0.3906844009464038,
+          -0.20585962969504495
+        ],
+        "z": [
+          0.027618080318252084,
+          -0.024387512696719682,
+          -0.11104009274030244,
+          -0.02264094192135463,
+          0.14131536474262313,
+          0.015266412803467347,
+          0.20817575514698028,
+          0.1312672632724101
+        ],
+        "features": [
+          0.027618080318252084,
+          -0.024387512696719682,
+          -0.11104009274030244,
+          -0.02264094192135463,
+          0.14131536474262313,
+          0.015266412803467347,
+          0.20817575514698028,
+          0.1312672632724101,
+          0.04569679111566952,
+          0.011871419836641174,
+          0.0015918867328021352
+        ],
+        "prediction": -0.12456663399485768
+      },
+      {
+        "model": "MB-1",
+        "seed": 0,
+        "gid": "016",
+        "angles": [
+          -1.1241948906578092,
+          0.9305250377442766,
+          0.9305250377442761,
+          0.35719758645333277,
+          -1.425572143574794,
+          -0.5000717102253559,
+          -0.5000717102253472,
+          -0.5866809350694914
+        ],
+        "phi": [
+          -0.3906844009464038,
+          -0.20585962969504495
+        ],
+        "z": [
+          0.013119803778278765,
+          -0.023909792567459176,
+          -0.12930305220263238,
+          -0.0216279965278231,
+          0.18433264763719082,
+          0.027756798255860228,
+          0.2767207799947166,
+          0.12766580729701987
+        ],
+        "features": [
+          0.013119803778278765,
+          -0.023909792567459176,
+          -0.12930305220263238,
+          -0.0216279965278231,
+          0.18433264763719082,
+          0.027756798255860228,
+          0.2767207799947166,
+          0.12766580729701987,
+          0.056844374458143956,
+          0.01819409628032014,
+          0.0034214810993075427
+        ],
+        "prediction": -0.14348242365522762
+      },
+      {
+        "model": "MB-1",
+        "seed": 0,
+        "gid": "030",
+        "angles": [
+          -1.183222108301055,
+          0.9535480617129701,
+          0.9535480617129696,
+          0.3790228059720336,
+          -1.4466390684966677,
+          -0.510012224913559,
+          -0.5100122249135588,
+          -0.4332173253364288
+        ],
+        "phi": [
+          -0.3906844009464038,
+          -0.20585962969504495
+        ],
+        "z": [
+          -0.0030498787472249636,
+          -0.02212174287307676,
+          -0.14302838005061708,
+          -0.01964547914817081,
+          0.21389101866143886,
+          0.03906471842866822,
+          0.3267964845037521,
+          0.12255995145095808
+        ],
+        "features": [
+          -0.0030498787472249636,
+          -0.02212174287307676,
+          -0.14302838005061708,
+          -0.01964547914817081,
+          0.21389101866143886,
+          0.03906471842866822,
+          0.3267964845037521,
+          0.12255995145095808,
+          0.06430833652821595,
+          0.02380425496157396,
+          0.005455264188907733
+        ],
+        "prediction": -0.157996645585947
+      },
+      {
+        "model": "MB-1",
+        "seed": 31,
+        "gid": "001",
+        "angles": [
+          -0.9640044199367567,
+          0.8430439431671733,
+          0.8430439431671737,
+          0.3710238542019129,
+          -1.373597647566595,
+          -0.40678000132021724,
+          -0.4067800013202208,
+          -0.6493347419173395
+        ],
+        "phi": [
+          -0.430099316978472,
+          -0.21960848663232957
+        ],
+        "z": [
+          0.03965274508023946,
+          -0.02622751604772882,
+          -0.11629978804725602,
+          -0.023522609612972693,
+          0.18324342538569113,
+          0.020756097604015773,
+          0.2598301576108949,
+          0.13896081075335673
+        ],
+        "features": [
+          0.03965274508023946,
+          -0.02622751604772882,
+          -0.11629978804725602,
+          -0.023522609612972693,
+          0.18324342538569113,
+          0.020756097604015773,
+          0.2598301576108949,
+          0.13896081075335673,
+          0.05954916534078006,
+          0.01714624536467935,
+          0.0031056382530299793
+        ],
+        "prediction": -0.12492160636627893
+      },
+      {
+        "model": "MB-1",
+        "seed": 31,
+        "gid": "016",
+        "angles": [
+          -1.0530334593735198,
+          0.8651277955593054,
+          0.865127795559305,
+          0.40162687876166486,
+          -1.4082765412896807,
+          -0.40838213800859485,
+          -0.40838213800858625,
+          -0.47731782718309124
+        ],
+        "phi": [
+          -0.430099316978472,
+          -0.21960848663232957
+        ],
+        "z": [
+          0.020616192949740604,
+          -0.025425511300458975,
+          -0.14027704518054698,
+          -0.02235827443151825,
+          0.2345005017707613,
+          0.03427605587171862,
+          0.3348180193498112,
+          0.13629079131101815
+        ],
+        "features": [
+          0.020616192949740604,
+          -0.025425511300458975,
+          -0.14027704518054698,
+          -0.02235827443151825,
+          0.2345005017707613,
+          0.03427605587171862,
+          0.3348180193498112,
+          0.13629079131101815,
+          0.07155509129256571,
+          0.026011580636393132,
+          0.006277769770365915
+        ],
+        "prediction": -0.14334797718493078
+      },
+      {
+        "model": "MB-1",
+        "seed": 31,
+        "gid": "030",
+        "angles": [
+          -1.11626347240236,
+          0.8852582630656002,
+          0.8852582630655998,
+          0.41587856666791656,
+          -1.4300217261128871,
+          -0.411116212773343,
+          -0.4111162127733428,
+          -0.3291463278805638
+        ],
+        "phi": [
+          -0.430099316978472,
+          -0.21960848663232957
+        ],
+        "z": [
+          0.00021250107787254547,
+          -0.022778060182845103,
+          -0.1586225875941543,
+          -0.019675288427667678,
+          0.2706668738000732,
+          0.04677302736665088,
+          0.38918101343946326,
+          0.13243870417782772
+        ],
+        "features": [
+          0.00021250107787254547,
+          -0.022778060182845103,
+          -0.1586225875941543,
+          -0.019675288427667678,
+          0.2706668738000732,
+          0.04677302736665088,
+          0.38918101343946326,
+          0.13243870417782772,
+          0.07977452295715257,
+          0.03381465896249932,
+          0.009648753902196001
+        ],
+        "prediction": -0.15812728851084745
+      }
+    ],
+    "watched_sha256": {
+      "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018/configuration.json": "76a24a1bb95919a9c5f7d8564d3532baf221b25ee2ee61cd69de3ddc992b3989",
+      "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018/preprocessing.json": "d71823edf862498ae6f03b6d9fda7c95cf47a55d251aa2318073db3b80a2d1c3",
+      "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018/runs/CO/FG/seed_00/best_theta.npy": "75d8b7d131cde8b5630cb082ace29b62e30b7d4478fd7f057b4829f1d1b61c45",
+      "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018/runs/CO/FG/seed_00/predictions.csv": "f3da54d5e2a34438846a1ce61778c7b735366e21a043f7bb3e998111bb8c8c66",
+      "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/001.npz": "1ef76560f3f1db279db7e6babfcd8df014daacbb12c7103a06b30d929759c33b",
+      "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/016.npz": "962e6fdd7b788eb67125c33d826b966726e63d5838265438cf711eb74916db30",
+      "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/030.npz": "960ed08683ed11eacb1ab9aff5d7e3b290e05002c713f90293a29fa79639cdab",
+      "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018/runs/CO/FG/seed_31/best_theta.npy": "726e6bff6d2f49c3c6c880dcb2176ab611bd0bb5c389e1af6a94e5e8511bbd66",
+      "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018/runs/CO/FG/seed_31/predictions.csv": "0666cca550d840a4cace8ccd8bc9e9932bc08c8e8ccf0a00ad002d90c53d8deb",
+      "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018/runs/CO/FE/seed_00/best_theta.npy": "3ff0551fdbab130af0d6eb8322f8d5e334030b0d95a11aaae1b8cc72fce7d1a6",
+      "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018/runs/CO/FE/seed_00/predictions.csv": "ecdaa58f9c315006841c636f92fae747caf196e0a9772021688bb7fce03d34e5",
+      "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018/runs/CO/FE/seed_31/best_theta.npy": "7da10e62a5bc7cb2258e01bcfa5f252a3c5e54a32e8048ae8757e484556d26ff",
+      "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018/runs/CO/FE/seed_31/predictions.csv": "e563ec9df8e5cbf40d72cc75db04e19cc5fd8c88df67755938115f7d89e5e3ce",
+      "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018/runs/CO/MB-1/seed_00/best_theta.npy": "d60c4a6ea4c365558ac90121a33c8c19e01fb95bf8bd22f9272a3364dc9a15e0",
+      "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018/runs/CO/MB-1/seed_00/predictions.csv": "e44c833cab250c1b52b62f18149d285619c5fd9b8e34df6b85676510bc4716d5",
+      "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018/runs/CO/MB-1/seed_31/best_theta.npy": "8ff655b7aeb8a7689c87b9c13aba0a764558fc351002a64181f889fdb28029ed",
+      "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018/runs/CO/MB-1/seed_31/predictions.csv": "f4a207a6e46a6dfdce65d7567797e99ee09465e93db5478b08b2d2e097c9717e"
+    },
+    "all_watched_files_unchanged": true
+  },
+  "initial_plot": {
+    "source": "/Users/novaz/Desktop/qml2.0/results/plots/initialdata/plotted_points.csv",
+    "sha256": "8f02ba2bb8ce886d2aeaeafb9c96eab9db6ed819d67ff81f5847d99e169a2753",
+    "shape": [
+      270,
+      2
+    ],
+    "display_formula_max_abs_residual_mHa": 0.0,
+    "reference_vs_RHF_equilibrium_max_abs_residual_Ha": 0.0,
+    "note": "Current plot curves contain 30 scan points plus one equilibrium point; exported CSV contains only 30 scans per molecule. Default plot uses 1000*(E-E_RHF(re)); absolute branch uses E in Ha. This plotting shift never changes training targets.",
+    "unchanged": true
+  },
+  "earlier_source_hashes": {
+    "/Users/novaz/Desktop/qml2.0/codes/circuit.py": "f4e14733f9fa327485d0d583cbd5b64fa1633d211b9f723dcfd6dd5651d36c8b",
+    "/Users/novaz/Desktop/qml2.0/codes/descriptor.py": "ee9fb65bbca840db594294289c0cf1895dbbe933e3a2077ab6bb838a354c90b8",
+    "/Users/novaz/Desktop/qml2.0/codes/initialdata.py": "54d570007eac4709bf5ae0d4fe46eed16132090b9c013f6aaa9d201da2891b67",
+    "/Users/novaz/Desktop/qml2.0/codes/plot_initialdata.py": "c0000c5b433fb9b0a0295eb627baca18eecc195037d76ec6462814fbeb07e782",
+    "/Users/novaz/Desktop/qml2.0/codes/plot_run1_results.py": "ee0f68af623acf96c1eeeb29c4e8174c3926e4f766d0e457f91e0ee2a159cbe5",
+    "/Users/novaz/Desktop/qml2.0/codes/run1.py": "aa5e94a7a7ac8141181bc4b39fe209bc02d2b26cbf48a6a34c346a8fb8b394ee",
+    "/Users/novaz/Desktop/qml2.0/codes/train.py": "9e2ab522c78f2fd9cd86dd58a162bab63ab6c279311f0c43d2c35c0e60601fc7"
+  },
+  "final_source_hashes": {
+    "/Users/novaz/Desktop/qml2.0/codes/circuit.py": "552d59ae9427aa0104813811eb4d894fa2c44eaaf9050d28069ec7961cc9596a",
+    "/Users/novaz/Desktop/qml2.0/codes/descriptor.py": "ee9fb65bbca840db594294289c0cf1895dbbe933e3a2077ab6bb838a354c90b8",
+    "/Users/novaz/Desktop/qml2.0/codes/initialdata.py": "54d570007eac4709bf5ae0d4fe46eed16132090b9c013f6aaa9d201da2891b67",
+    "/Users/novaz/Desktop/qml2.0/codes/plot_initialdata.py": "c0000c5b433fb9b0a0295eb627baca18eecc195037d76ec6462814fbeb07e782",
+    "/Users/novaz/Desktop/qml2.0/codes/plot_run1_results.py": "ee0f68af623acf96c1eeeb29c4e8174c3926e4f766d0e457f91e0ee2a159cbe5",
+    "/Users/novaz/Desktop/qml2.0/codes/run1.py": "3d8603977de6523ce510e350d558b1fd2eb44440af8a24460c8039bd3d12d008",
+    "/Users/novaz/Desktop/qml2.0/codes/train.py": "9e2ab522c78f2fd9cd86dd58a162bab63ab6c279311f0c43d2c35c0e60601fc7"
+  }
+}

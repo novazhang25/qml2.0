@@ -1,0 +1,8 @@
+{
+  "molecule": "H2O",
+  "geometry_id": "021",
+  "q_A": 0.042758602207326524,
+  "record": "/Users/novaz/Desktop/qml2.0/results/descriptor-1s-only/H2O/021.npz",
+  "error": "",
+  "validation_performed": false
+}

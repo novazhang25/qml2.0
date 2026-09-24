@@ -1,0 +1,91 @@
+{
+  "molecule": "H2O",
+  "geometry_id": "006",
+  "q_A": -0.07385576744901878,
+  "record": "/Users/novaz/Desktop/qml2.0/results/descriptor-v2-methods-t/H2O/006.npz",
+  "error": "",
+  "validation_performed": false,
+  "T_repair": {
+    "version": "descriptor-v2-methods-t",
+    "mapping": {
+      "raw_tensor": "G[p,q,r,s] = Lambda_Methods[p,r,q,s]",
+      "corrected_T": "T[i,j,k] = Lambda_Methods[i,j,k,k] = G[i,k,j,k]",
+      "previous_T": "T_old[i,j,k] = G[i,j,k,k]",
+      "selection": "valence-local i < j < k, lexicographic combinations; unchanged",
+      "rank4_storage": "unchanged PySCF/raw ordering"
+    },
+    "evidence": {
+      "full_AO_count": 7,
+      "valence_AO_count": 6,
+      "Lambda_L_shape": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "T_full_shape": [
+        6,
+        6,
+        6
+      ],
+      "T_munulambda_shape": [
+        20
+      ],
+      "residuals": {
+        "S_symmetry": 0.0,
+        "S_half_symmetry": 8.988036009904832e-17,
+        "S_half_squared": 1.7763568394002505e-15,
+        "S_minus_half_inverse": 1.5543122344752192e-15,
+        "MO_orthonormality": 1.4432899320127035e-15,
+        "RHF_particle_number": 3.552713678800501e-15,
+        "P_L_saved_transform": 0.0,
+        "F_L_saved_transform": 0.0,
+        "MO_particle_number": 5.329070518200751e-15,
+        "MO_pair_number": 2.842170943040401e-14,
+        "MO_contraction": 1.4210854715202004e-14,
+        "MO_P_hermiticity": 0.0,
+        "MO_Gamma_hermiticity": 0.0,
+        "MO_Gamma_particle_exchange": 0.0,
+        "AO_particle_number": 8.881784197001252e-15,
+        "AO_pair_number": 5.684341886080802e-14,
+        "AO_contraction": 7.105427357601002e-15,
+        "AO_P_hermiticity": 8.326672684688674e-17,
+        "AO_Gamma_hermiticity": 6.661338147750939e-16,
+        "AO_Gamma_particle_exchange": 8.881784197001252e-16,
+        "P_MO_to_AO": 0.0,
+        "Gamma_MO_to_AO": 0.0,
+        "Gamma0_HF": 0.0,
+        "Lambda_AO_subtraction": 0.0,
+        "Gamma0_AO_alias": 0.0,
+        "Lambda_HFref_AO_alias": 0.0,
+        "Lambda_L_saved_transform": 0.0,
+        "T_vectorized_vs_literal_loop": 0.0,
+        "T_selection_vs_literal_loop": 0.0
+      },
+      "differences": {
+        "T_munulambda": {
+          "max_abs_difference": 0.038907300042689066,
+          "mean_abs_difference": 0.009287469582640517,
+          "sum_abs_difference": 0.18574939165281035,
+          "element_count": 20,
+          "exactly_unchanged": false,
+          "unchanged_at_1e_8": false
+        },
+        "T_full": {
+          "max_abs_difference": 0.09049636949797452,
+          "mean_abs_difference": 0.009884105955996255,
+          "sum_abs_difference": 2.134966886495191,
+          "element_count": 216,
+          "exactly_unchanged": false,
+          "unchanged_at_1e_8": false
+        }
+      },
+      "identity": "H2O/006",
+      "source_record": "/Users/novaz/Desktop/qml2.0/results/descriptor/H2O/006.npz",
+      "output_record": "/Users/novaz/Desktop/qml2.0/results/descriptor-v2-methods-t/H2O/006.npz",
+      "source_sha256": "8d1bb23a86ed2452be8fa3bc074da29653b0a3784d185e36bb4df7502ca4e608",
+      "non_T_NPY_payloads_verified_unchanged": 94,
+      "output_sha256": "980c0715f41d45fd7f7ed7063bbc4b2ac2a2369deb5f1ecf806309c9ddcbc714"
+    }
+  }
+}

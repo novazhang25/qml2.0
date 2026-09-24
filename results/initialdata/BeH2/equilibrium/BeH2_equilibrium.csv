@@ -1,0 +1,2 @@
+molecule,method,basis,status,optimizer_success,energy_hartree,xyz_file,max_gradient_hartree_per_bohr,iterations
+BeH2,RHF,sto-3g,converged,True,-15.561352807782088,/Users/novaz/Desktop/qml2.0/results/initialdata/BeH2/equilibrium/BeH2_converged.xyz,3.231646616974615e-09,6

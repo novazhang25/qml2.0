@@ -1,0 +1,10 @@
+molecule,view,full_space_pass_count,geometry_count,full_projector_residual_max,full_eigenvalue_distance_min,full_eigenvalue_distance_max,FE_width,constant_dimensions,active_dimensions,active_column_indices,threshold_boundary_count,loader_status,saved_FE_width
+LiH,Run1_exact,30,30,8.43769498715119e-15,0.0,5.10702591327572e-15,5,4,1,3,0,PASS,5
+BeH2,Run1_exact,30,30,8.215650382226158e-15,0.0,8.43769498715119e-15,6,5,1,3,0,PASS,6
+H2O,Run1_exact,30,30,1.3766765505351941e-14,0.0,7.771561172376096e-15,6,5,1,1,0,PASS,6
+NH3,Run1_exact,30,30,1.5987211554602254e-14,0.0,8.43769498715119e-15,7,6,1,2,0,PASS,7
+N2,Run1_exact,30,30,3.241851231905457e-14,0.0,2.5757174171303632e-14,8,7,1,2,0,PASS,8
+CO,Run1_exact,30,30,1.7319479184152442e-14,0.0,1.2212453270876722e-14,8,7,1,2,0,PASS,8
+HF,Run1_exact,30,30,1.7319479184152442e-14,0.0,9.103828801926284e-15,5,4,1,0,0,PASS,5
+H2S,BLOCKED,30,30,1.9984014443252818e-14,0.0,1.199040866595169e-14,10,,,,0,BLOCKED: saved 6 AOs; loader expects 10,6
+H2O2,Run1_exact,30,30,1.794120407794253e-13,0.0,2.8133051444001467e-13,10,8,2,1 2,0,PASS,10

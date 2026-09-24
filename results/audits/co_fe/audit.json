@@ -1,0 +1,2864 @@
+{
+  "tolerance": 1e-15,
+  "criterion": "abs(lambda)<=tol OR abs(lambda-2)<=tol; no relative tolerance",
+  "input_dir": "/Users/novaz/Desktop/qml2.0/results/descriptor",
+  "reference_run": "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018",
+  "geometry_count": 30,
+  "near_zero_geometry_ids": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+  ],
+  "near_two_geometry_ids": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "022",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029"
+  ],
+  "near_zero_value_count": 60,
+  "near_two_value_count": 32,
+  "eigenvalue_min": [
+    -9.079371653503584e-16,
+    8.199741453334851e-19,
+    0.0051950521266224126,
+    1.9999999999999898,
+    1.9999999999999927,
+    1.9999999999999964,
+    1.9999999999999967,
+    1.9999999999999993
+  ],
+  "eigenvalue_max": [
+    2.1886810278126736e-16,
+    5.074685717769857e-16,
+    0.006369782518254485,
+    1.9999999999999973,
+    2.0,
+    2.0000000000000027,
+    2.0000000000000044,
+    2.0000000000000067
+  ],
+  "training_standard_deviations": [
+    2.1956223049242207e-16,
+    2.0258761022431528e-16,
+    0.0003676539989454187,
+    2.1413206232596582e-15,
+    1.500513412242058e-15,
+    1.3322676295501878e-15,
+    1.897149936107019e-15,
+    2.2535066179978845e-15
+  ],
+  "zeroed_encoding_indices": [
+    0,
+    1,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "encoded_column_ranges": [
+    0.0,
+    0.0,
+    5.019018396217513,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "saved_run_preprocessing_exact_match": true,
+  "input_sha256": {
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/001.npz": "1ef76560f3f1db279db7e6babfcd8df014daacbb12c7103a06b30d929759c33b",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/002.npz": "bdc3e66daf5861321b56ec031aa4ac6b003b4b6ee956b2694753b08a1fc8a6f2",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/003.npz": "968f1a51e44b191a62f8f5de3c368b361e8628ae139e5580d5873795950887e3",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/004.npz": "59e98f843cb9527b1b3ff5864712e74955d43fdca4584b2ea7684bd990987dee",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/005.npz": "f1cc8a29022c483229b02eafb4620c91195ecfbcc8d8c7b4e7c08a9a0c323bd2",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/006.npz": "592abd13b7c2a8f201f8630f5e0d0cbc30e4ab6d91a505f684466f590a5ef19b",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/007.npz": "a3c3e4425dee27353935839c053a2f79975322c4112f67013e5f1d8c405b8bdd",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/008.npz": "aa119bb547ca6cd8ce175cc471b96ff2e5f111be4fb29e03b06069ae024779c0",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/009.npz": "f1b2fdd8a422371f454010e0e20c2b0b06ea83fdbe71701482b1671475c19090",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/010.npz": "52588fd42a46d5410b7c1f051167140e624b8b8f2b78120557674b1884d9a582",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/011.npz": "f95ec47f8a4ca078444eadbf2862b282e46edbfc801a0afbe42f3953006f97e8",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/012.npz": "ce595e8e64ad862784602dabab04ef5f0acfc15f3ab9403a95dea21e854d0473",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/013.npz": "b9195a12a44b6a1c61fd2a60d794ba41aa2cd47f0bc62da02844542ce047be44",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/014.npz": "1d9ffb29c6974b07000bb0a6631569922ab21c14c62d27c2c4fb481986ed8792",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/015.npz": "7e4a87105333f0cfece5f3f6eeccdea178ab422d2441d62d5cf2d5b093f03949",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/016.npz": "962e6fdd7b788eb67125c33d826b966726e63d5838265438cf711eb74916db30",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/017.npz": "0b6046b0c4f599730521e8459c8f77e738cb3c9e58bacfc88678dd0c0ee70292",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/018.npz": "409ae2b76192a9f811f8e863a808e4535889eab425c8890e4d7e3d2bd6ee3715",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/019.npz": "3beb9790a4dde9fd5e6fa20f0c57cc5fae23ee3e38d212c45bdebb5f218ae3fe",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/020.npz": "f0f69c0d6d160249f2f1103b5f7de159243b6cb405d9881596460dbf0be2c99b",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/021.npz": "b5a6c10a5eedede8a8821327d7c27ebcd5ccdd126f92982f9377914744c6a6af",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/022.npz": "f905f95c7091c28e4aabacd888d84214ff806715c935b6ccd3c755cd195005bd",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/023.npz": "009f5e725d67ac550b31e250e40160a70a6d51ed7252c7c83e71c162686bf438",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/024.npz": "718cf1cab21eb8c5556aa72ba792a7b31311195e7f755ad28365e89abf1816f3",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/025.npz": "24e84abb49bc244ba94239b71c1dfcd8a7b530c6e8575293bdbf3cbcbb054a00",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/026.npz": "c62f7fda50f3fd23d4f69338f1543cbb8ac315427bc940765790159842b6aa58",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/027.npz": "7a677f5cbb0b087419c8e1fe5ac9725c17c774982e01e179c5c4ecaa750ca63a",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/028.npz": "70f0619aab6b15a9ddb888924d6223a0e0bfd59bf2f51cec8a1f20d863382447",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/029.npz": "357e9f28b01a848668cec3064aada82f88c3140173e0b09839e9dd7648107992",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/CO/030.npz": "960ed08683ed11eacb1ab9aff5d7e3b290e05002c713f90293a29fa79639cdab"
+  },
+  "pipeline_residual_maxima": {
+    "P_AO_minus_C_occ_CT": 0.0,
+    "C_T_S_C_minus_I": 1.7763568394002505e-14,
+    "S_half_squared_minus_S": 4.6629367034256575e-15,
+    "S_half_minus_independent_eigh_root": 0.0,
+    "saved_P_L_minus_full_transform": 0.0,
+    "P_S_P_minus_2P": 1.8207657603852567e-14,
+    "P_L_squared_minus_2P_L": 1.7319479184152442e-14,
+    "trace_P_S_minus_14": 2.3092638912203256e-14,
+    "trace_P_L_minus_14": 3.197442310920451e-14,
+    "valence_projector_compression_identity": 1.4840559336981585e-14,
+    "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+  },
+  "upstream_residual_maxima": {
+    "upstream_density_from_MO_residual": 0.0,
+    "upstream_overlap_residual": 0.0,
+    "upstream_to_reconverged_descriptor_density_difference": 8.197886813832156e-13,
+    "saved_RHF_energy_difference": 1.1368683772161603e-13,
+    "scf_commutator_residual": 3.844702334276917e-13
+  },
+  "geometries": [
+    {
+      "geometry_id": "001",
+      "bond_length_A": 1.0680981974213024,
+      "eigenvalues": [
+        -3.7759955008108545e-17,
+        4.818491648581712e-16,
+        0.0051950521266224126,
+        1.9999999999999898,
+        1.9999999999999936,
+        1.9999999999999984,
+        1.9999999999999998,
+        2.0000000000000013
+      ],
+      "distances_to_zero": [
+        3.7759955008108545e-17,
+        4.818491648581712e-16,
+        0.0051950521266224126,
+        1.9999999999999898,
+        1.9999999999999936,
+        1.9999999999999984,
+        1.9999999999999998,
+        2.0000000000000013
+      ],
+      "distances_to_two": [
+        2.0,
+        1.9999999999999996,
+        1.9948049478733776,
+        1.021405182655144e-14,
+        6.439293542825908e-15,
+        1.5543122344752192e-15,
+        2.220446049250313e-16,
+        1.3322676295501878e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        6
+      ],
+      "full_P_L_eigenvalues": [
+        -5.123832514529762e-16,
+        -1.5375056332211768e-16,
+        -3.623581415005089e-57,
+        1.9999999999999885,
+        1.9999999999999907,
+        1.999999999999993,
+        1.9999999999999982,
+        1.9999999999999993,
+        2.0,
+        2.0000000000000013
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10179938942177644,
+        2.9952994081937326e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -3.7759955008108545e-17,
+        4.818491648581712e-16,
+        0.0051950521266224126,
+        1.9999999999999898,
+        1.9999999999999936,
+        1.9999999999999984,
+        1.9999999999999998,
+        2.0000000000000013
+      ],
+      "near_two_indices_independent": [
+        6
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.0880185641326534e-14,
+        "S_half_squared_minus_S": 1.5543122344752192e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 1.8207657603852567e-14,
+        "P_L_squared_minus_2P_L": 1.7319479184152442e-14,
+        "trace_P_S_minus_14": 2.3092638912203256e-14,
+        "trace_P_L_minus_14": 2.4868995751603507e-14,
+        "valence_projector_compression_identity": 1.198520449552376e-14,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/001/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 6.690203946391193e-13,
+      "RHF_vs_MP2_density_difference": 0.04252380410206813,
+      "saved_RHF_energy_difference": 5.684341886080802e-14,
+      "scf_commutator_residual": 2.395861287141088e-13
+    },
+    {
+      "geometry_id": "002",
+      "bond_length_A": 1.0734349200577429,
+      "eigenvalues": [
+        -2.741597229261468e-16,
+        5.211511800111552e-17,
+        0.0052692990386140615,
+        1.9999999999999942,
+        1.9999999999999984,
+        1.9999999999999987,
+        2.0,
+        2.000000000000003
+      ],
+      "distances_to_zero": [
+        2.741597229261468e-16,
+        5.211511800111552e-17,
+        0.0052692990386140615,
+        1.9999999999999942,
+        1.9999999999999984,
+        1.9999999999999987,
+        2.0,
+        2.000000000000003
+      ],
+      "distances_to_two": [
+        2.0000000000000004,
+        2.0,
+        1.994730700961386,
+        5.773159728050814e-15,
+        1.5543122344752192e-15,
+        1.3322676295501878e-15,
+        0.0,
+        3.1086244689504383e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        6
+      ],
+      "full_P_L_eigenvalues": [
+        -4.886837849915526e-16,
+        -1.7745002978354137e-16,
+        4.440892098500626e-16,
+        1.9999999999999933,
+        1.999999999999997,
+        1.999999999999998,
+        1.9999999999999991,
+        1.9999999999999996,
+        2.0,
+        2.0000000000000027
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10252235153794279,
+        7.511513450082079e-16
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -2.741597229261468e-16,
+        5.211511800111552e-17,
+        0.0052692990386140615,
+        1.9999999999999942,
+        1.9999999999999984,
+        1.9999999999999987,
+        2.0,
+        2.000000000000003
+      ],
+      "near_two_indices_independent": [
+        6
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 9.769962616701378e-15,
+        "S_half_squared_minus_S": 1.3322676295501878e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 7.993605777301127e-15,
+        "P_L_squared_minus_2P_L": 5.662137425588298e-15,
+        "trace_P_S_minus_14": 1.2434497875801753e-14,
+        "trace_P_L_minus_14": 7.105427357601002e-15,
+        "valence_projector_compression_identity": 5.5892790395972725e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/002/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 6.117328865684613e-13,
+      "RHF_vs_MP2_density_difference": 0.04306740564347211,
+      "saved_RHF_energy_difference": 0.0,
+      "scf_commutator_residual": 2.8743674107545303e-13
+    },
+    {
+      "geometry_id": "003",
+      "bond_length_A": 1.0787716426941834,
+      "eigenvalues": [
+        -3.025509174258873e-16,
+        8.050631250085601e-17,
+        0.005341192369880954,
+        1.999999999999992,
+        1.999999999999996,
+        1.9999999999999987,
+        1.999999999999999,
+        2.000000000000001
+      ],
+      "distances_to_zero": [
+        3.025509174258873e-16,
+        8.050631250085601e-17,
+        0.005341192369880954,
+        1.999999999999992,
+        1.999999999999996,
+        1.9999999999999987,
+        1.999999999999999,
+        2.000000000000001
+      ],
+      "distances_to_two": [
+        2.0000000000000004,
+        2.0,
+        1.994658807630119,
+        7.993605777301127e-15,
+        3.9968028886505635e-15,
+        1.3322676295501878e-15,
+        1.1102230246251565e-15,
+        8.881784197001252e-16
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        7
+      ],
+      "full_P_L_eigenvalues": [
+        -4.611334754498545e-16,
+        -2.220446049250313e-16,
+        1.704426559979191e-17,
+        1.9999999999999918,
+        1.9999999999999947,
+        1.9999999999999964,
+        1.999999999999999,
+        1.999999999999999,
+        2.0000000000000013,
+        2.000000000000004
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10321751984924445,
+        2.387934622715541e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -3.025509174258873e-16,
+        8.050631250085601e-17,
+        0.005341192369880954,
+        1.999999999999992,
+        1.999999999999996,
+        1.9999999999999987,
+        1.999999999999999,
+        2.000000000000001
+      ],
+      "near_two_indices_independent": [
+        7
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.7763568394002505e-14,
+        "S_half_squared_minus_S": 1.1102230246251565e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 1.687538997430238e-14,
+        "P_L_squared_minus_2P_L": 9.769962616701378e-15,
+        "trace_P_S_minus_14": 1.7763568394002505e-14,
+        "trace_P_L_minus_14": 1.2434497875801753e-14,
+        "valence_projector_compression_identity": 1.0282573403852524e-14,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/003/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.37854222165879e-13,
+      "RHF_vs_MP2_density_difference": 0.043618039087326754,
+      "saved_RHF_energy_difference": 0.0,
+      "scf_commutator_residual": 1.5687451337953462e-13
+    },
+    {
+      "geometry_id": "004",
+      "bond_length_A": 1.084108365330624,
+      "eigenvalues": [
+        -4.096888243267301e-17,
+        4.096888243267301e-17,
+        0.005410702749537588,
+        1.9999999999999927,
+        1.9999999999999962,
+        2.0,
+        2.0000000000000036,
+        2.0000000000000036
+      ],
+      "distances_to_zero": [
+        4.096888243267301e-17,
+        4.096888243267301e-17,
+        0.005410702749537588,
+        1.9999999999999927,
+        1.9999999999999962,
+        2.0,
+        2.0000000000000036,
+        2.0000000000000036
+      ],
+      "distances_to_two": [
+        2.0,
+        2.0,
+        1.9945892972504624,
+        7.327471962526033e-15,
+        3.774758283725532e-15,
+        0.0,
+        3.552713678800501e-15,
+        3.552713678800501e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        5
+      ],
+      "full_P_L_eigenvalues": [
+        -2.4182536674328974e-16,
+        -8.99946768152835e-58,
+        2.4182536674328974e-16,
+        1.9999999999999918,
+        1.9999999999999936,
+        1.999999999999996,
+        1.9999999999999978,
+        2.0,
+        2.0000000000000044,
+        2.0000000000000053
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10388517601097498,
+        1.2016802072124679e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -4.096888243267301e-17,
+        4.096888243267301e-17,
+        0.005410702749537588,
+        1.9999999999999927,
+        1.9999999999999962,
+        2.0,
+        2.0000000000000036,
+        2.0000000000000036
+      ],
+      "near_two_indices_independent": [
+        5
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.554312234475219e-14,
+        "S_half_squared_minus_S": 2.4424906541753444e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 1.1102230246251565e-14,
+        "P_L_squared_minus_2P_L": 8.881784197001252e-15,
+        "trace_P_S_minus_14": 2.1316282072803006e-14,
+        "trace_P_L_minus_14": 1.0658141036401503e-14,
+        "valence_projector_compression_identity": 8.632417697329586e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/004/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 2.2737367544323206e-13,
+      "RHF_vs_MP2_density_difference": 0.04417574363806387,
+      "saved_RHF_energy_difference": 0.0,
+      "scf_commutator_residual": 1.0147438445073931e-13
+    },
+    {
+      "geometry_id": "005",
+      "bond_length_A": 1.0894450879670645,
+      "eigenvalues": [
+        -6.782644242895087e-17,
+        2.8987104735398217e-16,
+        0.005477805094311616,
+        1.9999999999999951,
+        1.9999999999999984,
+        1.9999999999999987,
+        2.0000000000000036,
+        2.0000000000000058
+      ],
+      "distances_to_zero": [
+        6.782644242895087e-17,
+        2.8987104735398217e-16,
+        0.005477805094311616,
+        1.9999999999999951,
+        1.9999999999999984,
+        1.9999999999999987,
+        2.0000000000000036,
+        2.0000000000000058
+      ],
+      "distances_to_two": [
+        2.0,
+        1.9999999999999998,
+        1.9945221949056884,
+        4.884981308350689e-15,
+        1.5543122344752192e-15,
+        1.3322676295501878e-15,
+        3.552713678800501e-15,
+        5.773159728050814e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [],
+      "full_P_L_eigenvalues": [
+        -4.440892098500626e-16,
+        -2.254390884900763e-16,
+        -2.1865012135998633e-16,
+        1.9999999999999887,
+        1.9999999999999958,
+        1.9999999999999976,
+        1.999999999999998,
+        2.0,
+        2.000000000000003,
+        2.000000000000006
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10452561332023962,
+        3.130307524631901e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -6.782644242895087e-17,
+        2.8987104735398217e-16,
+        0.005477805094311616,
+        1.9999999999999951,
+        1.9999999999999984,
+        1.9999999999999987,
+        2.0000000000000036,
+        2.0000000000000058
+      ],
+      "near_two_indices_independent": [],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 9.992007221626409e-15,
+        "S_half_squared_minus_S": 2.886579864025407e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 9.769962616701378e-15,
+        "P_L_squared_minus_2P_L": 1.2434497875801753e-14,
+        "trace_P_S_minus_14": 1.5987211554602254e-14,
+        "trace_P_L_minus_14": 8.881784197001252e-15,
+        "valence_projector_compression_identity": 6.072399527656813e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/005/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.087663789206999e-13,
+      "RHF_vs_MP2_density_difference": 0.04474055621288486,
+      "saved_RHF_energy_difference": 5.684341886080802e-14,
+      "scf_commutator_residual": 2.858824288409778e-13
+    },
+    {
+      "geometry_id": "006",
+      "bond_length_A": 1.094781810603505,
+      "eigenvalues": [
+        -2.926416439814838e-16,
+        7.059703905645252e-17,
+        0.005542478460770717,
+        1.999999999999996,
+        1.999999999999998,
+        2.0000000000000013,
+        2.000000000000002,
+        2.000000000000004
+      ],
+      "distances_to_zero": [
+        2.926416439814838e-16,
+        7.059703905645252e-17,
+        0.005542478460770717,
+        1.999999999999996,
+        1.999999999999998,
+        2.0000000000000013,
+        2.000000000000002,
+        2.000000000000004
+      ],
+      "distances_to_two": [
+        2.0000000000000004,
+        2.0,
+        1.9944575215392293,
+        3.9968028886505635e-15,
+        1.9984014443252818e-15,
+        1.3322676295501878e-15,
+        2.220446049250313e-15,
+        3.9968028886505635e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [],
+      "full_P_L_eigenvalues": [
+        -4.613462592836272e-17,
+        0.0,
+        4.613462592836272e-17,
+        1.9999999999999898,
+        1.9999999999999925,
+        1.9999999999999973,
+        2.000000000000001,
+        2.000000000000001,
+        2.000000000000003,
+        2.0000000000000044
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10513913569196405,
+        3.998829483031592e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -2.926416439814838e-16,
+        7.059703905645252e-17,
+        0.005542478460770717,
+        1.999999999999996,
+        1.999999999999998,
+        2.0000000000000013,
+        2.000000000000002,
+        2.000000000000004
+      ],
+      "near_two_indices_independent": [],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.1546319456101628e-14,
+        "S_half_squared_minus_S": 1.3322676295501878e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 1.687538997430238e-14,
+        "P_L_squared_minus_2P_L": 1.3766765505351941e-14,
+        "trace_P_S_minus_14": 1.5987211554602254e-14,
+        "trace_P_L_minus_14": 1.2434497875801753e-14,
+        "valence_projector_compression_identity": 3.9968028886505635e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/006/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 6.94777568810423e-13,
+      "RHF_vs_MP2_density_difference": 0.045312511288306045,
+      "saved_RHF_energy_difference": 2.842170943040401e-14,
+      "scf_commutator_residual": 3.1508129438861943e-13
+    },
+    {
+      "geometry_id": "007",
+      "bond_length_A": 1.1001185332399455,
+      "eigenvalues": [
+        -4.497768455136502e-16,
+        4.497768455136502e-16,
+        0.0056047058966917085,
+        1.99999999999999,
+        1.9999999999999944,
+        1.9999999999999984,
+        2.0000000000000013,
+        2.0000000000000027
+      ],
+      "distances_to_zero": [
+        4.497768455136502e-16,
+        4.497768455136502e-16,
+        0.0056047058966917085,
+        1.99999999999999,
+        1.9999999999999944,
+        1.9999999999999984,
+        2.0000000000000013,
+        2.0000000000000027
+      ],
+      "distances_to_two": [
+        2.0000000000000004,
+        1.9999999999999996,
+        1.9943952941033083,
+        9.992007221626409e-15,
+        5.551115123125783e-15,
+        1.5543122344752192e-15,
+        1.3322676295501878e-15,
+        2.6645352591003757e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [],
+      "full_P_L_eigenvalues": [
+        -4.480056037935491e-16,
+        -3.763760313403992e-86,
+        4.480056037935491e-16,
+        1.999999999999989,
+        1.9999999999999913,
+        1.9999999999999973,
+        1.9999999999999991,
+        2.000000000000001,
+        2.0000000000000027,
+        2.000000000000004
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10572605669935141,
+        4.547134730721814e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -4.497768455136502e-16,
+        4.497768455136502e-16,
+        0.0056047058966917085,
+        1.99999999999999,
+        1.9999999999999944,
+        1.9999999999999984,
+        2.0000000000000013,
+        2.0000000000000027
+      ],
+      "near_two_indices_independent": [],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.021405182655144e-14,
+        "S_half_squared_minus_S": 2.3314683517128287e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 1.3322676295501878e-14,
+        "P_L_squared_minus_2P_L": 1.509903313490213e-14,
+        "trace_P_S_minus_14": 7.105427357601002e-15,
+        "trace_P_L_minus_14": 1.5987211554602254e-14,
+        "valence_projector_compression_identity": 1.4840559336981585e-14,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/007/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.009948177483238e-13,
+      "RHF_vs_MP2_density_difference": 0.04589164073960872,
+      "saved_RHF_energy_difference": 2.842170943040401e-14,
+      "scf_commutator_residual": 1.3677947663381929e-13
+    },
+    {
+      "geometry_id": "008",
+      "bond_length_A": 1.1054552558763862,
+      "eigenvalues": [
+        -9.079371653503584e-16,
+        1.975874565023319e-17,
+        0.005664474292017108,
+        1.9999999999999902,
+        1.9999999999999998,
+        2.000000000000001,
+        2.000000000000003,
+        2.000000000000006
+      ],
+      "distances_to_zero": [
+        9.079371653503584e-16,
+        1.975874565023319e-17,
+        0.005664474292017108,
+        1.9999999999999902,
+        1.9999999999999998,
+        2.000000000000001,
+        2.000000000000003,
+        2.000000000000006
+      ],
+      "distances_to_two": [
+        2.000000000000001,
+        2.0,
+        1.994335525707983,
+        9.769962616701378e-15,
+        2.220446049250313e-16,
+        8.881784197001252e-16,
+        3.1086244689504383e-15,
+        6.217248937900877e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        4,
+        5
+      ],
+      "full_P_L_eigenvalues": [
+        -4.658321261026617e-16,
+        -3.17381601245584e-87,
+        2.437875211776304e-16,
+        1.999999999999989,
+        1.9999999999999938,
+        1.9999999999999984,
+        1.9999999999999993,
+        2.0000000000000013,
+        2.000000000000003,
+        2.0000000000000053
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10628669867405317,
+        1.7614363371039013e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -9.079371653503584e-16,
+        1.975874565023319e-17,
+        0.005664474292017108,
+        1.9999999999999902,
+        1.9999999999999998,
+        2.000000000000001,
+        2.000000000000003,
+        2.000000000000006
+      ],
+      "near_two_indices_independent": [
+        4,
+        5
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.3100631690576847e-14,
+        "S_half_squared_minus_S": 4.6629367034256575e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 1.3766765505351941e-14,
+        "P_L_squared_minus_2P_L": 8.881784197001252e-15,
+        "trace_P_S_minus_14": 1.4210854715202004e-14,
+        "trace_P_L_minus_14": 1.0658141036401503e-14,
+        "valence_projector_compression_identity": 8.827790928811474e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/008/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.822631431508853e-13,
+      "RHF_vs_MP2_density_difference": 0.046477973672244044,
+      "saved_RHF_energy_difference": 2.842170943040401e-14,
+      "scf_commutator_residual": 3.4516833835596117e-13
+    },
+    {
+      "geometry_id": "009",
+      "bond_length_A": 1.1107919785128266,
+      "eigenvalues": [
+        -2.797145334264372e-17,
+        2.797145334264372e-17,
+        0.00572177422981035,
+        1.999999999999991,
+        1.9999999999999942,
+        1.9999999999999964,
+        1.9999999999999996,
+        1.9999999999999996
+      ],
+      "distances_to_zero": [
+        2.797145334264372e-17,
+        2.797145334264372e-17,
+        0.00572177422981035,
+        1.999999999999991,
+        1.9999999999999942,
+        1.9999999999999964,
+        1.9999999999999996,
+        1.9999999999999996
+      ],
+      "distances_to_two": [
+        2.0,
+        2.0,
+        1.9942782257701896,
+        9.103828801926284e-15,
+        5.773159728050814e-15,
+        3.552713678800501e-15,
+        4.440892098500626e-16,
+        4.440892098500626e-16
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        6,
+        7
+      ],
+      "full_P_L_eigenvalues": [
+        -8.918326605092035e-16,
+        -4.404349690409844e-16,
+        2.220446049250313e-16,
+        1.9999999999999913,
+        1.999999999999995,
+        1.9999999999999958,
+        1.999999999999997,
+        1.9999999999999991,
+        1.9999999999999998,
+        2.0000000000000013
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10682139186175872,
+        1.1877945646321085e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -2.797145334264372e-17,
+        2.797145334264372e-17,
+        0.00572177422981035,
+        1.999999999999991,
+        1.9999999999999942,
+        1.9999999999999964,
+        1.9999999999999996,
+        1.9999999999999996
+      ],
+      "near_two_indices_independent": [
+        6,
+        7
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 7.549516567451064e-15,
+        "S_half_squared_minus_S": 1.5543122344752192e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 1.3322676295501878e-14,
+        "P_L_squared_minus_2P_L": 1.0658141036401503e-14,
+        "trace_P_S_minus_14": 2.1316282072803006e-14,
+        "trace_P_L_minus_14": 2.1316282072803006e-14,
+        "valence_projector_compression_identity": 1.0532373584393184e-14,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/009/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 6.341593916658894e-13,
+      "RHF_vs_MP2_density_difference": 0.04707153624529414,
+      "saved_RHF_energy_difference": 0.0,
+      "scf_commutator_residual": 3.013145288832675e-13
+    },
+    {
+      "geometry_id": "010",
+      "bond_length_A": 1.116128701149267,
+      "eigenvalues": [
+        -1.4987248933898924e-16,
+        1.4987248933898924e-16,
+        0.005776599837575613,
+        1.9999999999999907,
+        1.9999999999999927,
+        1.9999999999999993,
+        2.000000000000001,
+        2.000000000000001
+      ],
+      "distances_to_zero": [
+        1.4987248933898924e-16,
+        1.4987248933898924e-16,
+        0.005776599837575613,
+        1.9999999999999907,
+        1.9999999999999927,
+        1.9999999999999993,
+        2.000000000000001,
+        2.000000000000001
+      ],
+      "distances_to_two": [
+        2.0,
+        1.9999999999999998,
+        1.9942234001624244,
+        9.325873406851315e-15,
+        7.327471962526033e-15,
+        6.661338147750939e-16,
+        8.881784197001252e-16,
+        8.881784197001252e-16
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        5,
+        6,
+        7
+      ],
+      "full_P_L_eigenvalues": [
+        4.03217771184377e-17,
+        2.220446049250313e-16,
+        4.037674327316249e-16,
+        1.9999999999999878,
+        1.9999999999999907,
+        1.9999999999999942,
+        1.9999999999999964,
+        1.999999999999999,
+        1.9999999999999998,
+        2.0
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10733047362919844,
+        1.6931594519424153e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -1.4987248933898924e-16,
+        1.4987248933898924e-16,
+        0.005776599837575613,
+        1.9999999999999907,
+        1.9999999999999927,
+        1.9999999999999993,
+        2.000000000000001,
+        2.000000000000001
+      ],
+      "near_two_indices_independent": [
+        5,
+        6,
+        7
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 9.547918011776346e-15,
+        "S_half_squared_minus_S": 2.886579864025407e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 9.769962616701378e-15,
+        "P_L_squared_minus_2P_L": 1.6431300764452317e-14,
+        "trace_P_S_minus_14": 2.1316282072803006e-14,
+        "trace_P_L_minus_14": 3.197442310920451e-14,
+        "valence_projector_compression_identity": 1.412585326487914e-14,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/010/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 5.433431482515516e-13,
+      "RHF_vs_MP2_density_difference": 0.04767235148658888,
+      "saved_RHF_energy_difference": 2.842170943040401e-14,
+      "scf_commutator_residual": 2.808864252301646e-13
+    },
+    {
+      "geometry_id": "011",
+      "bond_length_A": 1.1214654237857076,
+      "eigenvalues": [
+        -2.372521669845905e-16,
+        1.5207562059559185e-17,
+        0.005828948639312603,
+        1.9999999999999911,
+        1.999999999999998,
+        1.9999999999999987,
+        2.0,
+        2.000000000000001
+      ],
+      "distances_to_zero": [
+        2.372521669845905e-16,
+        1.5207562059559185e-17,
+        0.005828948639312603,
+        1.9999999999999911,
+        1.999999999999998,
+        1.9999999999999987,
+        2.0,
+        2.000000000000001
+      ],
+      "distances_to_two": [
+        2.0000000000000004,
+        2.0,
+        1.9941710513606874,
+        8.881784197001252e-15,
+        1.9984014443252818e-15,
+        1.3322676295501878e-15,
+        0.0,
+        8.881784197001252e-16
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        6,
+        7
+      ],
+      "full_P_L_eigenvalues": [
+        -5.754322940148679e-16,
+        -4.440892098500626e-16,
+        -3.1274612568525735e-16,
+        1.9999999999999911,
+        1.9999999999999916,
+        1.999999999999996,
+        1.999999999999999,
+        1.9999999999999996,
+        2.0000000000000013,
+        2.000000000000009
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10781428771914207,
+        4.1084565068878786e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -2.372521669845905e-16,
+        1.5207562059559185e-17,
+        0.005828948639312603,
+        1.9999999999999911,
+        1.999999999999998,
+        1.9999999999999987,
+        2.0,
+        2.000000000000001
+      ],
+      "near_two_indices_independent": [
+        6,
+        7
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 3.1086244689504383e-15,
+        "S_half_squared_minus_S": 1.7763568394002505e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 1.509903313490213e-14,
+        "P_L_squared_minus_2P_L": 1.5987211554602254e-14,
+        "trace_P_S_minus_14": 0.0,
+        "trace_P_L_minus_14": 8.881784197001252e-15,
+        "valence_projector_compression_identity": 7.980595351231301e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/011/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 6.570299859731676e-13,
+      "RHF_vs_MP2_density_difference": 0.04828043909885982,
+      "saved_RHF_energy_difference": 0.0,
+      "scf_commutator_residual": 2.483568906086475e-13
+    },
+    {
+      "geometry_id": "012",
+      "bond_length_A": 1.1268021464221483,
+      "eigenvalues": [
+        -2.854239668519544e-16,
+        5.074685717769857e-16,
+        0.005878821408611179,
+        1.9999999999999916,
+        1.9999999999999958,
+        1.9999999999999982,
+        2.000000000000001,
+        2.000000000000001
+      ],
+      "distances_to_zero": [
+        2.854239668519544e-16,
+        5.074685717769857e-16,
+        0.005878821408611179,
+        1.9999999999999916,
+        1.9999999999999958,
+        1.9999999999999982,
+        2.000000000000001,
+        2.000000000000001
+      ],
+      "distances_to_two": [
+        2.0000000000000004,
+        1.9999999999999996,
+        1.9941211785913888,
+        8.43769498715119e-15,
+        4.218847493575595e-15,
+        1.7763568394002505e-15,
+        8.881784197001252e-16,
+        8.881784197001252e-16
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        6,
+        7
+      ],
+      "full_P_L_eigenvalues": [
+        -5.43342812367097e-16,
+        -3.448356073330282e-16,
+        -4.933587051969254e-58,
+        1.9999999999999896,
+        1.9999999999999944,
+        1.999999999999998,
+        1.9999999999999993,
+        2.000000000000001,
+        2.0000000000000013,
+        2.0000000000000044
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10827318355007391,
+        1.557011299632787e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -2.854239668519544e-16,
+        5.074685717769857e-16,
+        0.005878821408611179,
+        1.9999999999999916,
+        1.9999999999999958,
+        1.9999999999999982,
+        2.000000000000001,
+        2.000000000000001
+      ],
+      "near_two_indices_independent": [
+        6,
+        7
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 2.7755575615628914e-15,
+        "S_half_squared_minus_S": 1.5543122344752192e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 7.993605777301127e-15,
+        "P_L_squared_minus_2P_L": 8.43769498715119e-15,
+        "trace_P_S_minus_14": 3.552713678800501e-15,
+        "trace_P_L_minus_14": 1.0658141036401503e-14,
+        "valence_projector_compression_identity": 8.593820099989102e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/012/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.689404668553834e-13,
+      "RHF_vs_MP2_density_difference": 0.048895815256817854,
+      "saved_RHF_energy_difference": 0.0,
+      "scf_commutator_residual": 3.191891195797325e-13
+    },
+    {
+      "geometry_id": "013",
+      "bond_length_A": 1.1321388690585887,
+      "eigenvalues": [
+        -4.7870599531733866e-17,
+        4.919598093817965e-16,
+        0.005926222023094896,
+        1.9999999999999931,
+        1.9999999999999971,
+        2.000000000000001,
+        2.0000000000000018,
+        2.000000000000005
+      ],
+      "distances_to_zero": [
+        4.7870599531733866e-17,
+        4.919598093817965e-16,
+        0.005926222023094896,
+        1.9999999999999931,
+        1.9999999999999971,
+        2.000000000000001,
+        2.0000000000000018,
+        2.000000000000005
+      ],
+      "distances_to_two": [
+        2.0,
+        1.9999999999999996,
+        1.994073777976905,
+        6.8833827526759706e-15,
+        2.886579864025407e-15,
+        8.881784197001252e-16,
+        1.7763568394002505e-15,
+        4.884981308350689e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        5
+      ],
+      "full_P_L_eigenvalues": [
+        -4.511252433582781e-16,
+        7.036033508215418e-18,
+        8.881784197001252e-16,
+        1.9999999999999931,
+        1.999999999999995,
+        1.9999999999999973,
+        2.0000000000000004,
+        2.000000000000002,
+        2.0000000000000027,
+        2.000000000000004
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10870751555767491,
+        3.390290043380271e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -4.7870599531733866e-17,
+        4.919598093817965e-16,
+        0.005926222023094896,
+        1.9999999999999931,
+        1.9999999999999971,
+        2.000000000000001,
+        2.0000000000000018,
+        2.000000000000005
+      ],
+      "near_two_indices_independent": [
+        5
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.9984014443252818e-15,
+        "S_half_squared_minus_S": 2.220446049250313e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 1.1546319456101628e-14,
+        "P_L_squared_minus_2P_L": 7.993605777301127e-15,
+        "trace_P_S_minus_14": 3.552713678800501e-15,
+        "trace_P_L_minus_14": 3.552713678800501e-15,
+        "valence_projector_compression_identity": 7.908604326978264e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/013/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.955858194463872e-13,
+      "RHF_vs_MP2_density_difference": 0.04951849239463335,
+      "saved_RHF_energy_difference": 2.842170943040401e-14,
+      "scf_commutator_residual": 3.1519231669108194e-13
+    },
+    {
+      "geometry_id": "014",
+      "bond_length_A": 1.1374755916950292,
+      "eigenvalues": [
+        -1.979291834325409e-19,
+        4.442871390334952e-16,
+        0.005971157320479259,
+        1.999999999999996,
+        1.9999999999999982,
+        2.0,
+        2.0000000000000013,
+        2.0000000000000053
+      ],
+      "distances_to_zero": [
+        1.979291834325409e-19,
+        4.442871390334952e-16,
+        0.005971157320479259,
+        1.999999999999996,
+        1.9999999999999982,
+        2.0,
+        2.0000000000000013,
+        2.0000000000000053
+      ],
+      "distances_to_two": [
+        2.0,
+        1.9999999999999996,
+        1.9940288426795207,
+        3.9968028886505635e-15,
+        1.7763568394002505e-15,
+        0.0,
+        1.3322676295501878e-15,
+        5.329070518200751e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        5
+      ],
+      "full_P_L_eigenvalues": [
+        -5.106692569042503e-16,
+        -1.554645578708436e-16,
+        -2.779174684858566e-60,
+        1.9999999999999956,
+        1.999999999999996,
+        1.9999999999999993,
+        2.000000000000001,
+        2.0000000000000027,
+        2.000000000000008,
+        2.0000000000000093
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10911764257539767,
+        3.850839583491093e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -1.979291834325409e-19,
+        4.442871390334952e-16,
+        0.005971157320479259,
+        1.999999999999996,
+        1.9999999999999982,
+        2.0,
+        2.0000000000000013,
+        2.0000000000000053
+      ],
+      "near_two_indices_independent": [
+        5
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.9984014443252818e-15,
+        "S_half_squared_minus_S": 1.7763568394002505e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 9.769962616701378e-15,
+        "P_L_squared_minus_2P_L": 1.5987211554602254e-14,
+        "trace_P_S_minus_14": 3.552713678800501e-15,
+        "trace_P_L_minus_14": 1.4210854715202004e-14,
+        "valence_projector_compression_identity": 5.641754424745571e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/014/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.454037387333301e-13,
+      "RHF_vs_MP2_density_difference": 0.050148478983364386,
+      "saved_RHF_energy_difference": 2.842170943040401e-14,
+      "scf_commutator_residual": 2.495781359357352e-13
+    },
+    {
+      "geometry_id": "015",
+      "bond_length_A": 1.1428123143314697,
+      "eigenvalues": [
+        -4.578426845904923e-16,
+        4.578426845904923e-16,
+        0.006013636956487822,
+        1.999999999999995,
+        1.999999999999996,
+        2.0000000000000013,
+        2.0000000000000044,
+        2.0000000000000067
+      ],
+      "distances_to_zero": [
+        4.578426845904923e-16,
+        4.578426845904923e-16,
+        0.006013636956487822,
+        1.999999999999995,
+        1.999999999999996,
+        2.0000000000000013,
+        2.0000000000000044,
+        2.0000000000000067
+      ],
+      "distances_to_two": [
+        2.0000000000000004,
+        1.9999999999999996,
+        1.9939863630435122,
+        5.10702591327572e-15,
+        3.9968028886505635e-15,
+        1.3322676295501878e-15,
+        4.440892098500626e-15,
+        6.661338147750939e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [],
+      "full_P_L_eigenvalues": [
+        -1.2620113288344485e-16,
+        -1.9260789259727553e-18,
+        4.460152887760353e-16,
+        1.9999999999999938,
+        1.9999999999999951,
+        1.999999999999998,
+        2.000000000000003,
+        2.0000000000000044,
+        2.0000000000000058,
+        2.0000000000000075
+      ],
+      "valence_core_coupling_singular_values": [
+        0.10950392725163398,
+        4.10865205520802e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -4.578426845904923e-16,
+        4.578426845904923e-16,
+        0.006013636956487822,
+        1.999999999999995,
+        1.999999999999996,
+        2.0000000000000013,
+        2.0000000000000044,
+        2.0000000000000067
+      ],
+      "near_two_indices_independent": [],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 2.519318783887241e-15,
+        "S_half_squared_minus_S": 2.220446049250313e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 7.105427357601002e-15,
+        "P_L_squared_minus_2P_L": 9.325873406851315e-15,
+        "trace_P_S_minus_14": 3.552713678800501e-15,
+        "trace_P_L_minus_14": 1.0658141036401503e-14,
+        "valence_projector_compression_identity": 7.271960811294775e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/015/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 6.463718449367661e-13,
+      "RHF_vs_MP2_density_difference": 0.05078577929799,
+      "saved_RHF_energy_difference": 1.1368683772161603e-13,
+      "scf_commutator_residual": 2.1449508835758024e-13
+    },
+    {
+      "geometry_id": "016",
+      "bond_length_A": 1.1481490369679104,
+      "eigenvalues": [
+        -2.8058052088184754e-17,
+        4.721472619382473e-16,
+        0.006053673264853732,
+        1.999999999999995,
+        1.999999999999998,
+        1.9999999999999996,
+        2.0000000000000013,
+        2.0000000000000036
+      ],
+      "distances_to_zero": [
+        2.8058052088184754e-17,
+        4.721472619382473e-16,
+        0.006053673264853732,
+        1.999999999999995,
+        1.999999999999998,
+        1.9999999999999996,
+        2.0000000000000013,
+        2.0000000000000036
+      ],
+      "distances_to_two": [
+        2.0,
+        1.9999999999999996,
+        1.9939463267351463,
+        5.10702591327572e-15,
+        1.9984014443252818e-15,
+        4.440892098500626e-16,
+        1.3322676295501878e-15,
+        3.552713678800501e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        5
+      ],
+      "full_P_L_eigenvalues": [
+        -4.453913297964362e-16,
+        -2.220446049250313e-16,
+        4.453913297964362e-16,
+        1.9999999999999944,
+        1.9999999999999982,
+        1.9999999999999996,
+        2.000000000000001,
+        2.0000000000000013,
+        2.000000000000003,
+        2.000000000000005
+      ],
+      "valence_core_coupling_singular_values": [
+        0.1098667355012851,
+        2.3382202005279407e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -2.8058052088184754e-17,
+        4.721472619382473e-16,
+        0.006053673264853732,
+        1.999999999999995,
+        1.999999999999998,
+        1.9999999999999996,
+        2.0000000000000013,
+        2.0000000000000036
+      ],
+      "near_two_indices_independent": [
+        5
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.7763568394002505e-15,
+        "S_half_squared_minus_S": 1.9984014443252818e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 8.43769498715119e-15,
+        "P_L_squared_minus_2P_L": 7.993605777301127e-15,
+        "trace_P_S_minus_14": 0.0,
+        "trace_P_L_minus_14": 1.7763568394002505e-15,
+        "valence_projector_compression_identity": 6.222019427459813e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/016/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 6.359357485052897e-13,
+      "RHF_vs_MP2_density_difference": 0.0514303931734621,
+      "saved_RHF_energy_difference": 5.684341886080802e-14,
+      "scf_commutator_residual": 3.526068326209497e-13
+    },
+    {
+      "geometry_id": "017",
+      "bond_length_A": 1.1534857596043508,
+      "eigenvalues": [
+        -1.7292207664634688e-17,
+        1.7292207664634688e-17,
+        0.006091281119598542,
+        1.9999999999999967,
+        1.9999999999999984,
+        1.9999999999999993,
+        2.0000000000000004,
+        2.000000000000002
+      ],
+      "distances_to_zero": [
+        1.7292207664634688e-17,
+        1.7292207664634688e-17,
+        0.006091281119598542,
+        1.9999999999999967,
+        1.9999999999999984,
+        1.9999999999999993,
+        2.0000000000000004,
+        2.000000000000002
+      ],
+      "distances_to_two": [
+        2.0,
+        2.0,
+        1.9939087188804014,
+        3.3306690738754696e-15,
+        1.5543122344752192e-15,
+        6.661338147750939e-16,
+        4.440892098500626e-16,
+        2.220446049250313e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        5,
+        6
+      ],
+      "full_P_L_eigenvalues": [
+        -1.2173133265544401e-117,
+        7.332674951756357e-17,
+        3.7076246033249904e-16,
+        1.9999999999999958,
+        1.9999999999999987,
+        1.9999999999999993,
+        2.0000000000000004,
+        2.0000000000000018,
+        2.0000000000000027,
+        2.000000000000007
+      ],
+      "valence_core_coupling_singular_values": [
+        0.11020643598955034,
+        2.9876623901559326e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -1.7292207664634688e-17,
+        1.7292207664634688e-17,
+        0.006091281119598542,
+        1.9999999999999967,
+        1.9999999999999984,
+        1.9999999999999993,
+        2.0000000000000004,
+        2.000000000000002
+      ],
+      "near_two_indices_independent": [
+        5,
+        6
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.5543122344752192e-15,
+        "S_half_squared_minus_S": 1.970645868709653e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 7.993605777301127e-15,
+        "P_L_squared_minus_2P_L": 1.199040866595169e-14,
+        "trace_P_S_minus_14": 0.0,
+        "trace_P_L_minus_14": 5.329070518200751e-15,
+        "valence_projector_compression_identity": 4.620435978264226e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/017/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.402967128200544e-13,
+      "RHF_vs_MP2_density_difference": 0.052082315749287345,
+      "saved_RHF_energy_difference": 2.842170943040401e-14,
+      "scf_commutator_residual": 3.6293190674996367e-13
+    },
+    {
+      "geometry_id": "018",
+      "bond_length_A": 1.1588224822407913,
+      "eigenvalues": [
+        -1.2938503506741559e-17,
+        4.570277133568042e-16,
+        0.006126477799770491,
+        1.9999999999999962,
+        1.999999999999998,
+        1.9999999999999996,
+        2.0000000000000013,
+        2.0000000000000027
+      ],
+      "distances_to_zero": [
+        1.2938503506741559e-17,
+        4.570277133568042e-16,
+        0.006126477799770491,
+        1.9999999999999962,
+        1.999999999999998,
+        1.9999999999999996,
+        2.0000000000000013,
+        2.0000000000000027
+      ],
+      "distances_to_two": [
+        2.0,
+        1.9999999999999996,
+        1.9938735222002295,
+        3.774758283725532e-15,
+        1.9984014443252818e-15,
+        4.440892098500626e-16,
+        1.3322676295501878e-15,
+        2.6645352591003757e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        5
+      ],
+      "full_P_L_eigenvalues": [
+        -1.83532474294269e-17,
+        2.220446049250313e-16,
+        4.624424572794895e-16,
+        1.9999999999999953,
+        1.9999999999999971,
+        1.999999999999999,
+        2.0000000000000004,
+        2.000000000000002,
+        2.000000000000003,
+        2.000000000000005
+      ],
+      "valence_core_coupling_singular_values": [
+        0.11052339964600023,
+        2.196828929199101e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -1.2938503506741559e-17,
+        4.570277133568042e-16,
+        0.006126477799770491,
+        1.9999999999999962,
+        1.999999999999998,
+        1.9999999999999996,
+        2.0000000000000013,
+        2.0000000000000027
+      ],
+      "near_two_indices_independent": [
+        5
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.9984014443252818e-15,
+        "S_half_squared_minus_S": 1.9984014443252818e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 7.105427357601002e-15,
+        "P_L_squared_minus_2P_L": 6.050715484207103e-15,
+        "trace_P_S_minus_14": 3.552713678800501e-15,
+        "trace_P_L_minus_14": 0.0,
+        "valence_projector_compression_identity": 4.344614945583913e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/018/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 6.548095399239173e-13,
+      "RHF_vs_MP2_density_difference": 0.05274153720228181,
+      "saved_RHF_energy_difference": 1.1368683772161603e-13,
+      "scf_commutator_residual": 3.411715354673106e-13
+    },
+    {
+      "geometry_id": "019",
+      "bond_length_A": 1.1641592048772318,
+      "eigenvalues": [
+        2.1886810278126736e-16,
+        2.2522110706879526e-16,
+        0.006159282856794235,
+        1.9999999999999944,
+        1.999999999999995,
+        1.9999999999999964,
+        1.9999999999999967,
+        1.9999999999999993
+      ],
+      "distances_to_zero": [
+        2.1886810278126736e-16,
+        2.2522110706879526e-16,
+        0.006159282856794235,
+        1.9999999999999944,
+        1.999999999999995,
+        1.9999999999999964,
+        1.9999999999999967,
+        1.9999999999999993
+      ],
+      "distances_to_two": [
+        1.9999999999999998,
+        1.9999999999999998,
+        1.9938407171432058,
+        5.551115123125783e-15,
+        5.10702591327572e-15,
+        3.552713678800501e-15,
+        3.3306690738754696e-15,
+        6.661338147750939e-16
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        7
+      ],
+      "full_P_L_eigenvalues": [
+        -2.4475257681068926e-16,
+        -1.3974914055146158e-58,
+        2.4475257681068926e-16,
+        1.999999999999993,
+        1.9999999999999942,
+        1.9999999999999958,
+        1.999999999999997,
+        1.9999999999999998,
+        2.0000000000000004,
+        2.0000000000000013
+      ],
+      "valence_core_coupling_singular_values": [
+        0.11081799920716198,
+        3.1404858633359104e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        2.1886810278126736e-16,
+        2.2522110706879526e-16,
+        0.006159282856794235,
+        1.9999999999999944,
+        1.999999999999995,
+        1.9999999999999964,
+        1.9999999999999967,
+        1.9999999999999993
+      ],
+      "near_two_indices_independent": [
+        7
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 2.220446049250313e-15,
+        "S_half_squared_minus_S": 1.887379141862766e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 1.2434497875801753e-14,
+        "P_L_squared_minus_2P_L": 7.993605777301127e-15,
+        "trace_P_S_minus_14": 5.329070518200751e-15,
+        "trace_P_L_minus_14": 1.7763568394002505e-14,
+        "valence_projector_compression_identity": 8.335346302068558e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/019/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.851497230149107e-13,
+      "RHF_vs_MP2_density_difference": 0.053408042466416616,
+      "saved_RHF_energy_difference": 2.842170943040401e-14,
+      "scf_commutator_residual": 2.7255975254547593e-13
+    },
+    {
+      "geometry_id": "020",
+      "bond_length_A": 1.1694959275136725,
+      "eigenvalues": [
+        -5.581809417214256e-17,
+        5.581809417214256e-17,
+        0.006189717984573795,
+        1.9999999999999925,
+        1.999999999999999,
+        1.9999999999999991,
+        2.000000000000002,
+        2.000000000000004
+      ],
+      "distances_to_zero": [
+        5.581809417214256e-17,
+        5.581809417214256e-17,
+        0.006189717984573795,
+        1.9999999999999925,
+        1.999999999999999,
+        1.9999999999999991,
+        2.000000000000002,
+        2.000000000000004
+      ],
+      "distances_to_two": [
+        2.0,
+        2.0,
+        1.9938102820154262,
+        7.549516567451064e-15,
+        1.1102230246251565e-15,
+        8.881784197001252e-16,
+        2.220446049250313e-15,
+        3.9968028886505635e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        5
+      ],
+      "full_P_L_eigenvalues": [
+        -4.442189933792596e-16,
+        -7.252662690741228e-89,
+        8.883082032293222e-16,
+        1.9999999999999938,
+        1.9999999999999956,
+        1.9999999999999991,
+        1.9999999999999993,
+        2.000000000000002,
+        2.000000000000004,
+        2.000000000000005
+      ],
+      "valence_core_coupling_singular_values": [
+        0.11109060878588627,
+        3.499121904167028e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -5.581809417214256e-17,
+        5.581809417214256e-17,
+        0.006189717984573795,
+        1.9999999999999925,
+        1.999999999999999,
+        1.9999999999999991,
+        2.000000000000002,
+        2.000000000000004
+      ],
+      "near_two_indices_independent": [
+        5
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.9984014443252818e-15,
+        "S_half_squared_minus_S": 1.5543122344752192e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 6.661338147750939e-15,
+        "P_L_squared_minus_2P_L": 8.43769498715119e-15,
+        "trace_P_S_minus_14": 3.552713678800501e-15,
+        "trace_P_L_minus_14": 1.7763568394002505e-15,
+        "valence_projector_compression_identity": 8.490604053168482e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/020/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 5.662137425588298e-13,
+      "RHF_vs_MP2_density_difference": 0.05408181094005582,
+      "saved_RHF_energy_difference": 2.842170943040401e-14,
+      "scf_commutator_residual": 2.845501612114276e-13
+    },
+    {
+      "geometry_id": "021",
+      "bond_length_A": 1.174832650150113,
+      "eigenvalues": [
+        -1.5144798107602992e-17,
+        4.592340079576656e-16,
+        0.006217806892457212,
+        1.9999999999999938,
+        1.9999999999999978,
+        1.9999999999999987,
+        2.0000000000000018,
+        2.0000000000000058
+      ],
+      "distances_to_zero": [
+        1.5144798107602992e-17,
+        4.592340079576656e-16,
+        0.006217806892457212,
+        1.9999999999999938,
+        1.9999999999999978,
+        1.9999999999999987,
+        2.0000000000000018,
+        2.0000000000000058
+      ],
+      "distances_to_two": [
+        2.0,
+        1.9999999999999996,
+        1.9937821931075428,
+        6.217248937900877e-15,
+        2.220446049250313e-15,
+        1.3322676295501878e-15,
+        1.7763568394002505e-15,
+        5.773159728050814e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [],
+      "full_P_L_eigenvalues": [
+        -4.097891298464342e-18,
+        -1.6503145132470597e-59,
+        2.2614249622349566e-16,
+        1.9999999999999936,
+        1.999999999999997,
+        1.9999999999999987,
+        1.9999999999999998,
+        2.0000000000000013,
+        2.000000000000005,
+        2.0000000000000058
+      ],
+      "valence_core_coupling_singular_values": [
+        0.11134160346591912,
+        2.3507609330791874e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -1.5144798107602992e-17,
+        4.592340079576656e-16,
+        0.006217806892457212,
+        1.9999999999999938,
+        1.9999999999999978,
+        1.9999999999999987,
+        2.0000000000000018,
+        2.0000000000000058
+      ],
+      "near_two_indices_independent": [],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 2.4424906541753444e-15,
+        "S_half_squared_minus_S": 3.1086244689504383e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 1.0658141036401503e-14,
+        "P_L_squared_minus_2P_L": 6.661338147750939e-15,
+        "trace_P_S_minus_14": 3.552713678800501e-15,
+        "trace_P_L_minus_14": 0.0,
+        "valence_projector_compression_identity": 6.661338147750939e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/021/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 6.257216966787382e-13,
+      "RHF_vs_MP2_density_difference": 0.0547628161790078,
+      "saved_RHF_energy_difference": 0.0,
+      "scf_commutator_residual": 1.6364687382974807e-13
+    },
+    {
+      "geometry_id": "022",
+      "bond_length_A": 1.1801693727865534,
+      "eigenvalues": [
+        -4.2831267451307934e-17,
+        4.2831267451307934e-17,
+        0.006243575181166916,
+        1.9999999999999962,
+        2.0,
+        2.0000000000000027,
+        2.0000000000000036,
+        2.0000000000000058
+      ],
+      "distances_to_zero": [
+        4.2831267451307934e-17,
+        4.2831267451307934e-17,
+        0.006243575181166916,
+        1.9999999999999962,
+        2.0,
+        2.0000000000000027,
+        2.0000000000000036,
+        2.0000000000000058
+      ],
+      "distances_to_two": [
+        2.0,
+        2.0,
+        1.993756424818833,
+        3.774758283725532e-15,
+        0.0,
+        2.6645352591003757e-15,
+        3.552713678800501e-15,
+        5.773159728050814e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        4
+      ],
+      "full_P_L_eigenvalues": [
+        -1.755417504469251e-16,
+        1.755417504469251e-16,
+        4.440892098500626e-16,
+        1.9999999999999925,
+        1.999999999999997,
+        2.000000000000001,
+        2.0000000000000013,
+        2.0000000000000036,
+        2.0000000000000053,
+        2.0000000000000075
+      ],
+      "valence_core_coupling_singular_values": [
+        0.1115713589201571,
+        4.82960779844107e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -4.2831267451307934e-17,
+        4.2831267451307934e-17,
+        0.006243575181166916,
+        1.9999999999999962,
+        2.0,
+        2.0000000000000027,
+        2.0000000000000036,
+        2.0000000000000058
+      ],
+      "near_two_indices_independent": [
+        4
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 2.0816681711721685e-15,
+        "S_half_squared_minus_S": 3.1086244689504383e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 9.325873406851315e-15,
+        "P_L_squared_minus_2P_L": 7.105427357601002e-15,
+        "trace_P_S_minus_14": 1.7763568394002505e-15,
+        "trace_P_L_minus_14": 5.329070518200751e-15,
+        "valence_projector_compression_identity": 7.105427357601002e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/022/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.971401316808624e-13,
+      "RHF_vs_MP2_density_difference": 0.055451025575393165,
+      "saved_RHF_energy_difference": 2.842170943040401e-14,
+      "scf_commutator_residual": 2.544631172440859e-13
+    },
+    {
+      "geometry_id": "023",
+      "bond_length_A": 1.185506095422994,
+      "eigenvalues": [
+        -4.449091839953961e-16,
+        8.199741453334851e-19,
+        0.006267050221792747,
+        1.9999999999999951,
+        1.999999999999997,
+        1.9999999999999982,
+        1.9999999999999987,
+        2.0000000000000013
+      ],
+      "distances_to_zero": [
+        4.449091839953961e-16,
+        8.199741453334851e-19,
+        0.006267050221792747,
+        1.9999999999999951,
+        1.999999999999997,
+        1.9999999999999982,
+        1.9999999999999987,
+        2.0000000000000013
+      ],
+      "distances_to_two": [
+        2.0000000000000004,
+        2.0,
+        1.9937329497782073,
+        4.884981308350689e-15,
+        3.1086244689504383e-15,
+        1.7763568394002505e-15,
+        1.3322676295501878e-15,
+        1.3322676295501878e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [],
+      "full_P_L_eigenvalues": [
+        -4.703156274108011e-16,
+        -2.220446049250313e-16,
+        -1.9581818736429278e-16,
+        1.999999999999994,
+        1.999999999999997,
+        1.999999999999998,
+        1.9999999999999984,
+        1.9999999999999993,
+        2.0000000000000036,
+        2.000000000000009
+      ],
+      "valence_core_coupling_singular_values": [
+        0.11178025105135136,
+        4.656590048995487e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -4.449091839953961e-16,
+        8.199741453334851e-19,
+        0.006267050221792747,
+        1.9999999999999951,
+        1.999999999999997,
+        1.9999999999999982,
+        1.9999999999999987,
+        2.0000000000000013
+      ],
+      "near_two_indices_independent": [],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.5543122344752192e-15,
+        "S_half_squared_minus_S": 1.887379141862766e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 7.993605777301127e-15,
+        "P_L_squared_minus_2P_L": 9.769962616701378e-15,
+        "trace_P_S_minus_14": 5.329070518200751e-15,
+        "trace_P_L_minus_14": 3.552713678800501e-15,
+        "valence_projector_compression_identity": 5.890687243548243e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/023/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.596145934485321e-13,
+      "RHF_vs_MP2_density_difference": 0.0561464000211197,
+      "saved_RHF_energy_difference": 0.0,
+      "scf_commutator_residual": 2.333688797762079e-13
+    },
+    {
+      "geometry_id": "024",
+      "bond_length_A": 1.1908428180594346,
+      "eigenvalues": [
+        -4.502633312834526e-16,
+        6.174121433389909e-18,
+        0.006288261037891152,
+        1.9999999999999942,
+        1.9999999999999978,
+        1.9999999999999991,
+        2.0000000000000013,
+        2.0000000000000044
+      ],
+      "distances_to_zero": [
+        4.502633312834526e-16,
+        6.174121433389909e-18,
+        0.006288261037891152,
+        1.9999999999999942,
+        1.9999999999999978,
+        1.9999999999999991,
+        2.0000000000000013,
+        2.0000000000000044
+      ],
+      "distances_to_two": [
+        2.0000000000000004,
+        2.0,
+        1.9937117389621088,
+        5.773159728050814e-15,
+        2.220446049250313e-15,
+        8.881784197001252e-16,
+        1.3322676295501878e-15,
+        4.440892098500626e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        5
+      ],
+      "full_P_L_eigenvalues": [
+        -6.71244014753906e-16,
+        -1.0743788873887962e-86,
+        5.110199978812043e-18,
+        1.9999999999999947,
+        1.9999999999999971,
+        1.9999999999999993,
+        2.0000000000000004,
+        2.000000000000003,
+        2.0000000000000058,
+        2.000000000000007
+      ],
+      "valence_core_coupling_singular_values": [
+        0.11196865565372197,
+        2.4288366032628704e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -4.502633312834526e-16,
+        6.174121433389909e-18,
+        0.006288261037891152,
+        1.9999999999999942,
+        1.9999999999999978,
+        1.9999999999999991,
+        2.0000000000000013,
+        2.0000000000000044
+      ],
+      "near_two_indices_independent": [
+        5
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 2.6645352591003757e-15,
+        "S_half_squared_minus_S": 2.4424906541753444e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 1.1546319456101628e-14,
+        "P_L_squared_minus_2P_L": 9.325873406851315e-15,
+        "trace_P_S_minus_14": 0.0,
+        "trace_P_L_minus_14": 5.329070518200751e-15,
+        "valence_projector_compression_identity": 7.105427357601002e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/024/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 8.022471575941381e-13,
+      "RHF_vs_MP2_density_difference": 0.05684889355572731,
+      "saved_RHF_energy_difference": 2.842170943040401e-14,
+      "scf_commutator_residual": 2.6356694604601216e-13
+    },
+    {
+      "geometry_id": "025",
+      "bond_length_A": 1.196179540695875,
+      "eigenvalues": [
+        -4.496042431747836e-16,
+        5.515033324721059e-18,
+        0.006307238190766951,
+        1.9999999999999918,
+        1.9999999999999967,
+        2.0000000000000004,
+        2.000000000000002,
+        2.0000000000000044
+      ],
+      "distances_to_zero": [
+        4.496042431747836e-16,
+        5.515033324721059e-18,
+        0.006307238190766951,
+        1.9999999999999918,
+        1.9999999999999967,
+        2.0000000000000004,
+        2.000000000000002,
+        2.0000000000000044
+      ],
+      "distances_to_two": [
+        2.0000000000000004,
+        2.0,
+        1.993692761809233,
+        8.215650382226158e-15,
+        3.3306690738754696e-15,
+        4.440892098500626e-16,
+        2.220446049250313e-15,
+        4.440892098500626e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        5
+      ],
+      "full_P_L_eigenvalues": [
+        -2.2877472694094025e-17,
+        0.0,
+        2.2877472694094025e-17,
+        1.9999999999999918,
+        1.9999999999999964,
+        2.0000000000000013,
+        2.000000000000003,
+        2.0000000000000036,
+        2.000000000000006,
+        2.00000000000001
+      ],
+      "valence_core_coupling_singular_values": [
+        0.11213694809445725,
+        3.286277820603579e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -4.496042431747836e-16,
+        5.515033324721059e-18,
+        0.006307238190766951,
+        1.9999999999999918,
+        1.9999999999999967,
+        2.0000000000000004,
+        2.000000000000002,
+        2.0000000000000044
+      ],
+      "near_two_indices_independent": [
+        5
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 2.6424175347816714e-15,
+        "S_half_squared_minus_S": 1.3322676295501878e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 8.215650382226158e-15,
+        "P_L_squared_minus_2P_L": 1.199040866595169e-14,
+        "trace_P_S_minus_14": 1.7763568394002505e-15,
+        "trace_P_L_minus_14": 8.881784197001252e-15,
+        "valence_projector_compression_identity": 6.734196533741965e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/025/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.629452625224076e-13,
+      "RHF_vs_MP2_density_difference": 0.057558452997445886,
+      "saved_RHF_energy_difference": 0.0,
+      "scf_commutator_residual": 2.3381296898605797e-13
+    },
+    {
+      "geometry_id": "026",
+      "bond_length_A": 1.2015162633323155,
+      "eigenvalues": [
+        -1.7535905910244373e-17,
+        4.61625115760307e-16,
+        0.006324013667967643,
+        1.9999999999999967,
+        1.999999999999997,
+        1.999999999999999,
+        1.9999999999999996,
+        2.0000000000000036
+      ],
+      "distances_to_zero": [
+        1.7535905910244373e-17,
+        4.61625115760307e-16,
+        0.006324013667967643,
+        1.9999999999999967,
+        1.999999999999997,
+        1.999999999999999,
+        1.9999999999999996,
+        2.0000000000000036
+      ],
+      "distances_to_two": [
+        2.0,
+        1.9999999999999996,
+        1.9936759863320324,
+        3.3306690738754696e-15,
+        3.1086244689504383e-15,
+        1.1102230246251565e-15,
+        4.440892098500626e-16,
+        3.552713678800501e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        6
+      ],
+      "full_P_L_eigenvalues": [
+        -2.220446049250313e-16,
+        -2.1722250917102668e-16,
+        2.1722250917102668e-16,
+        1.9999999999999964,
+        1.9999999999999976,
+        1.9999999999999982,
+        2.0000000000000004,
+        2.0000000000000018,
+        2.000000000000004,
+        2.000000000000012
+      ],
+      "valence_core_coupling_singular_values": [
+        0.1122855030138044,
+        4.799488149204087e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -1.7535905910244373e-17,
+        4.61625115760307e-16,
+        0.006324013667967643,
+        1.9999999999999967,
+        1.999999999999997,
+        1.999999999999999,
+        1.9999999999999996,
+        2.0000000000000036
+      ],
+      "near_two_indices_independent": [
+        6
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 2.220446049250313e-15,
+        "S_half_squared_minus_S": 2.220446049250313e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 1.1102230246251565e-14,
+        "P_L_squared_minus_2P_L": 1.687538997430238e-14,
+        "trace_P_S_minus_14": 3.552713678800501e-15,
+        "trace_P_L_minus_14": 7.105427357601002e-15,
+        "valence_projector_compression_identity": 4.408799714195055e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/026/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.074341112911497e-13,
+      "RHF_vs_MP2_density_difference": 0.05827501755672371,
+      "saved_RHF_energy_difference": 5.684341886080802e-14,
+      "scf_commutator_residual": 2.1227464230832993e-13
+    },
+    {
+      "geometry_id": "027",
+      "bond_length_A": 1.206852985968756,
+      "eigenvalues": [
+        -4.947725101445589e-16,
+        5.0683300294496273e-17,
+        0.006338620775023118,
+        1.999999999999996,
+        1.9999999999999973,
+        1.999999999999999,
+        2.000000000000001,
+        2.0000000000000013
+      ],
+      "distances_to_zero": [
+        4.947725101445589e-16,
+        5.0683300294496273e-17,
+        0.006338620775023118,
+        1.999999999999996,
+        1.9999999999999973,
+        1.999999999999999,
+        2.000000000000001,
+        2.0000000000000013
+      ],
+      "distances_to_two": [
+        2.0000000000000004,
+        2.0,
+        1.9936613792249769,
+        3.9968028886505635e-15,
+        2.6645352591003757e-15,
+        1.1102230246251565e-15,
+        8.881784197001252e-16,
+        1.3322676295501878e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        6
+      ],
+      "full_P_L_eigenvalues": [
+        -3.924239806337096e-17,
+        1.2723790056069339e-42,
+        4.833316079134337e-16,
+        1.9999999999999951,
+        1.999999999999997,
+        1.9999999999999973,
+        1.9999999999999996,
+        2.0,
+        2.0000000000000004,
+        2.000000000000005
+      ],
+      "valence_core_coupling_singular_values": [
+        0.11241469404271288,
+        8.168761359949601e-16
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -4.947725101445589e-16,
+        5.0683300294496273e-17,
+        0.006338620775023118,
+        1.999999999999996,
+        1.9999999999999973,
+        1.999999999999999,
+        2.000000000000001,
+        2.0000000000000013
+      ],
+      "near_two_indices_independent": [
+        6
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.9984014443252818e-15,
+        "S_half_squared_minus_S": 1.4432899320127035e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 8.881784197001252e-15,
+        "P_L_squared_minus_2P_L": 9.769962616701378e-15,
+        "trace_P_S_minus_14": 1.7763568394002505e-15,
+        "trace_P_L_minus_14": 3.552713678800501e-15,
+        "valence_projector_compression_identity": 6.640738306473715e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/027/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 8.197886813832156e-13,
+      "RHF_vs_MP2_density_difference": 0.05899851843138426,
+      "saved_RHF_energy_difference": 0.0,
+      "scf_commutator_residual": 2.9831692671677956e-13
+    },
+    {
+      "geometry_id": "028",
+      "bond_length_A": 1.2121897086051967,
+      "eigenvalues": [
+        -5.385010863928929e-16,
+        9.441187654283026e-17,
+        0.006351094030444759,
+        1.9999999999999973,
+        1.999999999999999,
+        1.9999999999999991,
+        1.9999999999999996,
+        2.0000000000000027
+      ],
+      "distances_to_zero": [
+        5.385010863928929e-16,
+        9.441187654283026e-17,
+        0.006351094030444759,
+        1.9999999999999973,
+        1.999999999999999,
+        1.9999999999999991,
+        1.9999999999999996,
+        2.0000000000000027
+      ],
+      "distances_to_two": [
+        2.0000000000000004,
+        2.0,
+        1.9936489059695552,
+        2.6645352591003757e-15,
+        1.1102230246251565e-15,
+        8.881784197001252e-16,
+        4.440892098500626e-16,
+        2.6645352591003757e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        5,
+        6
+      ],
+      "full_P_L_eigenvalues": [
+        -1.0436028720516473e-17,
+        1.0436028720516473e-17,
+        4.440892098500626e-16,
+        1.999999999999994,
+        1.9999999999999971,
+        1.9999999999999987,
+        1.9999999999999996,
+        2.000000000000001,
+        2.0000000000000044,
+        2.0000000000000067
+      ],
+      "valence_core_coupling_singular_values": [
+        0.1125248935369644,
+        4.478968660011293e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -5.385010863928929e-16,
+        9.441187654283026e-17,
+        0.006351094030444759,
+        1.9999999999999973,
+        1.999999999999999,
+        1.9999999999999991,
+        1.9999999999999996,
+        2.0000000000000027
+      ],
+      "near_two_indices_independent": [
+        5,
+        6
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 1.9984014443252818e-15,
+        "S_half_squared_minus_S": 1.7763568394002505e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 9.769962616701378e-15,
+        "P_L_squared_minus_2P_L": 7.389922007661198e-15,
+        "trace_P_S_minus_14": 1.7763568394002505e-15,
+        "trace_P_L_minus_14": 1.7763568394002505e-15,
+        "valence_projector_compression_identity": 3.989213473443165e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/028/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 6.818989817247711e-13,
+      "RHF_vs_MP2_density_difference": 0.05972887838246055,
+      "saved_RHF_energy_difference": 2.842170943040401e-14,
+      "scf_commutator_residual": 3.055333763768431e-13
+    },
+    {
+      "geometry_id": "029",
+      "bond_length_A": 1.2175264312416372,
+      "eigenvalues": [
+        -1.2237125330601407e-17,
+        1.2237125330601407e-17,
+        0.006361469064001403,
+        1.9999999999999944,
+        1.9999999999999962,
+        1.9999999999999991,
+        2.000000000000001,
+        2.000000000000003
+      ],
+      "distances_to_zero": [
+        1.2237125330601407e-17,
+        1.2237125330601407e-17,
+        0.006361469064001403,
+        1.9999999999999944,
+        1.9999999999999962,
+        1.9999999999999991,
+        2.000000000000001,
+        2.000000000000003
+      ],
+      "distances_to_two": [
+        2.0,
+        2.0,
+        1.9936385309359985,
+        5.551115123125783e-15,
+        3.774758283725532e-15,
+        8.881784197001252e-16,
+        8.881784197001252e-16,
+        3.1086244689504383e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [
+        5,
+        6
+      ],
+      "full_P_L_eigenvalues": [
+        -8.882722296616644e-16,
+        -4.440892098500626e-16,
+        4.441830198116017e-16,
+        1.9999999999999918,
+        1.999999999999995,
+        1.9999999999999987,
+        2.0000000000000013,
+        2.0000000000000013,
+        2.0000000000000036,
+        2.0000000000000058
+      ],
+      "valence_core_coupling_singular_values": [
+        0.11261647232688152,
+        6.3499487918986304e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -1.2237125330601407e-17,
+        1.2237125330601407e-17,
+        0.006361469064001403,
+        1.9999999999999944,
+        1.9999999999999962,
+        1.9999999999999991,
+        2.000000000000001,
+        2.000000000000003
+      ],
+      "near_two_indices_independent": [
+        5,
+        6
+      ],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 2.220446049250313e-15,
+        "S_half_squared_minus_S": 1.5543122344752192e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 6.772360450213455e-15,
+        "P_L_squared_minus_2P_L": 9.901801600875615e-15,
+        "trace_P_S_minus_14": 1.7763568394002505e-15,
+        "trace_P_L_minus_14": 5.329070518200751e-15,
+        "valence_projector_compression_identity": 7.654467337747661e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/029/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.123190925995004e-13,
+      "RHF_vs_MP2_density_difference": 0.06046601128955409,
+      "saved_RHF_energy_difference": 5.684341886080802e-14,
+      "scf_commutator_residual": 1.7630341631047486e-13
+    },
+    {
+      "geometry_id": "030",
+      "bond_length_A": 1.2228631538780776,
+      "eigenvalues": [
+        -2.6514727777035627e-16,
+        4.871918826953875e-16,
+        0.006369782518254485,
+        1.9999999999999956,
+        1.9999999999999976,
+        1.999999999999999,
+        2.000000000000003,
+        2.000000000000004
+      ],
+      "distances_to_zero": [
+        2.6514727777035627e-16,
+        4.871918826953875e-16,
+        0.006369782518254485,
+        1.9999999999999956,
+        1.9999999999999976,
+        1.999999999999999,
+        2.000000000000003,
+        2.000000000000004
+      ],
+      "distances_to_two": [
+        2.0000000000000004,
+        1.9999999999999996,
+        1.9936302174817455,
+        4.440892098500626e-15,
+        2.4424906541753444e-15,
+        1.1102230246251565e-15,
+        3.1086244689504383e-15,
+        3.9968028886505635e-15
+      ],
+      "near_zero_indices": [
+        0,
+        1
+      ],
+      "near_two_indices": [],
+      "full_P_L_eigenvalues": [
+        -4.44441952356892e-16,
+        -4.440892098500626e-16,
+        4.44441952356892e-16,
+        1.999999999999994,
+        1.9999999999999993,
+        2.0,
+        2.0000000000000004,
+        2.000000000000004,
+        2.000000000000005,
+        2.000000000000007
+      ],
+      "valence_core_coupling_singular_values": [
+        0.11268979948149252,
+        1.6758010645885707e-15
+      ],
+      "independent_reconstruction_eigenvalues": [
+        -2.6514727777035627e-16,
+        4.871918826953875e-16,
+        0.006369782518254485,
+        1.9999999999999956,
+        1.9999999999999976,
+        1.999999999999999,
+        2.000000000000003,
+        2.000000000000004
+      ],
+      "near_two_indices_independent": [],
+      "checks": {
+        "P_AO_minus_C_occ_CT": 0.0,
+        "C_T_S_C_minus_I": 3.1086244689504383e-15,
+        "S_half_squared_minus_S": 2.220446049250313e-15,
+        "S_half_minus_independent_eigh_root": 0.0,
+        "saved_P_L_minus_full_transform": 0.0,
+        "P_S_P_minus_2P": 7.993605777301127e-15,
+        "P_L_squared_minus_2P_L": 7.549516567451064e-15,
+        "trace_P_S_minus_14": 1.7763568394002505e-15,
+        "trace_P_L_minus_14": 5.329070518200751e-15,
+        "valence_projector_compression_identity": 6.441028266301885e-15,
+        "production_FE_minus_independent_MO_overlap_reconstruction": 0.0
+      },
+      "upstream_checkpoint": "/Users/novaz/Desktop/qml2.0/results/initialdata/CO/scan/030/electronic_state.npz",
+      "upstream_density_from_MO_residual": 0.0,
+      "upstream_overlap_residual": 0.0,
+      "upstream_to_reconverged_descriptor_density_difference": 7.100986465502501e-13,
+      "RHF_vs_MP2_density_difference": 0.06120982168506717,
+      "saved_RHF_energy_difference": 5.684341886080802e-14,
+      "scf_commutator_residual": 3.844702334276917e-13
+    }
+  ],
+  "versions": {
+    "numpy": "2.5.1"
+  },
+  "scope": "Read-only saved-data and current-code audit; no solvers, training, or scientific changes"
+}

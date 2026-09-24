@@ -1,0 +1,143 @@
+{
+  "CO/FG": {
+    "manifest_id": "run1-methods41-fullspace",
+    "molecule": "CO",
+    "model_label": "FG",
+    "training_sample_ids": [
+      "CO/001",
+      "CO/003",
+      "CO/005",
+      "CO/007",
+      "CO/009",
+      "CO/011",
+      "CO/013",
+      "CO/015",
+      "CO/017",
+      "CO/019",
+      "CO/021",
+      "CO/023",
+      "CO/025",
+      "CO/027",
+      "CO/029"
+    ],
+    "n_active": 2,
+    "mu": [
+      1.1428123143314697,
+      0.8764632800207378
+    ],
+    "sigma": [
+      0.04611455411479282,
+      0.035435283873271765
+    ],
+    "sigma_safe": [
+      0.04611455411479282,
+      0.035435283873271765
+    ],
+    "constant_mask": [
+      false,
+      false
+    ],
+    "schema_version": "canonical-fingerprint-v1",
+    "epsilon": 1e-12
+  },
+  "CO/FE": {
+    "manifest_id": "run1-methods41-fullspace",
+    "molecule": "CO",
+    "model_label": "FE",
+    "training_sample_ids": [
+      "CO/001",
+      "CO/003",
+      "CO/005",
+      "CO/007",
+      "CO/009",
+      "CO/011",
+      "CO/013",
+      "CO/015",
+      "CO/017",
+      "CO/019",
+      "CO/021",
+      "CO/023",
+      "CO/025",
+      "CO/027",
+      "CO/029"
+    ],
+    "n_active": 8,
+    "mu": [
+      -1.8959620203082452e-16,
+      2.0439917569249327e-16,
+      0.005923472430443106,
+      1.9999999999999931,
+      1.9999999999999964,
+      1.9999999999999991,
+      2.000000000000001,
+      2.0000000000000027
+    ],
+    "sigma": [
+      2.1956223049242207e-16,
+      2.0258761022431528e-16,
+      0.0003676539989454187,
+      2.1413206232596582e-15,
+      1.500513412242058e-15,
+      1.3322676295501878e-15,
+      1.897149936107019e-15,
+      2.2535066179978845e-15
+    ],
+    "sigma_safe": [
+      1.0,
+      1.0,
+      0.0003676539989454187,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "constant_mask": [
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "schema_version": "canonical-fingerprint-v1",
+    "epsilon": 1e-12
+  },
+  "CO/MB-1": {
+    "manifest_id": "run1-methods41-fullspace",
+    "molecule": "CO",
+    "model_label": "MB-1",
+    "training_sample_ids": [
+      "CO/001",
+      "CO/003",
+      "CO/005",
+      "CO/007",
+      "CO/009",
+      "CO/011",
+      "CO/013",
+      "CO/015",
+      "CO/017",
+      "CO/019",
+      "CO/021",
+      "CO/023",
+      "CO/025",
+      "CO/027",
+      "CO/029"
+    ],
+    "n_active": 8,
+    "Pii_mean": 1.2507404340538044,
+    "Pii_std": 0.42134910848000473,
+    "Fii_mean": -0.3334380117124386,
+    "Fii_std": 0.4264262435466091,
+    "Pij_abs95": 0.9030950234650951,
+    "alpha": 1.6301933366152828,
+    "T_abs95": null,
+    "beta": null,
+    "schema_version": "mb-encoding-constants-v1",
+    "pair_contract": "active-i-lt-j-row-major-v1",
+    "triple_contract": null,
+    "percentile_contract": "numpy-float64-abs-percentile-95-linear-v1"
+  }
+}

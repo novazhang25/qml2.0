@@ -1,0 +1,8 @@
+{
+  "molecule": "BeH2",
+  "geometry_id": "007",
+  "q_A": -0.08320087068698423,
+  "record": "/Users/novaz/Desktop/qml2.0/results/descriptor-1s-only/BeH2/007.npz",
+  "error": "",
+  "validation_performed": false
+}

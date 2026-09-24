@@ -1,0 +1,8 @@
+{
+  "molecule": "HF",
+  "geometry_id": "017",
+  "q_A": 0.015897077091902356,
+  "record": "/Users/novaz/Desktop/qml2.0/results/descriptor-1s-only/HF/017.npz",
+  "error": "",
+  "validation_performed": false
+}

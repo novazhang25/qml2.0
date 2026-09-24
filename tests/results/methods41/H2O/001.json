@@ -1,0 +1,261 @@
+{
+  "molecule": "H2O",
+  "geometry_id": "001",
+  "status": "FAIL",
+  "validation": {
+    "checks": {
+      "rhf_electron_number_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "mp2_electron_number_error": {
+        "value": 1.7763568394002505e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "rhf_idempotency_ao_max_error": {
+        "value": 3.552713678800501e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "rdm2_contraction_max_error": {
+        "value": 0.018653191551697645,
+        "limit": 1e-08,
+        "passed": false
+      },
+      "rdm2_particle_number_error": {
+        "value": 0.039980068515475864,
+        "limit": 1e-08,
+        "passed": false
+      },
+      "rhf_rdm2_contraction_max_error": {
+        "value": 7.105427357601002e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "cumulant_contraction_max_error": {
+        "value": 0.018653191551698534,
+        "limit": 1e-08,
+        "passed": false
+      },
+      "pyscf_truncation_identity_max_error": {
+        "value": 7.051650929845721e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "lowdin_metric_max_error": {
+        "value": 1.0970410571309535e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "S_half_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "S_minus_half_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "P_L_transform_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "F_L_transform_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "rhf_idempotency_lowdin_max_error": {
+        "value": 7.549516567451064e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "Gamma0_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "Lambda_AO_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "Lambda_L_transform_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "lowdin_electron_number_error": {
+        "value": 7.105427357601002e-15,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "cumulant_lowdin_contraction_max_error": {
+        "value": 0.010178216639896757,
+        "limit": 1e-08,
+        "passed": false
+      },
+      "rhf_energy_error_Ha": {
+        "value": 2.842170943040401e-14,
+        "limit": 1e-10,
+        "passed": true
+      },
+      "input_correlation_error_Ha": {
+        "value": 0.0,
+        "limit": 1e-12,
+        "passed": true
+      },
+      "P_mu_extraction_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "F_mu_extraction_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "pair_indices_extraction_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "P_munu_extraction_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "T_full_extraction_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "triple_indices_extraction_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "T_munulambda_extraction_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "T_full_explicit_index_max_error": {
+        "value": 0.0,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "rank4_explicit_loop_max_error": {
+        "value": 4.85722573273506e-17,
+        "limit": 1e-08,
+        "passed": true
+      },
+      "zero_t2_cumulant_max_error": {
+        "value": 4.440892098500626e-16,
+        "limit": 1e-08,
+        "passed": true
+      }
+    },
+    "rdm_definition": "pyscf.mp.mp2.make_rdm2: unrelaxed energy-derivative MP2 density",
+    "rdm_convention": "Gamma[p,q,r,s] = sum_spin <p^dagger r^dagger s q>; real spatial AOs",
+    "pyscf_expected_contraction_defect_max": 0.018653191551698586,
+    "passed": false,
+    "failed_checks": [
+      "rdm2_contraction_max_error",
+      "rdm2_particle_number_error",
+      "cumulant_contraction_max_error",
+      "cumulant_lowdin_contraction_max_error"
+    ],
+    "overlap_eigenvalue_min": 0.28897999050425094,
+    "overlap_eigenvalue_max": 2.0553661311603375,
+    "tensor_shapes": {
+      "S_AO": [
+        7,
+        7
+      ],
+      "F_AO": [
+        7,
+        7
+      ],
+      "S_half": [
+        7,
+        7
+      ],
+      "S_minus_half": [
+        7,
+        7
+      ],
+      "P_L": [
+        7,
+        7
+      ],
+      "F_L": [
+        7,
+        7
+      ],
+      "Gamma0_AO": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "Lambda_AO": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "Lambda_L": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "P_mu": [
+        6
+      ],
+      "F_mu": [
+        6
+      ],
+      "P_munu": [
+        15
+      ],
+      "T_full": [
+        6,
+        6,
+        6
+      ],
+      "T_munulambda": [
+        20
+      ],
+      "pair_indices": [
+        15,
+        2
+      ],
+      "triple_indices": [
+        20,
+        3
+      ],
+      "Gamma_MP2_AO": [
+        7,
+        7,
+        7,
+        7
+      ]
+    },
+    "descriptor_dimensions": {
+      "one_body": 6,
+      "pair": 15,
+      "triple": 20
+    },
+    "rhf_converged": true,
+    "rhf_gradient_norm": 2.9386614706066104e-13,
+    "mp2_convergence_status": "canonical noniterative RMP2 completed",
+    "mp2_min_occupied_virtual_gap_Ha": 1.0981871882245557,
+    "zero_t2_cumulant_max_error": 4.440892098500626e-16
+  }
+}

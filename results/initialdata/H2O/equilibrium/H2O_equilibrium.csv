@@ -1,0 +1,2 @@
+molecule,method,basis,status,optimizer_success,energy_hartree,xyz_file,max_gradient_hartree_per_bohr,iterations
+H2O,RHF,sto-3g,converged,True,-74.96590119230045,/Users/novaz/Desktop/qml2.0/results/initialdata/H2O/equilibrium/H2O_converged.xyz,1.0132115146888054e-09,5

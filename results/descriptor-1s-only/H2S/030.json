@@ -1,0 +1,8 @@
+{
+  "molecule": "H2S",
+  "geometry_id": "030",
+  "q_A": 0.1255856989017472,
+  "record": "/Users/novaz/Desktop/qml2.0/results/descriptor-1s-only/H2S/030.npz",
+  "error": "",
+  "validation_performed": false
+}

@@ -1,0 +1,2 @@
+molecule,method,basis,status,optimizer_success,energy_hartree,xyz_file,max_gradient_hartree_per_bohr,iterations
+LiH,RHF,sto-3g,converged,True,-7.86338212892119,/Users/novaz/Desktop/qml2.0/results/initialdata/LiH/equilibrium/LiH_converged.xyz,1.0194241562011541e-08,7

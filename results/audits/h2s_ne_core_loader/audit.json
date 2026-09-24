@@ -1,0 +1,2015 @@
+{
+  "status": "PASS",
+  "molecule": "H2S",
+  "geometry_count": 30,
+  "full_AO_dimension": 11,
+  "valence_shape": [
+    6,
+    6
+  ],
+  "descriptor_qubit_dimension": 6,
+  "selected_ao_indices": [
+    2,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "selected_ao_labels": [
+    "0 S 3s",
+    "0 S 3px",
+    "0 S 3py",
+    "0 S 3pz",
+    "1 H 1s",
+    "2 H 1s"
+  ],
+  "core_ao_indices": [
+    0,
+    1,
+    3,
+    4,
+    5
+  ],
+  "core_ao_labels": [
+    "0 S 1s",
+    "0 S 2s",
+    "0 S 2px",
+    "0 S 2py",
+    "0 S 2pz"
+  ],
+  "max_abs_residuals": {
+    "loader_block_vs_saved_P_L_block": 0.0,
+    "loader_FE_vs_saved_raw_FE": 0.0,
+    "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+    "loader_block_vs_full_transform_then_selection": 0.0,
+    "loader_block_vs_saved_P_mu_P_munu_reconstruction": 3.3306690738754696e-16
+  },
+  "reference_csv": "/Users/novaz/Desktop/qml2.0/results/audits/fe_all_molecules/fe_eigenvalues.csv",
+  "reference_view": "saved_6AO_diagnostic",
+  "reference_kind": "Previously saved raw eigvalsh of the saved six-AO P_L block; unscaled",
+  "input_dir": "/Users/novaz/Desktop/qml2.0/results/descriptor",
+  "numpy_version": "2.5.1",
+  "nonexact_check_tolerance": 1e-12,
+  "exact_block_match": true,
+  "exact_FE_match": true,
+  "source_hashes_before": {
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/001.npz": "448861086c09c4741cb579cec80504db81a596cfe8bbe968f91392bb57d3d979",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/002.npz": "1e94a82ede1d96c62b196ba18133d6d5504ca3dba778f050ee5c7684d66bfdda",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/003.npz": "799b38042f27bdb4d998647ada8ca5cdffc231c0de04b432dbb8c7dbbca5127c",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/004.npz": "dca2ab66c299313b5b91358bf13b3fd049bda103cec0f7b913dca5d6f1a003bb",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/005.npz": "3e2d5dc0dcb956633a9fa499af3dbd14c9c84f7d711c770c12e298ee42e0b8af",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/006.npz": "6907f081c77d017d6b7ec94cf3d25978ee9cefc6bf2cfceedf2116d3f16d2db3",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/007.npz": "c86956b3d640fde0cc0f96b242502e5f283eb93649d696883de8f5c7ee19f743",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/008.npz": "fd2cff09af2e91eb29a5b6193407cff89af2f7b65faac44105d535c6bce3144f",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/009.npz": "2d7055fd9e22d69f89fd5076a42e94ebd98d17ace528877190f5c34770735797",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/010.npz": "4a0d507a53e487958baa7a8b2da12664f7c03bfad42bf0426ff06c3464bbb9bc",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/011.npz": "b1661fd30abad8ab0ed350677bb1ca2503d755a0fa7998584d263e8e8d13bfd0",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/012.npz": "22890573ddca6149d9ee311829ef2dfa47027e169e22154486b53a252cb5be39",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/013.npz": "e997e46d471d80cb3b7df70e559d1b18b1763d0d8a1c3e5751913703c323aefe",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/014.npz": "8f09d8c54bee70b6278c00b691daa0f67607e3d0bbeeee212e1ffbf5d02331cc",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/015.npz": "629c7b1335160f313345833e3bf9179803c4379bbdfb8f239b0e38217afe32a7",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/016.npz": "b07e7abd819a83bd9721235f7f7c91ebfee3a52629feb29f8be24980651e2292",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/017.npz": "6f7f785bef29817137343ab8a4511e68d43277efee97a6fb89100b7952fddb11",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/018.npz": "36c555b0a5fea272d948af3e15e06d8d095433bc53f084552b1df5599a4b838b",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/019.npz": "c5a9d713d2e2790bcc05cdf926c634840f044ff5bfbf63bf339e0f69647e6b2c",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/020.npz": "1aa35a022e10e4af3b62ba5a666cbd491c4177415f436eed0e088f93762edf4f",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/021.npz": "355252511461fbcd46272985274073528aa05508432cc0c358ee8402b47bfd06",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/022.npz": "9a7d9e5005b303797a230b2b422139492d441aa15a27eb8757ce14171ff2293c",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/023.npz": "329777247ba26644fdf21b159d9960b5f02ec574c4b5c3a052f5409c134aa948",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/024.npz": "edeaec88dc7c7ffeb8580d8637b15b35e87be9796464aa6b69c82d434111aae8",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/025.npz": "7a6bfb7c3092a31a6ee22ab99af8859f1571e83863507fc5d73c322b03c8307a",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/026.npz": "55911278a2664b065943d0471dd094f6fdb2ad8cb71674ac127709d466662022",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/027.npz": "9903bc551e8cde78d130daacc7bb2efec1ef9bcd0e33941b2f910db7db769a9b",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/028.npz": "38474a58b202fdcbc5c82e782b1b746d54878624327fbea8cb7ba30b01297759",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/029.npz": "f701b4f1ca967fe19bc9b93eba890c589b73eab7dd268095ff09b9ad5a15aac6",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/030.npz": "4df8b2824942587899f8d22d8e80dffd79bbb8c047de435f601de80a9aa8286f"
+  },
+  "source_hashes_after": {
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/001.npz": "448861086c09c4741cb579cec80504db81a596cfe8bbe968f91392bb57d3d979",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/002.npz": "1e94a82ede1d96c62b196ba18133d6d5504ca3dba778f050ee5c7684d66bfdda",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/003.npz": "799b38042f27bdb4d998647ada8ca5cdffc231c0de04b432dbb8c7dbbca5127c",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/004.npz": "dca2ab66c299313b5b91358bf13b3fd049bda103cec0f7b913dca5d6f1a003bb",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/005.npz": "3e2d5dc0dcb956633a9fa499af3dbd14c9c84f7d711c770c12e298ee42e0b8af",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/006.npz": "6907f081c77d017d6b7ec94cf3d25978ee9cefc6bf2cfceedf2116d3f16d2db3",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/007.npz": "c86956b3d640fde0cc0f96b242502e5f283eb93649d696883de8f5c7ee19f743",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/008.npz": "fd2cff09af2e91eb29a5b6193407cff89af2f7b65faac44105d535c6bce3144f",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/009.npz": "2d7055fd9e22d69f89fd5076a42e94ebd98d17ace528877190f5c34770735797",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/010.npz": "4a0d507a53e487958baa7a8b2da12664f7c03bfad42bf0426ff06c3464bbb9bc",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/011.npz": "b1661fd30abad8ab0ed350677bb1ca2503d755a0fa7998584d263e8e8d13bfd0",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/012.npz": "22890573ddca6149d9ee311829ef2dfa47027e169e22154486b53a252cb5be39",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/013.npz": "e997e46d471d80cb3b7df70e559d1b18b1763d0d8a1c3e5751913703c323aefe",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/014.npz": "8f09d8c54bee70b6278c00b691daa0f67607e3d0bbeeee212e1ffbf5d02331cc",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/015.npz": "629c7b1335160f313345833e3bf9179803c4379bbdfb8f239b0e38217afe32a7",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/016.npz": "b07e7abd819a83bd9721235f7f7c91ebfee3a52629feb29f8be24980651e2292",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/017.npz": "6f7f785bef29817137343ab8a4511e68d43277efee97a6fb89100b7952fddb11",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/018.npz": "36c555b0a5fea272d948af3e15e06d8d095433bc53f084552b1df5599a4b838b",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/019.npz": "c5a9d713d2e2790bcc05cdf926c634840f044ff5bfbf63bf339e0f69647e6b2c",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/020.npz": "1aa35a022e10e4af3b62ba5a666cbd491c4177415f436eed0e088f93762edf4f",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/021.npz": "355252511461fbcd46272985274073528aa05508432cc0c358ee8402b47bfd06",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/022.npz": "9a7d9e5005b303797a230b2b422139492d441aa15a27eb8757ce14171ff2293c",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/023.npz": "329777247ba26644fdf21b159d9960b5f02ec574c4b5c3a052f5409c134aa948",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/024.npz": "edeaec88dc7c7ffeb8580d8637b15b35e87be9796464aa6b69c82d434111aae8",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/025.npz": "7a6bfb7c3092a31a6ee22ab99af8859f1571e83863507fc5d73c322b03c8307a",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/026.npz": "55911278a2664b065943d0471dd094f6fdb2ad8cb71674ac127709d466662022",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/027.npz": "9903bc551e8cde78d130daacc7bb2efec1ef9bcd0e33941b2f910db7db769a9b",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/028.npz": "38474a58b202fdcbc5c82e782b1b746d54878624327fbea8cb7ba30b01297759",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/029.npz": "f701b4f1ca967fe19bc9b93eba890c589b73eab7dd268095ff09b9ad5a15aac6",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/030.npz": "4df8b2824942587899f8d22d8e80dffd79bbb8c047de435f601de80a9aa8286f"
+  },
+  "reference_sha256_before": "b9965c5e2629adcc6ca2e2d1b4da91c81dca81201ff9774b31883874ac014e68",
+  "reference_sha256_after": "b9965c5e2629adcc6ca2e2d1b4da91c81dca81201ff9774b31883874ac014e68",
+  "inputs_unchanged": true,
+  "per_geometry": [
+    {
+      "geometry_id": "001",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.028062287803305663,
+        0.035962139238866486,
+        1.9999999999999936,
+        1.9999999999999984,
+        2.0000000000000004,
+        2.0000000000000018
+      ],
+      "saved_raw_FE": [
+        0.028062287803305663,
+        0.035962139238866486,
+        1.9999999999999936,
+        1.9999999999999984,
+        2.0000000000000004,
+        2.0000000000000018
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 2.220446049250313e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "002",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.02833739212984887,
+        0.036121138329846314,
+        1.999999999999992,
+        1.999999999999997,
+        1.9999999999999973,
+        2.0000000000000027
+      ],
+      "saved_raw_FE": [
+        0.02833739212984887,
+        0.036121138329846314,
+        1.999999999999992,
+        1.999999999999997,
+        1.9999999999999973,
+        2.0000000000000027
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 5.551115123125783e-17
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "003",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.02860453656779248,
+        0.036274102666168595,
+        1.9999999999999958,
+        1.9999999999999978,
+        2.000000000000003,
+        2.000000000000006
+      ],
+      "saved_raw_FE": [
+        0.02860453656779248,
+        0.036274102666168595,
+        1.9999999999999958,
+        1.9999999999999978,
+        2.000000000000003,
+        2.000000000000006
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 1.1102230246251565e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "004",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.028863803128342136,
+        0.036421153576297716,
+        1.999999999999999,
+        1.9999999999999998,
+        2.000000000000001,
+        2.0000000000000018
+      ],
+      "saved_raw_FE": [
+        0.028863803128342136,
+        0.036421153576297716,
+        1.999999999999999,
+        1.9999999999999998,
+        2.000000000000001,
+        2.0000000000000018
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 1.1102230246251565e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "005",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.029115282614285753,
+        0.036562412962494406,
+        2.0000000000000018,
+        2.0000000000000036,
+        2.000000000000005,
+        2.0000000000000053
+      ],
+      "saved_raw_FE": [
+        0.029115282614285753,
+        0.036562412962494406,
+        2.0000000000000018,
+        2.0000000000000036,
+        2.000000000000005,
+        2.0000000000000053
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 1.1102230246251565e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "006",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.029359073803669977,
+        0.03669800313517824,
+        1.9999999999999978,
+        1.9999999999999987,
+        2.0,
+        2.000000000000001
+      ],
+      "saved_raw_FE": [
+        0.029359073803669977,
+        0.03669800313517824,
+        1.9999999999999978,
+        1.9999999999999987,
+        2.0,
+        2.000000000000001
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 1.6653345369377348e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "007",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.029595282675464407,
+        0.03682804665385353,
+        1.9999999999999956,
+        1.9999999999999993,
+        2.0000000000000004,
+        2.000000000000001
+      ],
+      "saved_raw_FE": [
+        0.029595282675464407,
+        0.03682804665385353,
+        1.9999999999999956,
+        1.9999999999999993,
+        2.0000000000000004,
+        2.000000000000001
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 2.220446049250313e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "008",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.02982402167637188,
+        0.03695266617469306,
+        1.9999999999999967,
+        1.9999999999999996,
+        2.0000000000000018,
+        2.0000000000000036
+      ],
+      "saved_raw_FE": [
+        0.02982402167637188,
+        0.03695266617469306,
+        1.9999999999999967,
+        1.9999999999999996,
+        2.0000000000000018,
+        2.0000000000000036
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 3.3306690738754696e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "009",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.030045409027340986,
+        0.037071984305258265,
+        1.9999999999999942,
+        1.9999999999999978,
+        1.9999999999999998,
+        2.0000000000000004
+      ],
+      "saved_raw_FE": [
+        0.030045409027340986,
+        0.037071984305258265,
+        1.9999999999999942,
+        1.9999999999999978,
+        1.9999999999999998,
+        2.0000000000000004
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 2.7755575615628914e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "010",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.030259568068861986,
+        0.03718612346619321,
+        1.9999999999999933,
+        1.9999999999999976,
+        1.9999999999999996,
+        2.0000000000000004
+      ],
+      "saved_raw_FE": [
+        0.030259568068861986,
+        0.03718612346619321,
+        1.9999999999999933,
+        1.9999999999999976,
+        1.9999999999999996,
+        2.0000000000000004
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 1.3183898417423734e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "011",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.030466626643558925,
+        0.03729520576020873,
+        1.9999999999999976,
+        2.000000000000004,
+        2.000000000000005,
+        2.000000000000009
+      ],
+      "saved_raw_FE": [
+        0.030466626643558925,
+        0.03729520576020873,
+        1.9999999999999976,
+        2.000000000000004,
+        2.000000000000005,
+        2.000000000000009
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 2.220446049250313e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "012",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.030666716514919923,
+        0.037399352848235035,
+        1.9999999999999973,
+        1.9999999999999998,
+        2.0000000000000004,
+        2.000000000000005
+      ],
+      "saved_raw_FE": [
+        0.030666716514919923,
+        0.037399352848235035,
+        1.9999999999999973,
+        1.9999999999999998,
+        2.0000000000000004,
+        2.000000000000005
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 3.3306690738754696e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "013",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.030859972820870718,
+        0.03749868583264937,
+        1.999999999999998,
+        1.9999999999999984,
+        2.0000000000000027,
+        2.0000000000000053
+      ],
+      "saved_raw_FE": [
+        0.030859972820870718,
+        0.03749868583264937,
+        1.999999999999998,
+        1.9999999999999984,
+        2.0000000000000027,
+        2.0000000000000053
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 3.3306690738754696e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "014",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.031046533560802832,
+        0.03759332514754909,
+        1.999999999999996,
+        1.9999999999999971,
+        2.0,
+        2.000000000000002
+      ],
+      "saved_raw_FE": [
+        0.031046533560802832,
+        0.03759332514754909,
+        1.999999999999996,
+        1.9999999999999971,
+        2.0,
+        2.000000000000002
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 1.1102230246251565e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "015",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.031226539114833862,
+        0.0376833904558036,
+        1.999999999999997,
+        1.999999999999998,
+        1.9999999999999996,
+        2.000000000000005
+      ],
+      "saved_raw_FE": [
+        0.031226539114833862,
+        0.0376833904558036,
+        1.999999999999997,
+        1.999999999999998,
+        1.9999999999999996,
+        2.000000000000005
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 2.220446049250313e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "016",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.03140013179388812,
+        0.03776900055280952,
+        1.9999999999999971,
+        1.9999999999999991,
+        2.0000000000000004,
+        2.0000000000000067
+      ],
+      "saved_raw_FE": [
+        0.03140013179388812,
+        0.03776900055280952,
+        1.9999999999999971,
+        1.9999999999999991,
+        2.0000000000000004,
+        2.0000000000000067
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 2.220446049250313e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "017",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.031567455419399426,
+        0.03785027327663126,
+        1.9999999999999938,
+        1.9999999999999958,
+        1.9999999999999996,
+        2.0000000000000013
+      ],
+      "saved_raw_FE": [
+        0.031567455419399426,
+        0.03785027327663126,
+        1.9999999999999938,
+        1.9999999999999958,
+        1.9999999999999996,
+        2.0000000000000013
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 2.220446049250313e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "018",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.031728654931192146,
+        0.037927325424331304,
+        1.9999999999999976,
+        2.0000000000000013,
+        2.000000000000004,
+        2.0000000000000044
+      ],
+      "saved_raw_FE": [
+        0.031728654931192146,
+        0.037927325424331304,
+        1.9999999999999976,
+        2.0000000000000013,
+        2.000000000000004,
+        2.0000000000000044
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 1.6653345369377348e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "019",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.03188387602236875,
+        0.03800027267418016,
+        1.9999999999999976,
+        1.9999999999999993,
+        2.0000000000000018,
+        2.000000000000005
+      ],
+      "saved_raw_FE": [
+        0.03188387602236875,
+        0.03800027267418016,
+        1.9999999999999976,
+        1.9999999999999993,
+        2.0000000000000018,
+        2.000000000000005
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 1.1102230246251565e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "020",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.0320332647999233,
+        0.03806922951362579,
+        1.9999999999999916,
+        1.999999999999997,
+        1.9999999999999993,
+        2.0000000000000018
+      ],
+      "saved_raw_FE": [
+        0.0320332647999233,
+        0.03806922951362579,
+        1.9999999999999916,
+        1.999999999999997,
+        1.9999999999999993,
+        2.0000000000000018
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 2.220446049250313e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "021",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.03217696746984888,
+        0.0381343091725046,
+        1.9999999999999982,
+        1.9999999999999987,
+        2.0,
+        2.0000000000000004
+      ],
+      "saved_raw_FE": [
+        0.03217696746984888,
+        0.0381343091725046,
+        1.9999999999999982,
+        1.9999999999999987,
+        2.0,
+        2.0000000000000004
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 2.220446049250313e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "022",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.03231513004548603,
+        0.03819562356147399,
+        1.9999999999999947,
+        2.0000000000000004,
+        2.0000000000000013,
+        2.0000000000000044
+      ],
+      "saved_raw_FE": [
+        0.03231513004548603,
+        0.03819562356147399,
+        1.9999999999999947,
+        2.0000000000000004,
+        2.0000000000000013,
+        2.0000000000000044
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 1.6653345369377348e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "023",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.03244789807802238,
+        0.03825328321522958,
+        1.9999999999999984,
+        2.0000000000000004,
+        2.0000000000000013,
+        2.000000000000005
+      ],
+      "saved_raw_FE": [
+        0.03244789807802238,
+        0.03825328321522958,
+        1.9999999999999984,
+        2.0000000000000004,
+        2.0000000000000013,
+        2.000000000000005
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 2.220446049250313e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "024",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.03257541640793993,
+        0.038307397240325836,
+        1.9999999999999984,
+        1.9999999999999998,
+        2.0000000000000036,
+        2.0000000000000093
+      ],
+      "saved_raw_FE": [
+        0.03257541640793993,
+        0.038307397240325836,
+        1.9999999999999984,
+        1.9999999999999998,
+        2.0000000000000036,
+        2.0000000000000093
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 1.1102230246251565e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "025",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.032697828936435185,
+        0.03835807326727281,
+        1.9999999999999956,
+        1.9999999999999964,
+        1.999999999999998,
+        2.000000000000001
+      ],
+      "saved_raw_FE": [
+        0.032697828936435185,
+        0.03835807326727281,
+        1.9999999999999956,
+        1.9999999999999964,
+        1.999999999999998,
+        2.000000000000001
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 2.2898349882893854e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "026",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.032815278415564864,
+        0.038405417406757625,
+        1.9999999999999958,
+        1.9999999999999987,
+        2.0,
+        2.0000000000000018
+      ],
+      "saved_raw_FE": [
+        0.032815278415564864,
+        0.038405417406757625,
+        1.9999999999999958,
+        1.9999999999999987,
+        2.0,
+        2.0000000000000018
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 1.1102230246251565e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "027",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.03292790625633213,
+        0.03844953420964736,
+        1.9999999999999891,
+        1.999999999999991,
+        1.999999999999999,
+        2.0000000000000018
+      ],
+      "saved_raw_FE": [
+        0.03292790625633213,
+        0.03844953420964736,
+        1.9999999999999891,
+        1.999999999999991,
+        1.999999999999999,
+        2.0000000000000018
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 2.220446049250313e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "028",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.033035852353403665,
+        0.03849052663076824,
+        1.9999999999999951,
+        1.9999999999999984,
+        2.0000000000000018,
+        2.000000000000005
+      ],
+      "saved_raw_FE": [
+        0.033035852353403665,
+        0.03849052663076824,
+        1.9999999999999951,
+        1.9999999999999984,
+        2.0000000000000018,
+        2.000000000000005
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 2.0122792321330962e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "029",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.033139254926022765,
+        0.03852849599584762,
+        1.999999999999996,
+        1.9999999999999964,
+        1.9999999999999998,
+        2.0000000000000036
+      ],
+      "saved_raw_FE": [
+        0.033139254926022765,
+        0.03852849599584762,
+        1.999999999999996,
+        1.9999999999999964,
+        1.9999999999999998,
+        2.0000000000000036
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 2.220446049250313e-16
+      },
+      "status": "PASS"
+    },
+    {
+      "geometry_id": "030",
+      "full_AO_dimension": 11,
+      "valence_shape": [
+        6,
+        6
+      ],
+      "descriptor_qubit_dimension": 6,
+      "selected_ao_indices": [
+        2,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "selected_ao_labels": [
+        "0 S 3s",
+        "0 S 3px",
+        "0 S 3py",
+        "0 S 3pz",
+        "1 H 1s",
+        "2 H 1s"
+      ],
+      "core_ao_indices": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "core_ao_labels": [
+        "0 S 1s",
+        "0 S 2s",
+        "0 S 2px",
+        "0 S 2py",
+        "0 S 2pz"
+      ],
+      "raw_FE": [
+        0.033238250373682776,
+        0.038563541971926796,
+        1.9999999999999962,
+        1.9999999999999967,
+        1.9999999999999976,
+        2.0000000000000027
+      ],
+      "saved_raw_FE": [
+        0.033238250373682776,
+        0.038563541971926796,
+        1.9999999999999962,
+        1.9999999999999967,
+        1.9999999999999976,
+        2.0000000000000027
+      ],
+      "max_abs_residuals": {
+        "loader_block_vs_saved_P_L_block": 0.0,
+        "loader_FE_vs_saved_raw_FE": 0.0,
+        "saved_full_P_L_vs_full_AO_Lowdin_transform": 0.0,
+        "loader_block_vs_full_transform_then_selection": 0.0,
+        "loader_block_vs_saved_P_mu_P_munu_reconstruction": 1.1102230246251565e-16
+      },
+      "status": "PASS"
+    }
+  ]
+}

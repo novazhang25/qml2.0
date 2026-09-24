@@ -1,0 +1,192 @@
+{
+  "schema_version": "methods41-v1",
+  "input_dir": "/Users/novaz/Desktop/qml2.0/results/initialdata",
+  "rdm_definition": "pyscf.mp.mp2.make_rdm2: unrelaxed energy-derivative MP2 density",
+  "rdm_convention": "Gamma[p,q,r,s] = sum_spin <p^dagger r^dagger s q>; real spatial AOs",
+  "rdm_source": "https://pyscf.org/_modules/pyscf/mp/mp2.html#make_rdm2",
+  "pyscf_version": "2.14.0",
+  "tolerances": {
+    "matrix": 1e-08,
+    "rdm": 1e-08,
+    "energy_Ha": 1e-10,
+    "overlap_min": 1e-08,
+    "gradient": 1e-10,
+    "imaginary": 1e-12
+  },
+  "input_audit": {
+    "input_dir": "/Users/novaz/Desktop/qml2.0/results/initialdata",
+    "schema": "initialdata-v1",
+    "status": "PASS",
+    "molecules": {
+      "H2O": {
+        "status": "PASS",
+        "errors": [],
+        "geometry_count": 30,
+        "max_xyz_rounding_A": 4.996003610813204e-16,
+        "max_correlation_residual_Ha": 0.0,
+        "coordinate_definition": "r(O-H_i) = r_e(O-H_i) + q for every H",
+        "geometry_ids": [
+          "001",
+          "002",
+          "003",
+          "004",
+          "005",
+          "006",
+          "007",
+          "008",
+          "009",
+          "010",
+          "011",
+          "012",
+          "013",
+          "014",
+          "015",
+          "016",
+          "017",
+          "018",
+          "019",
+          "020",
+          "021",
+          "022",
+          "023",
+          "024",
+          "025",
+          "026",
+          "027",
+          "028",
+          "029",
+          "030"
+        ],
+        "scan_range_A": [
+          0.8766820946783271,
+          1.102136542680595
+        ],
+        "electron_count": 10,
+        "frozen_core": 1,
+        "full_ao_count": 7,
+        "basis": "sto-3g",
+        "charge": 0,
+        "spin": 0,
+        "descriptor_dimensions": {
+          "one_body": 6,
+          "pair": 15,
+          "triple": 20
+        },
+        "core_ao_indices": [
+          0
+        ],
+        "valence_ao_indices": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    },
+    "errors": [],
+    "valid_geometry_count": 30,
+    "failed_molecule_count": 0,
+    "failed_geometry_count": 0,
+    "expected_geometry_count": 30,
+    "energy_units": "Hartree",
+    "geometry_units": "Angstrom",
+    "geometry_coordinate_source": "point metadata cartesian_A, verified against XYZ and NPZ",
+    "fci_convention": "frozen-core canonical RHF spatial orbitals",
+    "source_snapshot": "/Users/novaz/Desktop/qml2.0/results/initialdata/source_initialdata.py",
+    "ao_errors": {}
+  },
+  "records": [
+    {
+      "molecule": "H2O",
+      "geometry_id": "001",
+      "status": "FAIL",
+      "q_A": -0.11272722400113389,
+      "record": "/Users/novaz/Desktop/qml2.0/results/methods41/H2O/001.npz",
+      "validation": "/Users/novaz/Desktop/qml2.0/results/methods41/H2O/001.json",
+      "error": "rdm2_contraction_max_error; rdm2_particle_number_error; cumulant_contraction_max_error; cumulant_lowdin_contraction_max_error",
+      "E_RHF_error_Ha": 2.842170943040401e-14
+    }
+  ],
+  "execution_order": "H2O/001 smoke gate, then molecule order and numerical geometry ID",
+  "input_audits_by_molecule": {
+    "H2O": {
+      "status": "PASS",
+      "errors": [],
+      "geometry_count": 30,
+      "max_xyz_rounding_A": 4.996003610813204e-16,
+      "max_correlation_residual_Ha": 0.0,
+      "coordinate_definition": "r(O-H_i) = r_e(O-H_i) + q for every H",
+      "geometry_ids": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "011",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019",
+        "020",
+        "021",
+        "022",
+        "023",
+        "024",
+        "025",
+        "026",
+        "027",
+        "028",
+        "029",
+        "030"
+      ],
+      "scan_range_A": [
+        0.8766820946783271,
+        1.102136542680595
+      ],
+      "electron_count": 10,
+      "frozen_core": 1,
+      "full_ao_count": 7,
+      "basis": "sto-3g",
+      "charge": 0,
+      "spin": 0,
+      "descriptor_dimensions": {
+        "one_body": 6,
+        "pair": 15,
+        "triple": 20
+      },
+      "core_ao_indices": [
+        0
+      ],
+      "valence_ao_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  },
+  "updated_utc": "2026-09-23T23:15:41.049209+00:00",
+  "successful_geometry_count": 0,
+  "failed_geometry_count": 1,
+  "input_excluded_geometry_count": 0,
+  "ao_excluded_geometry_count": 0,
+  "requested_geometry_count": 1,
+  "not_run_requested_geometry_count": 0,
+  "status": "FAIL",
+  "dataset_expected_geometry_count": 270,
+  "dataset_not_run_geometry_count": 269,
+  "dataset_status": "FAIL"
+}

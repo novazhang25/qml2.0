@@ -1,0 +1,377 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=18mm]{geometry}
+\usepackage{fontspec}
+\setmainfont[BoldFont=lmroman10-bold.otf,ItalicFont=lmroman10-italic.otf]{lmroman10-regular.otf}
+\setsansfont{lmsans10-regular.otf}
+\usepackage{amsmath,amssymb,longtable,array,booktabs,xcolor,fancyhdr,hyperref}
+\definecolor{navy}{HTML}{163C54}
+\hypersetup{colorlinks=true,urlcolor=navy,linkcolor=navy}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\sffamily\small qml2.0/codes: scientific pipeline audit}\fancyfoot[R]{\thepage}
+\setlength{\headheight}{14pt}\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\setlength{\tabcolsep}{7pt}\renewcommand{\arraystretch}{1.2}
+\newcommand{\stage}[2]{\section*{#1}\textbf{Code evidence:} #2\par}
+\sloppy
+\begin{document}
+{\LARGE\sffamily\color{navy} Computational pipeline audit}\par
+{\large qml2.0/codes --- formula-readable edition}\par
+24 September 2026
+\paragraph{Scope} Code-only audit using the supplied table as a stage checklist. This is a typeset edition of the completed audit, not a new source audit or a comparison with the supplied document. Code and datasets are unchanged.
+\paragraph{Notation} $M$ is the full spatial AO/MO count; $v_i$ maps a retained local AO to a full source AO; $n$ is the selected descriptor count or fingerprint wire count. Energies are in Hartree (Ha); Cartesian geometries are in angstrom. All transposes refer to implemented real arrays. Symbol $H$ denotes the overlap square root in the basis-transformation stages, but the indexed Hessian in stage 1. Symbols such as $b$ and $J$ are local to their stated stages.
+\section*{Principal findings}
+\begin{enumerate}
+\item Default H2S input retains six AOs while the current loader requires ten; the default nine-molecule run fails this data contract. Producer and consumer output/input defaults also differ.
+\item Training accepts \texttt{FE\_prime}, but the plotting CLI does not.
+\item Descriptor production does not explicitly reject unconverged RHF or guard overlap eigenvalues before inverse square roots. Downstream validation catches some failures. No failing-convergence sample was observed.
+\end{enumerate}
+\paragraph{Source key} I: \texttt{initialdata.py}; D: \texttt{descriptor.py}; R: \texttt{run1.py}; C: \texttt{circuit.py}; T: \texttt{train.py}; \newline P: \texttt{plot\_run1\_results.py}. All files are under \texttt{qml2.0/codes}. Numbers identify audited source lines.
+\clearpage
+\par\noindent\begin{minipage}{\linewidth}
+\stage{1 Geometry}{I optimize\_equilibrium771-824; StretchPath194-261; calculate\_harmonic431-579; scan\_grid858-865}
+Cartesian coordinates; mass-weighted proper alignment follows the raw stretch. The scan includes both endpoints and contains 30 geometries. Harmonic constants use consistent SI quantities before conversion to angstrom.
+\[
+\begin{gathered}
+k=\sum_{a,b,x,y}t_{ax}H_{abxy}t_{by},\quad \mu=\sum_{a,x}m_a t_{ax}^{2},\quad \omega=\sqrt{k/\mu},\\ \Delta=\sqrt{\frac{3\hbar}{\mu\omega}},\qquad s_j=s_e-\Delta+\frac{2j\Delta}{29},\quad j=0,\ldots,29.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{2 AO overlap}{I rhf\_arrays887-893; D calculate\_record144-161}
+Full spherical-AO overlap from the molecular geometry, basis, charge and spin. Integral evaluation is delegated to PySCF. Dimensionless matrix; no active restriction here.
+\[
+\begin{gathered}
+S\in\mathbb R^{M\times M}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{3 RHF reference}{I configured\_rhf607-613, polish\_orbitals616-647, solve\_point660-743; D139-159}
+Initial-data RHF checks convergence and internal stability. Descriptor RHF is recomputed using the saved AO density as an initial guess. Density is spin summed; the Fock matrix is in Hartree. SCF and integral internals remain library boundaries.
+\[
+\begin{gathered}
+P=C\,\operatorname{diag}(n_p)C^{\mathsf T},\qquad F=h+J[P]-\tfrac12K[P].
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{4 Core/space definitions}{I ACTIVE\_SPACES37-41; D select\_valence\_aos91-119}
+FCI frozen MOs and excluded descriptor AOs define separate restrictions. MP2 and RDM construction freeze no orbitals. Descriptor exclusion uses AO/shell metadata; H2S retains 10 AOs.
+\[
+\begin{gathered}
+\text{Excluded descriptor AO:}\quad Z>2\ \land\ \text{principal shell}=1.\\ \text{Descriptor MP2: frozen}=0.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{5 MP2 amplitudes}{D calculate\_record156-169}
+Restricted MP2 uses all occupied and virtual spatial MOs. Amplitude and energy construction is delegated to PySCF; saved-array amplitude checks agree to roundoff. No unaudited library-internal amplitude formula is asserted.
+\[
+\begin{gathered}
+t_2\in\mathbb R^{n_{\mathrm{occ}}\times n_{\mathrm{occ}}\times n_{\mathrm{virt}}\times n_{\mathrm{virt}}}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{6 Used RDM construction}{D build\_consistent\_rdms60-88}
+The determinant reference and first-order correction use zero singles and restricted doubles. Apply the following algebra separately to the one- and two-particle RDMs. Determinant conversion and RDM APIs are external boundaries; normalized-state diagnostics do not replace this algebra.
+\[
+\begin{gathered}
+w=\langle\chi|\chi\rangle,\quad R_0=R[\Phi],\\ R_1=R[\Phi+\chi]-R[\Phi]-R[\chi],\quad R_2=R[\chi]-wR_0,\\ R=R_0+R_1+R_2.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{7 Tensor ordering}{D transform\_rank456-57; extract\_descriptors129-136}
+Full rank-four arrays preserve raw PySCF index ordering. Only triple-descriptor extraction performs the displayed axis permutation. There is no explicit four-spin-block pipeline.
+\[
+\begin{gathered}
+\Lambda_{pqrs}\ \xrightarrow{\ \operatorname{transpose}(0,2,1,3)\ }\ \widetilde\Lambda_{prqs}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{8 MO$\to$AO}{D calculate\_record171-175; transform\_rank456-57}
+MO-to-AO transformations use real arrays and ordinary transpose, without conjugation. Every axis spans the full space.
+\[
+\begin{gathered}
+D_{\mathrm{AO}}=CD_{\mathrm{MO}}C^{\mathsf T},\\ G_{abcd}=\sum_{pqrs}C_{ap}C_{bq}C_{cr}C_{ds}G_{pqrs}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{9 AO restriction}{D122-136,182-186; R ao\_selection140-172}
+Select AOs only after full-space transformations. The producer saves source-ascending indices; the loader rebuilds canonical atom/AO order. Local retained indices and full source indices are distinct.
+\[
+\begin{gathered}
+v_i:\ i\mapsto\text{full source AO index},\qquad A^{\mathrm{sel}}_{ij}=A_{v_i v_j}.\\ v_{\mathrm{BeH_2,model}}=[5,1,2,3,4,6]\quad\text{(zero-based)}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{10 Disconnected reference}{D disconnected\_rhf47-48;176}
+Disconnected reference uses the full RHF spin-summed density. The displayed indices are free indices, not summation indices.
+\[
+\begin{gathered}
+(G_0)_{pqrs}=P_{pq}P_{rs}-\tfrac12P_{ps}P_{rq}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{11 Reference subtraction}{D176-181}
+The reference subtraction is performed in the full AO space. The conventional subtraction using correlated density is separately stored and is not the descriptor input.
+\[
+\begin{gathered}
+\Lambda=G_{\mathrm{consistent}}-G_0[P_{\mathrm{RHF}}],\qquad \Lambda\in\mathbb R^{M\times M\times M\times M}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{12 Extra diagnostic contraction}{D160-210}
+No additional all-ones contraction of the fourth axis is executed. Raw RDMs, order components and the alternate cumulant are stored diagnostics. There is no additional formula for an absent stage.
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{13 FCI and target}{I frozen\_core\_fci896-943; calculate\_point946-990; R227-232}
+Canonical-RHF CASCI defines the active determinant space. Active one-electron and pair-packed two-electron integrals are saved but not consumed by descriptor production. Core energy includes nuclear and frozen-core terms. CASCI solving remains an external boundary.
+\[
+\begin{gathered}
+p\in[n_{\mathrm{core}},M),\quad n_{\mathrm{cas}}=M-n_{\mathrm{core}},\quad N_{\mathrm{cas}}=N_e-2n_{\mathrm{core}},\\ E_{\mathrm{FCI}}=E_{\mathrm{active}}+E_{\mathrm{core}},\quad y=E_{\mathrm{FCI}}-E_{\mathrm{RHF,input}},\\ \operatorname{shape}(\mathrm{CI})=\left(\binom{n_{\mathrm{cas}}}{N_{\mathrm{cas}}/2},\binom{n_{\mathrm{cas}}}{N_{\mathrm{cas}}/2}\right).
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{14 Overlap powers}{D lowdin\_factors51-53; R208-211}
+Full-space overlap powers precede selection. The producer applies no threshold or clipping. The loader requires the minimum eigenvalue to exceed the stated threshold and checks matrix identities.
+\[
+\begin{gathered}
+S=U\operatorname{diag}(s)U^{\mathsf T},\quad H=U\operatorname{diag}(\sqrt{s})U^{\mathsf T},\\ J=U\operatorname{diag}(s^{-1/2})U^{\mathsf T},\qquad \min(s)>10^{-8}\ \text{(loader)}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{15 One-body Löwdin}{D182-184; R212-213}
+Full Löwdin-AO matrices. No explicit transpose averaging occurs at this stage. The density is the RHF density, not the correlated density.
+\[
+\begin{gathered}
+P_L=HP_{\mathrm{RHF}}H,\qquad F_L=JF_{\mathrm{AO}}J,\qquad P_L,F_L\in\mathbb R^{M\times M}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{16 Rank-four Löwdin}{D56-57,182-184; R216}
+All four axes are transformed in the full space before selecting AOs. The same overlap square root is used on every axis.
+\[
+\begin{gathered}
+(\Lambda_L)_{abcd}=\sum_{pqrs}H_{ap}H_{bq}H_{cr}H_{ds}(\Lambda_{\mathrm{AO}})_{pqrs}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{17 T extraction}{D extract\_descriptors122-136}
+The repeated local index is not contracted. A full triple array and its strict-triple vector are saved. Current Run 1 constructs no triple input and does not consume these arrays.
+\[
+\begin{gathered}
+T_{ijk}=(\Lambda_L)_{v_i v_k v_j v_k}\quad\text{(no sum over }k\text{)},\\ \operatorname{shape}(T_{\mathrm{full}})=(n,n,n),\qquad \operatorname{shape}(T_{i<j<k})=\left(\binom n3\right).
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{18 P/F features}{D133-136; R218-241}
+Saved diagonal and pair features use the producer ordering. The loader validates them and rebuilds canonical density and Fock matrices. FE and FE-prime use ascending eigenvalues of the selected blocks; density is dimensionless and Fock quantities are in Hartree.
+\[
+\begin{gathered}
+P_i=(P_L)_{v_i v_i},\quad F_i=(F_L)_{v_i v_i},\quad P_{ij}=(P_L)_{v_i v_j},\ i<j,\\ x_{\mathrm{FE}}=\operatorname{eigvalsh}(P_L^{\mathrm{sel}}),\qquad x_{\mathrm{FE\_prime}}=\operatorname{eigvalsh}(F_L^{\mathrm{sel}}).
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{19 Population}{R load\_population244-282; retained\_positions111-117}
+Exactly 30 records per molecule, with IDs 001 through 030. Incomplete or erroneous records are rejected; there is no cutoff filtering. Traversal positions are zero based.
+\[
+\begin{gathered}
+\operatorname{sort\ key}=(q_{\mathrm{A}},\ \text{geometry index}).
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{20 Split}{R validate\_split\_manifest41-73;244-269;331-366}
+The default manifest requires explicit disjoint train, validation and test sets covering every geometry. In the explicit 15-15 protocol, membership follows geometry ID rather than sorted traversal position.
+\[
+\begin{gathered}
+\mathcal I_{\mathrm{train}}=\{1,3,\ldots,29\},\qquad \mathcal I_{\mathrm{test}}=\{2,4,\ldots,30\}\quad\text{(15-15)}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{21 Diagonal scaling}{C compute\_encoding\_constants345-392; standardize\_diagonal394-399}
+MB scaling pools every training geometry and selected AO, separately for density and Fock diagonals. Population standard deviation is used. Positive finite standard deviations are required; there is no epsilon floor or clipping.
+\[
+\begin{gathered}
+K=N_{\mathrm{train}}n,\quad \mu_x=\frac1K\sum_{a=1}^Kx_a,\quad \sigma_x=\sqrt{\frac1K\sum_{a=1}^K(x_a-\mu_x)^2},\\ x_a^{\mathrm{std}}=\frac{x_a-\mu_x}{\sigma_x}\qquad (\mathrm{ddof}=0).
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{22 Pair/triple indexing}{C pair\_addresses241-244; triple\_addresses245-248;249-262}
+Local pairs follow row-major strict-upper ordering; triples follow nested lexicographic ordering. Pair values feed scale fitting. The triple helper is unused by Run 1.
+\[
+\begin{gathered}
+0\le i<j<n,\quad N_{\mathrm{pair}}=\binom n2;\qquad 0\le i<j<k<n,\quad N_{\mathrm{triple}}=\binom n3.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{23 Pair/triple scales}{C \_p95\_abs279-287;381-392}
+The percentile uses linear interpolation of pooled absolute entries, including zeros. Empty or nonpositive scales reject. MB-1 fits the pair scale even though it has no pair gates. The triple scale belongs only to the MB-3 helper.
+\[
+\begin{gathered}
+q_{95}=\operatorname{percentile}_{95}(|x|),\qquad \alpha=\frac{\operatorname{atanh}(0.9)}{q_{95}}.\\ \beta\text{ is fitted analogously for triple inputs.}
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{24 Local encoding}{C CachedCircuitBank461-466; encode755-763; FingerprintCircuit800-820}
+MB shares three trainable encoding scalars across wires. Fingerprints instead use training-only per-column statistics. For fingerprint columns, replace near-zero standard deviations by one, explicitly zero those columns after scaling, and then clip. RY uses the library half-angle convention.
+\[
+\begin{gathered}
+\theta_i^{\mathrm{MB}}=\frac\pi2\tanh(aP_i^{\mathrm{std}}+bF_i^{\mathrm{std}}+c),\\ m_j=[\sigma_j<10^{-12}],\quad \sigma_j^{\mathrm{safe}}=\begin{cases}1&m_j,\\\sigma_j&\text{otherwise},\end{cases}\\ u_j=\begin{cases}0&m_j,\\\frac\pi2\frac{x_j-\mu_j}{\sigma_j^{\mathrm{safe}}}&\text{otherwise},\end{cases}\qquad \theta_j=\operatorname{clip}(u_j,-\pi,\pi).
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{25 Pair encoding}{C467-473,610-640}
+Pair encoding exists for helper models. MB-1 supplies no pair inputs and queues no pair gates; this is not an active Run 1 stage.
+\[
+\begin{gathered}
+\operatorname{IsingZZ}\!\left(\frac\pi2\tanh(\alpha P_{ij})\right),\qquad i<j.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{26 Triple encoding}{C474-481}
+Triple encoding exists as a helper. No current Run 1 method supplies triple inputs, and triple-model runtime results were not numerically verified.
+\[
+\begin{gathered}
+\operatorname{MultiRZ}\!\left(\frac\pi2\tanh(\beta T_{ijk})\right),\qquad i<j<k.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{27 HEA}{C shared\_ansatz416-424}
+There is a single encoding followed by two shared-parameter ansatz layers. Each layer applies the same RY angle to all wires, then sequential ring CNOTs in ascending wire order, with the wrap edge last. For two wires, both directed edges execute.
+\[
+\begin{gathered}
+L=2:\qquad RY_q(\phi_\ell)\ \text{for every }q;\quad \operatorname{CNOT}_{q\to(q+1)\bmod n},\ q=0,\ldots,n-1.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{28 Measurement}{C482-483,818-820}
+Measure Pauli-Z on every physical wire in wire order. The output is dimensionless. Simulation and autodifferentiation are delegated; independent statevector predictions were checked, but no separate direct-runtime Z-vector residual was recorded.
+\[
+\begin{gathered}
+z_q=\langle\psi|Z_q|\psi\rangle,\qquad z\in\mathbb R^n.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{29 Readout features}{C pad\_z\_to\_length568-574; invariant\_moments576-583;641-660}
+Zero padding adds classical features, not wires. Moment aggregation uses the unpadded measurement vector.
+\[
+\begin{gathered}
+m=\max(8,n),\quad z_{\mathrm{pad}}=(z_0,\ldots,z_{n-1},0,\ldots,0)\in\mathbb R^m,\\ M_k=\frac1n\sum_{q=0}^{n-1}z_q^k,\quad k=1,2,3,\qquad f=(z_{\mathrm{pad}},M_1,M_2,M_3)\in\mathbb R^{m+3}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{30 Prediction}{C CorrelationEnergyModel655-681; FingerprintModel880-910}
+The scalar prediction is in Hartree; targets are not standardized. For fingerprint models, the number of wires is the fingerprint width rather than necessarily the AO count.
+\[
+\begin{gathered}
+\widehat y=b+\sum_{j=1}^{m+3}w_j f_j.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{31 Initialization}{T initialize\_parameters18-32; C843-848}
+Initialization uses a local seeded CPU Torch generator. MB draws one complete vector; fingerprints draw separate ansatz, bias and weight blocks. The bias is then overwritten by the mean training target.
+\[
+\begin{gathered}
+\theta^{(0)}\sim0.05\,\mathcal N(0,I),\quad b^{(0)}=\frac1{N_{\mathrm{train}}}\sum_{a\in\mathrm{train}}y_a,\\ D_{\mathrm{MB}}=L+m+7,\qquad D_{\mathrm{fingerprint}}=L+m+4.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{32 Batches/loss}{T SampleOrder34-43; iter\_batches45-52; mse\_loss70-73;183-233}
+An independently maintained, same-seed shuffle generator produces a fresh permutation each epoch. Keep the final partial batch. Loss is in squared Hartree and divides by the actual batch size.
+\[
+\begin{gathered}
+\mathcal L_B=\frac1{|B|}\sum_{a\in B}(\widehat y_a-y_a)^2.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{33 Adam}{T54-91; C850-873}
+Each update clears gradients to None, differentiates, binds gradients according to the model parameter layout, and steps Torch Adam. MB uses one vector group; fingerprints use shared-storage blocks. Installed defaults and two diagnostic steps were checked; the full training trajectory was not replayed.
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{34 Checkpoint}{T BestCheckpoint132-173;211-233; R402-453}
+Checkpoint on strict improvement, retaining the earliest tie. Manifest training selects by validation MAE; 15-15 selects by training MAE. Restore parameters only, not optimizer state, before final test evaluation.
+\[
+\begin{gathered}
+e_* = \min\!\left(\operatorname*{arg\,min}_{e}\mathrm{MAE}_{\mathrm{selection}}(e)\right).
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{35 Metrics}{T error\_metrics244-254; evaluate256-266}
+Compute each split separately. Convert scalar metrics from Hartree to milli-Hartree only after reduction.
+\[
+\begin{gathered}
+e_a=\widehat y_a-y_a,\quad \mathrm{MAE}=\frac1N\sum_a|e_a|,\quad \mathrm{RMSE}=\sqrt{\frac1N\sum_ae_a^2},\\ \mathrm{MaxAE}=\max_a|e_a|,\quad \mathrm{NPE}=\max_ae_a-\min_ae_a,\qquad \mathrm{metric}_{\mathrm{mHa}}=1000\,\mathrm{metric}_{\mathrm{Ha}}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{36 Seed summaries}{T compute\_statistics268-272; R summarize455-480; P131-149}
+The full launcher requires 32 seeds. For overall results, first average molecules with equal weight within each seed, then summarize seeds. Also report the median and count. Core singleton SD/SE are NaN; the plot helper uses SD zero and SE NaN.
+\[
+\begin{gathered}
+\bar x=\frac1S\sum_{s=1}^Sx_s,\quad s_x=\sqrt{\frac1{S-1}\sum_{s=1}^S(x_s-\bar x)^2},\quad \mathrm{SE}=s_x/\sqrt S.\\ x_s^{\mathrm{overall}}=\frac1{N_{\mathrm{mol}}}\sum_mx_{m,s}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\par\noindent\begin{minipage}{\linewidth}
+\stage{37 Plot assembly}{P validate\_seed\_runs152-168; load\_prediction346-375;377-397}
+Plotting checks exact configured seed coverage and equality of sorted geometry ID, split, bond length and target. Bars show test mean plus/minus SE; curves show per-geometry signed-error mean plus/minus sample SD. FE-prime is absent from the plotting CLI. Initial-data plots are a separate branch, with 31 curve points including equilibrium and 30 scan rows in CSV.
+\[
+\begin{gathered}
+E_{\mathrm{relative}}=1000\,[E-E_{\mathrm{RHF}}(r_e)]\quad\mathrm{mHa};\qquad E_{\mathrm{absolute}}=E\quad\mathrm{Ha}.
+\end{gathered}
+\]
+\end{minipage}\par\vspace{4pt}
+\clearpage\section*{Cross-stage findings}
+\begin{itemize}
+\item The initial RHF/CASCI reference and descriptor RHF recomputation are separate calculations; the loader checks their RHF energies within1e-10 Ha. The target remains the input FCI-RHF difference.
+\item The determinant RDM is truncated through second order; ci\_normalized\_eta1 and ci\_\allowbreak second\_\allowbreak order\_\allowbreak normalization are stored but do not replace the implemented RDM algebra.
+\item Full-space matrix powers precede restriction. Stored source-local indices, canonical full-AO indices and circuit wire positions are different index systems.
+\item FG has explicit molecule-dependent distance/reciprocal/angle/torsion order. H2O2 torsion can be unwrapped across the complete sorted scan before train-only fitting; this is a preprocessing dependency on the full scan, not label usage.
+\item Current FE\_prime uses the Fock spectrum in Ha before per-column scaling. FE uses the density spectrum. Both become dimensionless rotation inputs; neither changes the target definition.
+\item Historical fixed-angle fields in the molecule registry are unused by the current geometry generator. Historical UHF/UMP2-named sample fields receive None; names do not establish computations.
+\end{itemize}
+\section*{Numerical verification}
+\small\begin{longtable}{p{.29\linewidth}p{.36\linewidth}p{.25\linewidth}}\toprule Check & Shapes / coverage & Maximum absolute residual\\\midrule\endfirsthead\toprule Check & Shapes / coverage & Maximum absolute residual\\\midrule\endhead
+Independent aligned geometry reconstruction & 27 samples across9 molecules; (2,3)/(3,3)/(4,3) & $5.10702591327572\times10^{-15}$ \AA{}\\\addlinespace
+Harmonic grid reconstruction & 9$\times$(30,) & $2.220446049250313\times10^{-16}$ \AA{}\\\addlinespace
+FCI-RHF target arithmetic & LiH/H2S/H2O2 IDs001/015/030, scalars & 0 Ha\\\addlinespace
+Independent LiH active Hamiltonian & H(25,25),CI(5,5);3 samples & Rayleigh: $8.881784197001252\times10^{-16}$ Ha; eigenvector: $6.661338147750939\times10^{-16}$ Ha\\\addlinespace
+Full rank-four transforms & LiH/H2S/H2O2 ID001;6$^4$/11$^4$/12$^4$ arrays & $1.5987211554602254\times10^{-14}$\\\addlinespace
+Literal T indexing against saved current-selection descriptors & (5,5,5)/(10,10,10)/(10,10,10); selected(10)/(120)/(120) & 0\\\addlinespace
+Independent NumPy statevector$\to$saved prediction & FG/FE/MB-1, seeds0/31, CO IDs001/016/030; states(4)/(256)/(256), readout(11) & $3.3306690738754696\times10^{-16}$ Ha\\\addlinespace
+Saved error/metric recomputation & 96 runs; residuals(2880,), metrics(192,8) & 0\\\addlinespace
+Earliest training-MAE checkpoint minimum & 96 histories$\times$500 epochs; outputs(96,) & 0\\\addlinespace
+Independent seed summary & (6,5) & $4.440892098500626\times10^{-16}$\\\addlinespace
+\bottomrule\end{longtable}\normalsize
+These samples support the checked arithmetic, not universal correctness. PySCF's compiled integral/SCF/determinant engines, PennyLane derivatives, and a full training replay were not independently audited. The saved learning run is CO-only and15-15; validation-selected training, multi-molecule aggregation at runtime, FE\_prime training and MB-2/3 runtime remain NOT\_VERIFIABLE from these numerical samples. Their described code paths were inspected.
+
+Two files, run1.py and circuit.py, changed externally during this session to add FE\_prime. Final source references above use the refreshed files; earlier numerical runtime checks are identified as pre-addition evidence, not a blanket certification of the new branch. Independent saved-array/statevector arithmetic remains valid for the named saved samples. evidence.json records earlier and final source hashes and only code/numerical evidence; no document-comparison results are included.
+
+\end{document}
