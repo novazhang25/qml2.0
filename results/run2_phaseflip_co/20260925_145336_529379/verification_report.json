@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "focused_tests_passed": 11,
+  "smoke_models": [
+    "MB2",
+    "MB2_flip_0",
+    "MB2_flip_01",
+    "MB2_flip_012",
+    "MB2_flip_0123",
+    "MB2_flip_01234"
+  ],
+  "smoke_epochs": 1,
+  "smoke_seed": 0,
+  "max_reloaded_prediction_error_Ha": 0.0,
+  "matched_saved_initializations_and_actual_batches": true,
+  "original_Run2_initialization_and_epoch1_match": true,
+  "source_descriptor_hashes_unchanged": true,
+  "production_training_launched": false
+}

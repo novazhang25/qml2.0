@@ -329,12 +329,18 @@ def raw_spectra(samples):
     return spectra
 
 
-def prepare_runs(samples, manifest, metadata, *, methods=METHODS):
-    """Prepare selected methods with identical splits and shared fingerprint machinery."""
+def prepare_runs(samples, manifest, metadata, *, methods=METHODS, include_spectrum_audit=True):
+    """Prepare matched methods; optionally skip unused FE diagnostics for MB-only callers.
+
+    Run1 retains its spectrum audit by default. FE/FE_prime always compute the
+    spectra required by their inputs, regardless of this diagnostic option.
+    """
     methods = tuple(dict.fromkeys(methods))
     if not methods or any(method not in AVAILABLE_METHODS for method in methods):
         raise ValueError('Select at least one supported Run 1 method')
-    spectra = raw_spectra(samples)
+    spectra = (raw_spectra(samples)
+               if include_spectrum_audit or any(m in ('FE', 'FE_prime') for m in methods)
+               else {})
     prepared, audits = ({}, [])
     for molecule in dict.fromkeys((s.molecule for s in samples)):
         rows = sorted((r for r in manifest.rows if r.molecule == molecule), key=lambda r: r.retained_position)

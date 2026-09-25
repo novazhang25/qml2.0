@@ -2,6 +2,9 @@
 
 `codes/run2.py` uses the current `run1.py` loader, MB1 preparation, training
 writer and full-run summary function, together with the current `train.py`.
+Run2 skips the optional FE spectrum audit during preparation, so it neither
+calculates nor prints unused density/Fock eigenvalues. Run1's default spectrum
+audit remains enabled.
 `codes/run2_model.py` adds the two pair encoders. The only Run1 circuit change
 is extracting the original MB1 RY encoder into a shared function with the
 same arithmetic, operations, parameter order and gradients.

@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "geometries": 30,
+  "P_valence_shape": [
+    8,
+    8
+  ],
+  "trained_models": [
+    "MB2",
+    "MB2_flip1",
+    "MB2_flip2",
+    "MB2_flip3",
+    "MB2_flip4",
+    "MB2_flip5"
+  ],
+  "sanity_only": [
+    "all_minus_sanity"
+  ],
+  "parameter_count": 19,
+  "atol": 1e-12,
+  "rtol": 1e-10,
+  "max_symmetry_error": 3.885780586188048e-16,
+  "max_eigenvalue_error": 0.0,
+  "max_identity_prediction_error_Ha": 0.0,
+  "exact_original_lambda_and_MB1_inputs": true,
+  "source_arrays_unchanged": true,
+  "all_32_seed_initializations_matched": true
+}

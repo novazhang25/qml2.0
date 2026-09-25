@@ -41,7 +41,7 @@ def main():
         directory.mkdir()
         plots.plot_metric_bars(metrics, summary, [molecule], methods, 'MAE',
                                directory / 'barplot_MAE.png', args.dpi,
-                               run_label_prefix='run1')
+                               run_label_prefix='run1', model_only_legend=True)
         curves = []
         for method, label in zip(methods, labels):
             stats, _ = plots.signed_error_stats(records, molecule, method, args.split)
@@ -51,7 +51,7 @@ def main():
             directory / f'signed_error_{args.split}.csv', index=False)
     plots.plot_signed_error_curves(
         records, molecules, methods, args.output_dir, args.split, args.dpi,
-        'Run 1', 'run1', 18.0 * args.font_scale, band='se')
+        'Run 1', 'run1', 18.0 * args.font_scale, band='se', model_only_legend=True)
     (args.output_dir / 'sources.json').write_text(json.dumps(dict(
         FG=str(args.mb1_dir.resolve()), MB1=str(args.mb1_dir.resolve()),
         MB1_PRIME=str(args.prime_dir.resolve()),

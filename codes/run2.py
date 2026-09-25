@@ -99,7 +99,8 @@ def prepare_runs(samples, manifest, metadata, *, methods=METHODS):
     methods = tuple(dict.fromkeys(methods))
     if not methods or any(method not in METHODS for method in methods):
         raise ValueError('Select at least one supported Run2 method')
-    baseline, audits = run1.prepare_runs(samples, manifest, metadata, methods=('MB-1',))
+    baseline, audits = run1.prepare_runs(
+        samples, manifest, metadata, methods=('MB-1',), include_spectrum_audit=False)
     prepared = {}
     for (molecule, _), (mb1, training, validation, testing) in baseline.items():
         for method in methods:

@@ -210,15 +210,15 @@ def setup_matplotlib(font_scale: float) -> None:
     )
 
 
-def compact_legend(ax, handles=None, labels=None):
-    """Place a smaller legend in two rows inside the upper-left corner."""
+def compact_legend(ax, handles=None, labels=None, *, single_row=False):
+    """Place a smaller legend in the upper-left corner, optionally in one row."""
     if handles is None:
         handles, labels = ax.get_legend_handles_labels()
     ax.legend(
         handles, labels,
         loc="upper left",
         frameon=False,
-        ncol=max(1, math.ceil(len(handles) / 2)),
+        ncol=max(1, len(handles) if single_row else math.ceil(len(handles) / 2)),
         fontsize=0.75 * plt.rcParams["legend.fontsize"],
         handlelength=1.4,
         handletextpad=0.4,
@@ -246,6 +246,7 @@ def plot_metric_bars(
     title: str | None = None,
     run_label_prefix: str = "5",
     ncols: int | None = None,
+    model_only_legend: bool = False,
 ) -> None:
     mean_col = f"mean_{metric}_mHa"
     se_col = f"se_{metric}_mHa"
@@ -323,6 +324,11 @@ def plot_metric_bars(
     for row in range(nrows):
         axes[row * ncols].set_ylabel(f"Test {metric} / mHa")
     for ax in axes[:len(molecules)]:
+        if model_only_legend:
+            handles = [Patch(facecolor=run_color(run), edgecolor="black", alpha=0.82)
+                       for run in runs]
+            compact_legend(ax, handles, [format_run_label(run, run_label_prefix) for run in runs], single_row=True)
+            continue
         handles, labels = ax.get_legend_handles_labels()
         if metric == "MAE":
             bar_handles = [Patch(facecolor=run_color(run), edgecolor="black", alpha=0.82)
@@ -410,6 +416,7 @@ def plot_signed_error_curves(
     molecule_label_fontsize: float,
     *,
     band: str = "sd",
+    model_only_legend: bool = False,
 ) -> None:
     if band not in ("sd", "se"):
         raise ValueError("Signed-error band must be 'sd' or 'se'")
@@ -464,7 +471,13 @@ def plot_signed_error_curves(
         ax.set_xlabel(x_label)
         ax.set_ylabel("Signed error / mHa")
         ax.grid(axis="y", alpha=0.22, linewidth=0.7)
-        if band == "se":
+        if model_only_legend:
+            handles, labels = ax.get_legend_handles_labels()
+            model_labels = [format_run_label(run, run_label_prefix) for run in runs]
+            selected = [(handle, label) for handle, label in zip(handles, labels)
+                        if label in model_labels]
+            compact_legend(ax, [h for h, _ in selected], [label for _, label in selected], single_row=True)
+        elif band == "se":
             handles, labels = ax.get_legend_handles_labels()
             handles.append(Patch(facecolor="0.5", alpha=0.13, edgecolor="none"))
             labels.append("Shading: mean +/- SE")
