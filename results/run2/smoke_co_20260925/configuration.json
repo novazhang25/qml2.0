@@ -1,0 +1,73 @@
+{
+  "molecules": [
+    "CO"
+  ],
+  "trained_molecules": [
+    "CO"
+  ],
+  "methods": [
+    "MB2",
+    "MB2_prime"
+  ],
+  "display_labels": {
+    "MB2": "MB2",
+    "MB2_prime": "MB2\u2032"
+  },
+  "seeds": [
+    0
+  ],
+  "epochs": 2,
+  "requested_epochs": 500,
+  "smoke_only": true,
+  "validate_only": false,
+  "batch_size": 8,
+  "learning_rate": 0.02,
+  "optimizer": "torch.optim.Adam",
+  "optimizer_defaults": {
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "amsgrad": false
+  },
+  "loss": "mean squared error on unscaled Hartree correlation energy",
+  "target": "E_FCI - E_RHF_input",
+  "input_dir": "/Users/novaz/Desktop/qml2.0/results/descriptor",
+  "implementation": "local codes/run2.py + run2_model.py; current run1.py + circuit.py + train.py",
+  "reference_run1": "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018",
+  "population": "all 30 geometries: odd geometry IDs train (15), even geometry IDs test (15); no validation set",
+  "split_protocol": "15-15",
+  "split_manifest": null,
+  "full_AO_until_final_descriptor_selection": true,
+  "pair_axis_convention": "G[p,q,r,s] = Lambda_Methods[p,r,q,s]",
+  "pair_extraction": "Lambda_Methods[mu,nu,mu,nu] = Lambda_L[source_mu,source_mu,source_nu,source_nu]",
+  "pair_preprocessing": "raw P_munu and Methods Lambda_abab; no centering or normalization",
+  "one_body_encoder": "original MB1: (pi/2)*tanh(a1*P_tilde_mu+b1*F_tilde_mu+c1)",
+  "pair_encoders": {
+    "MB2": "(pi/2)*tanh(a2*P_munu+b2*Lambda_Methods_munu_munu)",
+    "MB2_prime": "(pi/2)*tanh(a2*P_munu)"
+  },
+  "pair_gate": "IsingZZ(gamma) = exp(-1j*gamma*Z_mu*Z_nu/2); unique mu<nu, once",
+  "num_hea_layers": 2,
+  "backend": "default.qubit",
+  "shots": null,
+  "interface": "torch",
+  "diff_method": "backprop",
+  "dtype": "float64",
+  "device": "cpu",
+  "readout": "unchanged Run1 padded Z plus three moments and scalar linear readout",
+  "initialization": "original MB1 normal-vector draws first; append 0.05*N(0,1) a2,b2 draws; prime omits b2; train-mean bias",
+  "minibatch_order": "unchanged train.SampleOrder(seed), independent of parameter draws",
+  "checkpoint_selection": "strictly improving train MAE; earliest epoch on ties",
+  "final_test_evaluation": "once after restoring selected checkpoint; never used for selection",
+  "overall": "equal-weight molecule MAE per seed, then canonical seed mean/SD/SE; all summary units mHa",
+  "runtime": {
+    "python": "3.13.2",
+    "numpy": "2.5.1",
+    "torch": "2.13.0",
+    "pennylane": "0.45.1",
+    "pandas": "3.0.5"
+  }
+}

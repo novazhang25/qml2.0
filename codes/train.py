@@ -26,7 +26,12 @@ def initialize_parameters(model, train_samples, *, seed):
     if hasattr(model, 'initialize_theta'):
         return model.initialize_theta(train_samples, seed)
     generator = torch.Generator(device='cpu').manual_seed(seed)
-    theta = 0.05 * torch.randn(model.num_parameters, dtype=torch.float64, device='cpu', generator=generator)
+    prime = getattr(getattr(model, 'constants', None), 'model_label', None) == 'MB1_PRIME'
+    theta = 0.05 * torch.randn(model.num_parameters + int(prime), dtype=torch.float64, device='cpu', generator=generator)
+    if prime:
+        # Preserve MB-1's exact seeded draws for every surviving parameter.
+        # The discarded b draw is never included in the trainable tensor.
+        theta = torch.cat((theta[:1], theta[2:]))
     mean_target = np.mean([float(s.target_energy) for s in train_samples])
     theta[model.layout.bias_index] = mean_target
     return theta.requires_grad_()

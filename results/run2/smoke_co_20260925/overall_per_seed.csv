@@ -1,0 +1,5 @@
+model,seed,mae_mHa,molecule,split
+MB2,0,20.980399010515537,ALL,train
+MB2_prime,0,20.980112908342285,ALL,train
+MB2,0,21.946388324699758,ALL,test
+MB2_prime,0,21.946143748851494,ALL,test

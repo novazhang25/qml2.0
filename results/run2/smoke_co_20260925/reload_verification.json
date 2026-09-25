@@ -1,0 +1,14 @@
+{
+  "MB2": {
+    "parameter_count": 19,
+    "restored_prediction_max_error_Ha": 9.71445146547012e-17,
+    "status": "PASS"
+  },
+  "MB2_prime": {
+    "parameter_count": 18,
+    "restored_prediction_max_error_Ha": 9.71445146547012e-17,
+    "status": "PASS"
+  },
+  "matched_common_initialization": true,
+  "production_run_launched": false
+}

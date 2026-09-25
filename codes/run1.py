@@ -24,6 +24,7 @@ import torch
 
 from circuit import (
     MOLECULES, ProcessedSample, TargetDefinition, FingerprintSample, ParameterLayout,
+    MB1_PRIME, ONE_BODY_MODELS,
     compute_encoding_constants, standardize_diagonal, fg_features, geometry_contract,
     feature_width, fg_feature_names, fit_constants, construct_model,
 )
@@ -284,7 +285,7 @@ def load_population(input_dir, molecules=tuple(MOLECULES), *, split_manifest=Non
 # Run preparation, smoke gate, seed sweep, and outputs
 
 METHODS = ('FG', 'FE', 'MB-1')
-AVAILABLE_METHODS = ('FG', 'FE', 'FE_prime', 'MB-1')
+AVAILABLE_METHODS = ('FG', 'FE', 'FE_prime', 'MB-1', MB1_PRIME)
 SEEDS = tuple(range(32))
 EPOCHS, BATCH_SIZE, LEARNING_RATE = (500, 8, 0.02)
 
@@ -345,7 +346,7 @@ def prepare_runs(samples, manifest, metadata, *, methods=METHODS):
         fitting_manifest = SimpleNamespace(**dict(vars(manifest), rows=tuple(r for r in rows if r.split == 'train')))
         training_physical = tuple(by_id[i] for i in train_ids)
         for method in methods:
-            if method == 'MB-1':
+            if method in ONE_BODY_MODELS:
                 selected = physical
                 constants = compute_encoding_constants(training_physical, manifest=fitting_manifest, molecule=molecule, model_label=method)
             else:
@@ -391,6 +392,19 @@ def prepare_runs(samples, manifest, metadata, *, methods=METHODS):
                 raise ValueError(f'{molecule}: circuit.CachedCircuitBank MB-1 tape mismatch: {operations}')
         targets = [s.target_energy for s in physical]
         audit = dict(molecule=molecule, retained=len(rows), train=len(train_ids), validation=len(validation_ids), test=len(test_ids), geometry_ids=[metadata[r.sample_id]['geometry_id'] for r in rows], train_geometry_ids=[metadata[i]['geometry_id'] for i in train_ids], validation_geometry_ids=[metadata[i]['geometry_id'] for i in validation_ids], test_geometry_ids=[metadata[i]['geometry_id'] for i in test_ids], target_min_Ha=min(targets), target_max_Ha=max(targets), FG_dimension=feature_width(molecule, 'FG'), FG_feature_names=fg_feature_names(molecule), FE_dimension=n, FE_prime_dimension=n, methods=list(methods), MB1_input_dimension=2 * n, MB1_qubits=n, MB1_parameters=expected_parameters)
+        if MB1_PRIME in methods:
+            model, training, _, _ = prepared[molecule, MB1_PRIME]
+            theta = initialize_parameters(model, training, seed=0)
+            p, f, pairs, triple, ac, phi = model._quantum_arguments(physical[0], theta)
+            close(p.detach().numpy(), standardize_diagonal(physical[0].pii, model.constants.Pii_mean, model.constants.Pii_std), f'{molecule}: MB-1\' P scaling')
+            if f is not None or pairs is not None or triple is not None or theta.numel() != expected_parameters - 1:
+                raise ValueError(f'{molecule}: MB-1\' inputs/parameter count mismatch')
+            tape = model.circuit_bank.get_qnode(model.constants, num_hea_layers=2).construct((p, f, pairs, ac, phi), {})
+            if [op.name for op in tape.operations] != ['RY'] * n + (['RY'] * n + ['CNOT'] * n) * 2 or len(tape.measurements) != n:
+                raise ValueError(f'{molecule}: MB-1\' circuit tape mismatch')
+            audit.update(MB1_PRIME_display="MB-1'", MB1_PRIME_input_dimension=n,
+                         MB1_PRIME_qubits=n, MB1_PRIME_encoder_parameters=2,
+                         MB1_encoder_parameters=3, MB1_PRIME_parameters=model.num_parameters)
         audits.append(audit)
         print(json.dumps(audit), flush=True)
         for method in methods:
@@ -479,6 +493,74 @@ def summarize(output, records, molecules, *, splits=SPLITS, methods=METHODS):
     pd.concat(overall_runs, ignore_index=True).to_csv(output / 'overall_per_seed.csv', index=False)
     pd.concat(overall, ignore_index=True).to_csv(output / 'overall_summary.csv', index=False)
 
+def matched_mb1_reference(args, prepared, population):
+    """Verify an existing completed MB-1 benchmark before creating a control run."""
+    root = args.match_mb1_run.resolve()
+    config = json.loads((root / 'configuration.json').read_text())
+    expected = dict(molecules=list(dict.fromkeys(args.molecules)), seeds=list(SEEDS),
+        epochs=args.epochs, batch_size=BATCH_SIZE, learning_rate=LEARNING_RATE,
+        target=TARGET.formula, input_dir=str(args.input_dir.resolve()),
+        split_protocol=args.split_protocol, full_AO_until_final_descriptor_selection=True,
+        implementation='local codes/run1.py + circuit.py + train.py',
+        checkpoint_selection=f"strictly improving {'train' if args.split_protocol == '15-15' else 'validation'} MAE; earliest epoch on ties")
+    for key, value in expected.items():
+        if config.get(key) != value:
+            raise ValueError(f'MB-1 reference mismatch for {key}: {config.get(key)!r} != {value!r}')
+    if 'MB-1' not in config.get('methods', []):
+        raise ValueError('Reference must contain MB-1')
+    if json.loads((root / 'population.json').read_text()) != population:
+        raise ValueError('MB-1 reference population, geometry, target or split mismatch')
+    scalers = json.loads((root / 'preprocessing.json').read_text())
+    for molecule in expected['molecules']:
+        constants = asdict(prepared[molecule, MB1_PRIME][0].constants)
+        constants['model_label'] = 'MB-1'
+        if json.loads(json.dumps(constants)) != scalers.get(f'{molecule}/MB-1'):
+            raise ValueError(f'{molecule}: MB-1 reference preprocessing mismatch')
+    frame = pd.read_csv(root / 'per_seed_metrics.csv')
+    frame = frame[frame.model == 'MB-1'].copy()
+    if set(frame.molecule) != set(expected['molecules']) or set(frame.split) != set(SPLIT_PROTOCOLS[args.split_protocol]):
+        raise ValueError('MB-1 reference metric populations mismatch')
+    for molecule in expected['molecules']:
+        for split in SPLIT_PROTOCOLS[args.split_protocol]:
+            part = frame[(frame.molecule == molecule) & (frame.split == split)]
+            count = sum(row['molecule'] == molecule and row['split'] == split for row in population)
+            if sorted(part.seed.tolist()) != list(SEEDS) or not (part['count'] == count).all():
+                raise ValueError(f'{molecule}/{split}: incomplete MB-1 reference seeds or population')
+    if not np.isfinite(frame.mae_mHa).all() or (frame.mae_mHa < 0).any():
+        raise ValueError('MB-1 reference MAEs must be finite and nonnegative')
+    return frame
+
+
+def write_mb1_comparison(output, reference, records, molecules):
+    """Use Run 1's seed mean and sample SD in mHa; never retrain the reference."""
+    frame = pd.concat((reference, pd.DataFrame(records)), ignore_index=True)
+    frame = frame[frame.split == 'test']
+    for molecule in molecules:
+        for method in ONE_BODY_MODELS:
+            part = frame[(frame.molecule == molecule) & (frame.model == method)]
+            if sorted(part.seed.tolist()) != list(SEEDS):
+                raise ValueError(f'{molecule}/{method}: comparison requires all 32 seeds exactly once')
+    if not np.isfinite(frame.mae_mHa).all() or (frame.mae_mHa < 0).any():
+        raise ValueError('Comparison MAEs must be finite and nonnegative')
+    stats = compute_statistics(frame.rename(columns={'model': 'model_internal', 'mae_mHa': 'test_MAE_mHa'}))
+    rows = []
+    for molecule in molecules:
+        mb, prime = (stats.loc[(molecule, method)] for method in ONE_BODY_MODELS)
+        rows.append({'Molecule': molecule, 'MB-1 MAE mean': mb['mean'], 'MB-1 MAE SD': mb['sd'],
+                     "MB-1' MAE mean": prime['mean'], "MB-1' MAE SD": prime['sd'],
+                     'ΔMAE': prime['mean'] - mb['mean']})
+    comparison = pd.DataFrame(rows)
+    comparison.to_csv(output / 'mb1_prime_comparison.csv', index=False)
+    lines = ["MB-1 versus MB-1' test MAE (mHa). Mean and sample SD (ddof=1) over seeds 0–31.",
+             '', "ΔMAE = MAE(MB-1') − MAE(MB-1). Positive values mean MB-1' has higher MAE.", '',
+             '| ' + ' | '.join(comparison.columns) + ' |',
+             '| ' + ' | '.join(['---'] * len(comparison.columns)) + ' |']
+    for row in comparison.itertuples(index=False, name=None):
+        lines.append('| ' + ' | '.join([row[0]] + [f'{v:.12g}' for v in row[1:]]) + ' |')
+    (output / 'mb1_prime_comparison.md').write_text('\n'.join(lines) + '\n')
+    print('\n'.join(lines), flush=True)
+
+
 def main(argv=None):
     """Parse the run selection, audit inputs, gate the seed sweep on smoke success, and save results."""
     parser = argparse.ArgumentParser(description=__doc__)
@@ -488,12 +570,15 @@ def main(argv=None):
     parser.add_argument('--molecules', nargs='+', choices=tuple(MOLECULES), default=list(MOLECULES), help='Molecules to run; default all nine.')
     parser.add_argument('--methods', nargs='+', choices=AVAILABLE_METHODS, default=list(METHODS), help='Methods to compare; default FG FE MB-1. Use FE FE_prime for density versus Fock spectra.')
     parser.add_argument('--output-dir', type=Path, help='New directory; default results/run1/<timestamp>. Existing paths are rejected.')
+    parser.add_argument('--match-mb1-run', type=Path, help="Completed MB-1 Run 1 directory. Require an exactly matched MB1_PRIME-only run and write the comparison table.")
     parser.add_argument('--epochs', type=int, default=EPOCHS, help='Training epochs; default 500. Smoke-only runs use at most two epochs.')
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument('--validate-only', action='store_true', help='Load, prepare and audit; do not train.')
     modes.add_argument('--smoke-only', action='store_true', help='Audit and run seed-0 for H2O if selected, otherwise the first molecule.')
     args = parser.parse_args(argv)
     methods = tuple(dict.fromkeys(args.methods))
+    if args.match_mb1_run is not None and (methods != (MB1_PRIME,) or args.smoke_only):
+        parser.error('--match-mb1-run requires --methods MB1_PRIME and a full run or --validate-only')
     if args.split_protocol == 'manifest' and args.split_manifest is None:
         parser.error('--split-manifest is required for the default manifest protocol. Exact manuscript split IDs are unavailable; the 32-seed benchmark is blocked without a real split manifest. Use --split-protocol 15-15 to explicitly select the separate train/test protocol.')
     if args.split_protocol == '15-15' and args.split_manifest is not None:
@@ -509,12 +594,22 @@ def main(argv=None):
     molecules = [a['molecule'] for a in audits]
     smoke_molecule = 'H2O' if 'H2O' in molecules else molecules[0]
     checkpoint_selection = 'train' if args.split_protocol == '15-15' else 'validation'
+    population = [dict(metadata[r.sample_id], split=r.split, retained_position=r.retained_position) for r in manifest.rows]
+    reference = matched_mb1_reference(args, prepared, population) if args.match_mb1_run is not None else None
     output.mkdir(parents=True, exist_ok=False)
-    write_json(output / 'population.json', [dict(metadata[r.sample_id], split=r.split, retained_position=r.retained_position) for r in manifest.rows])
+    write_json(output / 'population.json', population)
     write_json(output / 'audit.json', audits)
     write_json(output / 'configuration.json', dict(molecules=molecules, methods=methods, seeds=(0,) if args.smoke_only else SEEDS, epochs=epochs, batch_size=BATCH_SIZE, learning_rate=LEARNING_RATE, target='E_FCI - E_RHF_input', input_dir=str(args.input_dir.resolve()), implementation='local codes/run1.py + circuit.py + train.py', population=manifest.split_rule, split_protocol=args.split_protocol, split_manifest=str(args.split_manifest.resolve()) if args.split_manifest is not None else None, split_ids_source='user-supplied; manuscript provenance is not established by this interface' if args.split_protocol == 'manifest' else LEGACY_SPLIT_RULE, full_AO_until_final_descriptor_selection=True, FE='ascending eigenvalues of the valence block of full-AO Lowdin RHF density P_L', FE_prime='ascending eigenvalues of the valence block of full-AO Lowdin RHF Fock F_L', MB1='P_mu/F_mu; physical Pij alpha fit retained, no pair or triple gates', checkpoint_selection=f'strictly improving {checkpoint_selection} MAE; earliest epoch on ties', overall='equal-weight molecule MAE per seed, then canonical seed mean/SD/SE; all summary units mHa'))
     write_json(output / 'split_manifest.json', {molecule: {split: [metadata[r.sample_id]['geometry_id'] for r in manifest.rows if r.molecule == molecule and r.split == split] for split in SPLIT_PROTOCOLS[args.split_protocol]} for molecule in molecules})
     write_json(output / 'preprocessing.json', {f'{molecule}/{method}': asdict(model.constants) for (molecule, method), (model, _, _, _) in prepared.items()})
+    if MB1_PRIME in methods:
+        write_json(output / 'mb1_prime_control.json', dict(
+            model=MB1_PRIME, display_label="MB-1'",
+            encoder='gamma_mu = (pi/2) * tanh(a1 * P_tilde_mu + c1)',
+            trainable_encoder_parameters=['a1', 'c1'],
+            initialization='same seeded MB-1 normal vector with b1 removed; same training-target-mean bias',
+            reference_run=str(args.match_mb1_run.resolve()) if args.match_mb1_run is not None else None,
+            MAE_units='mHa', seed_SD_ddof=1))
     print(f'All populations and canonical preparation checks passed. Output: {output}', flush=True)
     if args.validate_only:
         return
@@ -532,6 +627,8 @@ def main(argv=None):
                 if (molecule, method, seed) not in completed:
                     metrics.extend(train_one(output, molecule, method, seed, prepared, metadata, num_epochs=epochs, checkpoint_selection=checkpoint_selection))
     summarize(output, metrics, molecules, splits=SPLIT_PROTOCOLS[args.split_protocol], methods=methods)
+    if reference is not None:
+        write_mb1_comparison(output, reference, metrics, molecules)
     print(f'Run 1 complete: {len(molecules)} molecules x {len(methods)} models x 32 seeds. Results: {output}', flush=True)
 if __name__ == '__main__':
     main()

@@ -36,7 +36,7 @@ SUMMARY_CSV = "metrics.csv"
 PREDICTIONS_CSV = "predictions.csv"
 CHEMICAL_ACCURACY_MHA = 1.593
 SUBSCRIPT_DIGITS = str.maketrans("0123456789", "₀₁₂₃₄₅₆₇₈₉")
-DISPLAY_RUN_LABELS = {"FG": "FG", "FE": "FE", "MB-1": "MB1"}
+DISPLAY_RUN_LABELS = {"FG": "FG", "FE": "FE", "MB-1": "MB1", "MB1_PRIME": "MB1'"}
 COLORS = {
     "MB-1": "#0072B2",       # blue
     "MB-2": "#009E73",       # green
@@ -50,6 +50,7 @@ COLORS = {
     "Control 2": "#C07AB8",  # mauve
 }
 RUN_COLORS = {run: COLORS[run] for run in ("FG", "FE", "MB-1")}
+RUN_COLORS['MB1_PRIME'] = '#009E73'
 
 
 @dataclass(frozen=True)
@@ -68,7 +69,7 @@ def parse_args() -> argparse.Namespace:
                         help="One completed results/run1/<timestamp> directory.")
     parser.add_argument("--output-dir", required=True, type=Path)
     parser.add_argument("--molecules", nargs="+", default=["CO"])
-    parser.add_argument("--runs", nargs="+", choices=list(RUN_COLORS), default=list(RUN_COLORS))
+    parser.add_argument("--runs", nargs="+", choices=list(RUN_COLORS), default=["FG", "FE", "MB-1"])
     parser.add_argument("--expected-seeds", type=int, default=32,
                         help="Require exactly seeds 0 through N-1 for every selected model.")
     parser.add_argument("--split", choices=["all", "train", "validation", "test"], default="all",
@@ -407,7 +408,11 @@ def plot_signed_error_curves(
     protocol_label: str,
     run_label_prefix: str,
     molecule_label_fontsize: float,
+    *,
+    band: str = "sd",
 ) -> None:
+    if band not in ("sd", "se"):
+        raise ValueError("Signed-error band must be 'sd' or 'se'")
     for molecule in molecules:
         molecule_output_dir = output_dir / molecule
         molecule_output_dir.mkdir(parents=True, exist_ok=True)
@@ -421,6 +426,8 @@ def plot_signed_error_curves(
             x = stats["x"].to_numpy(dtype=float)
             y = stats["mean_signed_error_mHa"].to_numpy(dtype=float)
             ystd = stats["std_signed_error_mHa"].to_numpy(dtype=float)
+            if band == "se":
+                ystd = ystd / np.sqrt(stats["n_seeds"].to_numpy(dtype=float))
             color = run_color(run)
 
             ax.plot(
@@ -457,7 +464,13 @@ def plot_signed_error_curves(
         ax.set_xlabel(x_label)
         ax.set_ylabel("Signed error / mHa")
         ax.grid(axis="y", alpha=0.22, linewidth=0.7)
-        compact_legend(ax)
+        if band == "se":
+            handles, labels = ax.get_legend_handles_labels()
+            handles.append(Patch(facecolor="0.5", alpha=0.13, edgecolor="none"))
+            labels.append("Shading: mean +/- SE")
+            compact_legend(ax, handles, labels)
+        else:
+            compact_legend(ax)
         fig.tight_layout()
         save_figure(
             fig,

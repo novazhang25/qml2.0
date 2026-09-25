@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "molecule": "CO",
+  "seed": 0,
+  "epochs": 500,
+  "methods": [
+    "MB1_PRIME"
+  ],
+  "finite_predictions_and_metrics": true,
+  "metrics": [
+    {
+      "molecule": "CO",
+      "model": "MB1_PRIME",
+      "seed": 0,
+      "split": "train",
+      "count": 15,
+      "best_epoch": 500,
+      "checkpoint_selection": "train",
+      "best_train_mae_ha": 0.0006434176368306741,
+      "mae_hartree": 0.0006434176368306741,
+      "mae_mHa": 0.6434176368306741,
+      "rmse_hartree": 0.000792085580123281,
+      "rmse_mHa": 0.792085580123281,
+      "max_abs_error_hartree": 0.0017220723766216417,
+      "max_abs_error_mHa": 1.7220723766216417,
+      "signed_error_amplitude_hartree": 0.0023824412658761396,
+      "signed_error_amplitude_mHa": 2.38244126587614,
+      "final_test_evaluation_call_count": 1
+    },
+    {
+      "molecule": "CO",
+      "model": "MB1_PRIME",
+      "seed": 0,
+      "split": "test",
+      "count": 15,
+      "best_epoch": 500,
+      "checkpoint_selection": "train",
+      "best_train_mae_ha": 0.0006434176368306741,
+      "mae_hartree": 0.0006658889524253771,
+      "mae_mHa": 0.665888952425377,
+      "rmse_hartree": 0.0008409977592346106,
+      "rmse_mHa": 0.8409977592346106,
+      "max_abs_error_hartree": 0.002062546057915282,
+      "max_abs_error_mHa": 2.062546057915282,
+      "signed_error_amplitude_hartree": 0.0027200949859026158,
+      "signed_error_amplitude_mHa": 2.720094985902616,
+      "final_test_evaluation_call_count": 1
+    }
+  ]
+}

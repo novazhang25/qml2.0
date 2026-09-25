@@ -1,0 +1,13 @@
+{
+  "model": "MB1_PRIME",
+  "display_label": "MB-1'",
+  "encoder": "gamma_mu = (pi/2) * tanh(a1 * P_tilde_mu + c1)",
+  "trainable_encoder_parameters": [
+    "a1",
+    "c1"
+  ],
+  "initialization": "same seeded MB-1 normal vector with b1 removed; same training-target-mean bias",
+  "reference_run": "/Users/novaz/Desktop/qml2.0/results/run1/20260924_115423_466018",
+  "MAE_units": "mHa",
+  "seed_SD_ddof": 1
+}

@@ -236,7 +236,9 @@ SCHEMA_VERSION = 'mb-encoding-constants-v1'
 PAIR_CONTRACT = 'active-i-lt-j-row-major-v1'
 TRIPLE_CONTRACT = 'active-i-lt-j-lt-k-nested-v1'
 PERCENTILE_CONTRACT = 'numpy-float64-abs-percentile-95-linear-v1'
-MODEL_LABELS = ('MB-1', 'MB-2', 'MB-3', 'lambda_abab_only_no_zzz', 'pij_plus_lambda_abab_no_zzz')
+MB1_PRIME = 'MB1_PRIME'
+ONE_BODY_MODELS = ('MB-1', MB1_PRIME)
+MODEL_LABELS = ('MB-1', MB1_PRIME, 'MB-2', 'MB-3', 'lambda_abab_only_no_zzz', 'pij_plus_lambda_abab_no_zzz')
 
 def pair_addresses(n: int) -> tuple[tuple[int, int], ...]:
     """List distinct AO pairs in lexicographic order."""
@@ -413,6 +415,14 @@ class CircuitIdentity:
     diff_method: str = 'backprop'
     device_seed: int = 0
 
+def shared_mb1_encoder(n, p_diag_std, f_diag_std, abc):
+    """Queue the original MB-1 one-body RY gates with shared a, b, c."""
+    a, b, c = abc
+    for i in range(n):
+        angle = 0.5 * math.pi * qml.math.tanh(a * p_diag_std[i] + b * f_diag_std[i] + c)
+        qml.RY(angle, wires=i)
+
+
 def shared_ansatz(n, phi, *, num_layers=2):
     """Queue the existing shared RY layers and directed CNOT ring unchanged."""
     for layer in range(num_layers):
@@ -460,11 +470,14 @@ class CachedCircuitBank:
 
         def queue_circuit(p_diag_std, f_diag_std, p_matrix, abc, phi, t_tensor=None, lambda_pairs=None):
             """Queue the physical encoder, pair gates, two HEA blocks, and Z measurements."""
-            a, b, c = abc
-            for i in range(n):
-                angle = 0.5 * math.pi * qml.math.tanh(a * p_diag_std[i] + b * f_diag_std[i] + c)
-                qml.RY(angle, wires=i)
-            if key.model_label != 'MB-1':
+            if key.model_label == MB1_PRIME:
+                a, c = abc
+                for i in range(n):
+                    angle = 0.5 * math.pi * qml.math.tanh(a * p_diag_std[i] + c)
+                    qml.RY(angle, wires=i)
+            else:
+                shared_mb1_encoder(n, p_diag_std, f_diag_std, abc)
+            if key.model_label not in ONE_BODY_MODELS:
                 pair_position = 0
                 for i in range(n):
                     for j in range(i + 1, n):
@@ -500,8 +513,11 @@ class CachedCircuitBank:
         """Evaluate the configured circuit or model without changing its parameters."""
         key = self.identity(constants, num_hea_layers=num_hea_layers)
         n = key.n_active
-        entries = [(p_diag_std, (n,)), (f_diag_std, (n,)), (abc, (3,)), (phi, (num_hea_layers,))]
-        if key.model_label != 'MB-1':
+        prime = key.model_label == MB1_PRIME
+        entries = [(p_diag_std, (n,)), (abc, (2 if prime else 3,)), (phi, (num_hea_layers,))]
+        if not prime:
+            entries.append((f_diag_std, (n,)))
+        if key.model_label not in ONE_BODY_MODELS:
             entries.append((p_matrix, (n, n)))
         elif p_matrix is not None:
             raise ValueError('MB-1 circuit inputs must exclude pair descriptors')
@@ -523,6 +539,7 @@ class CachedCircuitBank:
 class ParameterLayout:
     n_active: int
     num_hea_layers: int = 2
+    include_fock: bool = True
 
     def __post_init__(self):
         """Validate the record and preserve immutable descriptors or model settings."""
@@ -542,9 +559,14 @@ class ParameterLayout:
         return self.context_width + 3
 
     @property
+    def encoder_names(self):
+        """MB-1' removes b entirely; all remaining parameters keep their names."""
+        return ('a', 'b', 'c') if self.include_fock else ('a', 'c')
+
+    @property
     def bias_index(self):
         """Locate the readout bias in the flat trainable parameter vector."""
-        return 3 + self.num_hea_layers
+        return len(self.encoder_names) + self.num_hea_layers
 
     @property
     def num_parameters(self):
@@ -554,7 +576,7 @@ class ParameterLayout:
     @property
     def names(self):
         """Describe the order of entries in the flat parameter vector."""
-        return ('a', 'b', 'c') + tuple((f'phi{i}' for i in range(self.num_hea_layers))) + ('bias',) + tuple((f'Z{i}_weight' for i in range(self.context_width))) + ('mean_Z_weight', 'mean_Z2_weight', 'mean_Z3_weight')
+        return self.encoder_names + tuple((f'phi{i}' for i in range(self.num_hea_layers))) + ('bias',) + tuple((f'Z{i}_weight' for i in range(self.context_width))) + ('mean_Z_weight', 'mean_Z2_weight', 'mean_Z3_weight')
 
     def validate(self, theta):
         """Reject parameters with the wrong shape, precision, or nonfinite values."""
@@ -595,7 +617,8 @@ class CorrelationEnergyModel:
     @property
     def layout(self):
         """Return the parameter layout for this model and qubit count."""
-        return ParameterLayout(self.constants.n_active, self.num_hea_layers)
+        return ParameterLayout(self.constants.n_active, self.num_hea_layers,
+                               include_fock=self.constants.model_label != MB1_PRIME)
 
     @property
     def num_parameters(self):
@@ -605,7 +628,8 @@ class CorrelationEnergyModel:
     def split_parameters(self, theta):
         """Separate encoder coefficients, shared HEA angles, and readout weights."""
         self.layout.validate(theta)
-        return (theta[:3], theta[3:self.layout.bias_index], theta[self.layout.bias_index:])
+        width = len(self.layout.encoder_names)
+        return (theta[:width], theta[width:self.layout.bias_index], theta[self.layout.bias_index:])
 
     def _quantum_arguments(self, sample: ProcessedSample, theta):
         """Standardize P/F diagonals; MB-1 excludes pair and triple circuit inputs."""
@@ -620,6 +644,10 @@ class CorrelationEnergyModel:
             """Copy one immutable NumPy descriptor into a Torch tensor with the parameter precision."""
             return torch.tensor(value, dtype=theta.dtype, device=theta.device)
         Pii = descriptor(sample.pii)
+        if c.model_label == MB1_PRIME:
+            # F is never read, standardized, or sent to the MB-1' encoder.
+            Pii_std = (Pii - float(c.Pii_mean)) / float(c.Pii_std)
+            return (Pii_std, None, None, None, abc, phi)
         Fii = descriptor(sample.fii)
         Pij = None if c.model_label == 'MB-1' else descriptor(sample.pij)
         T = None

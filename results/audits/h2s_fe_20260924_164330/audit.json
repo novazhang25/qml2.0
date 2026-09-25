@@ -1,0 +1,91 @@
+{
+  "full_space_pass_count": 30,
+  "geometry_count": 30,
+  "projector_tolerance": 1e-10,
+  "max_projector_residual": 1.9984014443252818e-14,
+  "min_eigenvalue_distance": 0.0,
+  "max_eigenvalue_distance": 1.199040866595169e-14,
+  "loader_rejection_count": 0,
+  "split": "15 odd IDs training / 15 even IDs test; ddof=0",
+  "loader_errors": [],
+  "input_sha256": {
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/001.npz": "448861086c09c4741cb579cec80504db81a596cfe8bbe968f91392bb57d3d979",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/002.npz": "1e94a82ede1d96c62b196ba18133d6d5504ca3dba778f050ee5c7684d66bfdda",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/003.npz": "799b38042f27bdb4d998647ada8ca5cdffc231c0de04b432dbb8c7dbbca5127c",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/004.npz": "dca2ab66c299313b5b91358bf13b3fd049bda103cec0f7b913dca5d6f1a003bb",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/005.npz": "3e2d5dc0dcb956633a9fa499af3dbd14c9c84f7d711c770c12e298ee42e0b8af",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/006.npz": "6907f081c77d017d6b7ec94cf3d25978ee9cefc6bf2cfceedf2116d3f16d2db3",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/007.npz": "c86956b3d640fde0cc0f96b242502e5f283eb93649d696883de8f5c7ee19f743",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/008.npz": "fd2cff09af2e91eb29a5b6193407cff89af2f7b65faac44105d535c6bce3144f",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/009.npz": "2d7055fd9e22d69f89fd5076a42e94ebd98d17ace528877190f5c34770735797",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/010.npz": "4a0d507a53e487958baa7a8b2da12664f7c03bfad42bf0426ff06c3464bbb9bc",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/011.npz": "b1661fd30abad8ab0ed350677bb1ca2503d755a0fa7998584d263e8e8d13bfd0",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/012.npz": "22890573ddca6149d9ee311829ef2dfa47027e169e22154486b53a252cb5be39",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/013.npz": "e997e46d471d80cb3b7df70e559d1b18b1763d0d8a1c3e5751913703c323aefe",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/014.npz": "8f09d8c54bee70b6278c00b691daa0f67607e3d0bbeeee212e1ffbf5d02331cc",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/015.npz": "629c7b1335160f313345833e3bf9179803c4379bbdfb8f239b0e38217afe32a7",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/016.npz": "b07e7abd819a83bd9721235f7f7c91ebfee3a52629feb29f8be24980651e2292",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/017.npz": "6f7f785bef29817137343ab8a4511e68d43277efee97a6fb89100b7952fddb11",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/018.npz": "36c555b0a5fea272d948af3e15e06d8d095433bc53f084552b1df5599a4b838b",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/019.npz": "c5a9d713d2e2790bcc05cdf926c634840f044ff5bfbf63bf339e0f69647e6b2c",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/020.npz": "1aa35a022e10e4af3b62ba5a666cbd491c4177415f436eed0e088f93762edf4f",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/021.npz": "355252511461fbcd46272985274073528aa05508432cc0c358ee8402b47bfd06",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/022.npz": "9a7d9e5005b303797a230b2b422139492d441aa15a27eb8757ce14171ff2293c",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/023.npz": "329777247ba26644fdf21b159d9960b5f02ec574c4b5c3a052f5409c134aa948",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/024.npz": "edeaec88dc7c7ffeb8580d8637b15b35e87be9796464aa6b69c82d434111aae8",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/025.npz": "7a6bfb7c3092a31a6ee22ab99af8859f1571e83863507fc5d73c322b03c8307a",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/026.npz": "55911278a2664b065943d0471dd094f6fdb2ad8cb71674ac127709d466662022",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/027.npz": "9903bc551e8cde78d130daacc7bb2efec1ef9bcd0e33941b2f910db7db769a9b",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/028.npz": "38474a58b202fdcbc5c82e782b1b746d54878624327fbea8cb7ba30b01297759",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/029.npz": "f701b4f1ca967fe19bc9b93eba890c589b73eab7dd268095ff09b9ad5a15aac6",
+    "/Users/novaz/Desktop/qml2.0/results/descriptor/H2S/030.npz": "4df8b2824942587899f8d22d8e80dffd79bbb8c047de435f601de80a9aa8286f"
+  },
+  "loader_status": "PASS",
+  "FE_width": 6,
+  "active_dimensions": 2,
+  "active_columns": [
+    0,
+    1
+  ],
+  "training_mean": [
+    0.03098780829172549,
+    0.037516680645774424,
+    1.9999999999999964,
+    1.9999999999999984,
+    2.0000000000000013,
+    2.000000000000003
+  ],
+  "training_std": [
+    0.0015688420035938112,
+    0.000795465725014087,
+    2.791646173764847e-15,
+    3.0075912366101663e-15,
+    2.031839577982629e-15,
+    2.4937629136492327e-15
+  ],
+  "actual_constant_mask": [
+    false,
+    false,
+    true,
+    true,
+    true,
+    true
+  ],
+  "requested_constant_mask": [
+    false,
+    false,
+    true,
+    true,
+    true,
+    true
+  ],
+  "current_expected_valence_indices": [
+    2,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "actual_Run1_scaler_verified": true
+}
